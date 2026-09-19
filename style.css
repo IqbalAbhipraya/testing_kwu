@@ -260,7 +260,7 @@ main > :last-child {
   box-shadow: 3px 3px 0px #1e1b16 !important;
 }
 
-/* Card shimmer light sweep */
+/* Card shimmer light sweep (High visibility on both light & dark cards + mobile touch) */
 .card-shimmer {
   position: relative;
   overflow: hidden;
@@ -269,24 +269,43 @@ main > :last-child {
 .card-shimmer::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: -120%;
-  width: 70%;
-  height: 100%;
+  top: -20%;
+  left: -160%;
+  width: 75%;
+  height: 140%;
   background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.22) 50%,
-    transparent 100%
+    105deg,
+    transparent 10%,
+    rgba(255, 255, 255, 0.35) 35%,
+    rgba(255, 255, 255, 0.85) 50%,
+    rgba(255, 235, 180, 0.6) 58%,
+    transparent 75%
   );
-  transform: skewX(-20deg);
+  transform: skewX(-25deg);
   pointer-events: none;
-  transition: left 0.75s ease;
-  z-index: 5;
+  transition: left 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  z-index: 10;
 }
 
-.card-shimmer:hover::after {
-  left: 140%;
+.card-shimmer:hover::after,
+.card-shimmer:active::after {
+  left: 170%;
+}
+
+/* Subtle auto-shine sweep when revealed into viewport */
+.reveal-on-scroll.is-revealed.card-shimmer::after,
+.reveal-on-scroll.is-revealed .card-shimmer::after {
+  animation: cardShimmerAuto 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.35s 1 forwards;
+}
+
+@keyframes cardShimmerAuto {
+  0% {
+    left: -160%;
+  }
+  100% {
+    left: 170%;
+  }
 }
 
 /* Food image zoom & subtle rotation tilt */
