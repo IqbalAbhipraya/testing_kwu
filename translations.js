@@ -155,7 +155,21 @@ const TRANSLATIONS = {
     dock_roulette: "Roulette",
     dock_combos: "Paket",
     dock_track: "Lacak",
-    dock_order: "Pesan"
+    dock_order: "Pesan",
+
+    // Welcome Poster Modal
+    poster_badge: "SPESIAL MARKET DAY TEL-U",
+    poster_booth_tag: "BOOTH #14",
+    poster_title: "YUK MAMPIR KE BOOTH KAMI!",
+    poster_desc: "Nikmati renyahnya Famichiki ayam krispi juicy panas dan segarnya 6 varian Potion Roulette langsung di venue festival!",
+    poster_loc: "Gedung Student Pavilion Hall, Tel-U",
+    poster_hours: "09:00 – 17:00 WIB",
+    poster_feat1: "Goreng Segar Panas di Tempat",
+    poster_feat2: "Minuman Magis Berubah Warna",
+    poster_feat3: "Free Stamp Card: Beli 5 Gratis 1",
+    poster_cta_order: "Pre-Order Google Form",
+    poster_cta_menu: "Lihat Pilihan Menu",
+    poster_close: "Nanti saja, masuk ke website"
   },
 
   en: {
@@ -308,6 +322,20 @@ const TRANSLATIONS = {
     dock_roulette: "Roulette",
     dock_combos: "Combos",
     dock_track: "Track",
-    dock_order: "Order"
+    dock_order: "Order",
+
+    // Welcome Poster Modal
+    poster_badge: "TEL-U MARKET DAY SPECIAL",
+    poster_booth_tag: "BOOTH #14",
+    poster_title: "VISIT US AT OUR BOOTH!",
+    poster_desc: "Taste our sizzling hot Japanese Famichiki crispy cutlets and 6 viral color-shifting Potion drinks live at the festival!",
+    poster_loc: "Student Pavilion Hall, Tel-U",
+    poster_hours: "09:00 AM – 17:00 WIB",
+    poster_feat1: "Freshly Fried Hot on Site",
+    poster_feat2: "Color-Shifting Magic Potions",
+    poster_feat3: "Free Loyalty Card (Buy 5 Get 1)",
+    poster_cta_order: "Pre-Order Google Form",
+    poster_cta_menu: "Explore Our Menu",
+    poster_close: "Maybe later, enter website"
   }
 };

@@ -427,4 +427,68 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Initialize Welcome Poster Modal
+  initWelcomePoster();
 });
+
+// ==========================================
+// 7. Welcome Booth Poster Modal Controller
+// ==========================================
+function openPosterModal() {
+  const modal = document.getElementById('welcome-poster-modal');
+  if (modal) {
+    modal.classList.add('show-modal');
+    document.body.classList.add('overflow-hidden');
+  }
+}
+
+function closePosterModal() {
+  const modal = document.getElementById('welcome-poster-modal');
+  if (modal) {
+    modal.classList.remove('show-modal');
+    document.body.classList.remove('overflow-hidden');
+    sessionStorage.setItem('tori_poster_dismissed', 'true');
+  }
+}
+
+function goToMenuFromPoster() {
+  closePosterModal();
+  const menuSection = document.getElementById('menu');
+  if (menuSection) {
+    const headerOffset = 80;
+    const offsetPosition = menuSection.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+  }
+}
+
+function initWelcomePoster() {
+  const alreadySeen = sessionStorage.getItem('tori_poster_dismissed');
+  if (!alreadySeen) {
+    // Show on first entrance after slight delay for smooth page rendering
+    setTimeout(() => {
+      openPosterModal();
+    }, 600);
+  }
+
+  // Click backdrop outside modal card to close
+  const modal = document.getElementById('welcome-poster-modal');
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closePosterModal();
+      }
+    });
+  }
+
+  // Close with Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const modal = document.getElementById('welcome-poster-modal');
+      if (modal && modal.classList.contains('show-modal')) {
+        closePosterModal();
+      }
+    }
+  });
+}
+

@@ -120,13 +120,13 @@
   </script>
 
   <!-- External Stylesheet (Custom Styling & Animations) -->
-  <link rel="stylesheet" href="style.css?v=2.4">
+  <link rel="stylesheet" href="style.css?v=2.7">
 
   <!-- Multi-Language Translations Dictionary -->
-  <script src="translations.js?v=2.5"></script>
+  <script src="translations.js?v=2.7"></script>
 
   <!-- External Script (Order Tracking & Interactive Logic) -->
-  <script src="script.js?v=2.6" defer></script>
+  <script src="script.js?v=2.7" defer></script>
 </head>
 
 <body class="bg-surface text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed pb-24 sm:pb-0">
@@ -135,8 +135,8 @@
        HEADER
        ========================================== -->
   <header class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.06)] w-full max-w-full">
-    <!-- Announcement Banner -->
-    <div class="bg-primary text-on-primary font-label-badge text-[11px] sm:text-label-badge text-center py-1 sm:py-1.5 px-3 tracking-wide overflow-hidden whitespace-nowrap border-b border-inverse-surface/10 flex items-center justify-center gap-2 w-full">
+    <!-- Announcement Banner (Clickable to view Booth Poster) -->
+    <div class="bg-primary hover:bg-primary-container text-on-primary font-label-badge text-[11px] sm:text-label-badge text-center py-1 sm:py-1.5 px-3 tracking-wide overflow-hidden whitespace-nowrap border-b border-inverse-surface/10 flex items-center justify-center gap-2 w-full cursor-pointer transition-colors" onclick="openPosterModal()" title="Lihat Info Poster Booth #14">
       <span class="inline-block w-1.5 h-1.5 rounded-full bg-tertiary-fixed animate-ping shrink-0"></span>
       <span class="sm:hidden font-bold truncate" data-i18n="announcement_status">🔥 TEL-U MARKET DAY • BATCH 04 DIBUKA</span>
       <span class="hidden sm:inline truncate" data-i18n="announcement_status">🔥 TELKOM UNIVERSITY MARKET DAY SPECIAL • PRE-ORDER BATCH 04 DIBUKA • BOOTH #14</span>
@@ -781,6 +781,97 @@
       <span class="text-[9px] font-bold uppercase tracking-tight mt-0.5 truncate w-full" data-i18n="dock_order">Pesan</span>
     </a>
   </nav>
+
+  <!-- ==========================================
+       WELCOME BOOTH POSTER MODAL (First Visit Pop-up)
+       ========================================== -->
+  <div id="welcome-poster-modal" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/70 backdrop-blur-sm opacity-0 pointer-events-none" role="dialog" aria-modal="true" aria-labelledby="poster-title">
+    <div class="relative w-full max-w-md bg-surface-container-lowest rounded-3xl border-2 border-[#1e1b16] shadow-[8px_8px_0px_#1e1b16] overflow-hidden transform scale-95 max-h-[92vh] flex flex-col my-auto" id="welcome-poster-card">
+      
+      <!-- Close 'X' Button -->
+      <button id="close-poster-btn" class="absolute top-3 right-3 z-30 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-surface/95 hover:bg-surface border border-on-surface/20 shadow-md flex items-center justify-center text-on-surface hover:text-primary transition-all active:scale-95 cursor-pointer" onclick="closePosterModal()" aria-label="Close poster">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+
+      <!-- Scrollable Inner Content -->
+      <div class="overflow-y-auto no-scrollbar flex flex-col">
+        
+        <!-- Poster Visual Header Banner -->
+        <div class="relative h-44 sm:h-52 w-full bg-[#1e1b16] overflow-hidden shrink-0">
+          <img class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-500" data-alt="Market Day Booth 14 Crispy Japanese chicken cutlet and craft potion drinks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBchBN53TA2S2SkzyPmHkxcf4JpIxB--SHg-1oaKMi4aQMAEyqyHguCl-3KhB_6ObPiCvC6o75YI4lUnjNOB8J_ltojKHhvpqIrSpaGLuKV-nInwwvUn3mcKNbQdZEsk99OC530aeZ_Srp23404i7hLVwN402wklXdToQ1-2XcnFZev2d6ZzwxZQsbBZRQM-v957ijs9yspXLy8E5dxtsFxOJtrnYrV_eQMPjKnsAvIn3mVdcurcgosmw">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"></div>
+
+          <!-- Top Badge Tags -->
+          <div class="absolute top-3 left-3 flex items-center gap-1.5 flex-wrap pr-12">
+            <span class="bg-primary text-white font-label-badge text-[10px] sm:text-[11px] px-2.5 py-1 rounded-full uppercase font-black shadow-[2px_2px_0px_#1e1b16]" data-i18n="poster_booth_tag">BOOTH #14</span>
+            <span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-badge text-[10px] sm:text-[11px] px-2.5 py-0.5 rounded-full font-bold shadow-sm" data-i18n="poster_badge">SPESIAL MARKET DAY TEL-U</span>
+          </div>
+
+          <!-- Bottom Title Overlay -->
+          <div class="absolute bottom-3 inset-x-4 text-white">
+            <div class="flex items-center gap-1.5 text-tertiary-fixed-dim text-[11px] font-bold uppercase mb-0.5">
+              <span class="w-2 h-2 rounded-full bg-[#2E7D32] animate-ping"></span>
+              <span>LIVE ON CAMPUS</span>
+            </div>
+            <h3 id="poster-title" class="font-headline-lg text-lg sm:text-xl uppercase font-black leading-tight drop-shadow-md text-white" data-i18n="poster_title">YUK MAMPIR KE BOOTH KAMI!</h3>
+          </div>
+        </div>
+
+        <!-- Poster Details Body -->
+        <div class="p-4 sm:p-5 flex flex-col gap-3">
+          
+          <p class="font-body-md text-xs sm:text-sm text-on-surface-variant leading-relaxed" data-i18n="poster_desc">
+            Nikmati renyahnya Famichiki ayam krispi juicy panas dan segarnya 6 varian Potion Roulette langsung di venue festival!
+          </p>
+
+          <!-- Location & Operating Hours Banner -->
+          <div class="bg-surface-container p-3 rounded-2xl flex flex-col gap-1.5 border border-on-surface/10 text-xs">
+            <div class="flex items-center gap-2 text-on-surface font-bold">
+              <span class="material-symbols-outlined text-primary text-[18px]">location_on</span>
+              <span data-i18n="poster_loc">Gedung Student Pavilion Hall, Tel-U</span>
+            </div>
+            <div class="flex items-center gap-2 text-on-surface-variant font-medium">
+              <span class="material-symbols-outlined text-tertiary-container text-[18px]">schedule</span>
+              <span data-i18n="poster_hours">09:00 – 17:00 WIB</span>
+            </div>
+          </div>
+
+          <!-- Festival Highlights Checklist -->
+          <div class="grid grid-cols-1 gap-1.5 text-xs text-on-surface font-medium py-1">
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-[11px]">✓</span>
+              <span data-i18n="poster_feat1">Goreng Segar Panas di Tempat</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-[11px]">✓</span>
+              <span data-i18n="poster_feat2">Minuman Magis Berubah Warna</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-[11px]">✓</span>
+              <span data-i18n="poster_feat3">Free Stamp Card: Beli 5 Gratis 1</span>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="flex flex-col gap-2 pt-1">
+            <a href="https://forms.gle/mZKQudvXEUE7D7Ty5" target="_blank" rel="noopener noreferrer" class="w-full bg-primary hover:bg-primary-container text-on-primary font-headline-sm text-xs sm:text-sm uppercase py-3 rounded-xl shadow-[3px_3px_0px_#1e1b16] btn-tactile text-center font-black flex items-center justify-center gap-1.5" onclick="closePosterModal()">
+              <span data-i18n="poster_cta_order">Pre-Order Google Form</span>
+              <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+            </a>
+            <button class="w-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-badge text-xs uppercase py-2.5 rounded-xl border border-on-surface/10 btn-tactile font-bold cursor-pointer" onclick="goToMenuFromPoster()">
+              <span data-i18n="poster_cta_menu">Lihat Pilihan Menu</span>
+            </button>
+          </div>
+
+          <button class="text-center font-body-sm text-[11px] text-on-surface-variant hover:text-on-surface underline mt-1 transition-colors cursor-pointer" onclick="closePosterModal()">
+            <span data-i18n="poster_close">Nanti saja, masuk ke website</span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>

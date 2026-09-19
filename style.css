@@ -508,4 +508,25 @@ main > :last-child {
   transform: translateY(-0.5px);
 }
 
+/* ==========================================
+   WELCOME BOOTH POSTER MODAL
+   ========================================== */
+#welcome-poster-modal {
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#welcome-poster-modal.show-modal {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+#welcome-poster-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#welcome-poster-modal.show-modal #welcome-poster-card {
+  transform: scale(1) !important;
+}
+
+
 
