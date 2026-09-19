@@ -1,0 +1,237 @@
+/* ==========================================================================
+   TORI SNACKS & SIPS - Exact Styling & Micro-Animations
+   ========================================================================== */
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    overscroll-behavior: none;
+  }
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* ==========================================================================
+   EXACT TYPOGRAPHY METRICS (Exact match to Google Stitch)
+   ========================================================================== */
+.font-display-hero,
+.text-display-hero {
+  font-family: 'Epilogue', sans-serif !important;
+  font-size: 56px !important;
+  line-height: 60px !important;
+  letter-spacing: -0.03em !important;
+  font-weight: 900 !important;
+}
+
+.text-display-hero-mobile,
+.font-display-hero-mobile {
+  font-family: 'Epilogue', sans-serif !important;
+  font-size: 36px !important;
+  line-height: 40px !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 900 !important;
+}
+
+.font-headline-lg,
+.text-headline-lg {
+  font-family: 'Epilogue', sans-serif !important;
+  font-size: 32px !important;
+  line-height: 38px !important;
+  letter-spacing: -0.02em !important;
+  font-weight: 800 !important;
+}
+
+.font-headline-md,
+.text-headline-md {
+  font-family: 'Epilogue', sans-serif !important;
+  font-size: 22px !important;
+  line-height: 28px !important;
+  font-weight: 800 !important;
+}
+
+.font-headline-sm,
+.text-headline-sm {
+  font-family: 'Epilogue', sans-serif !important;
+  font-size: 18px !important;
+  line-height: 24px !important;
+  font-weight: 700 !important;
+}
+
+.font-price-display,
+.text-price-display {
+  font-family: 'Epilogue', sans-serif !important;
+  font-size: 20px !important;
+  line-height: 22px !important;
+  font-weight: 900 !important;
+}
+
+.font-label-badge,
+.text-label-badge {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-size: 13px !important;
+  line-height: 16px !important;
+  letter-spacing: 0.04em !important;
+  font-weight: 700 !important;
+}
+
+.font-body-lg,
+.text-body-lg {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  font-weight: 600 !important;
+}
+
+.font-body-md,
+.text-body-md {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  font-weight: 500 !important;
+}
+
+.font-body-sm,
+.text-body-sm {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 12px !important;
+  line-height: 16px !important;
+  font-weight: 500 !important;
+}
+
+/* ==========================================================================
+   ENHANCED MICRO-ANIMATIONS (Non-disruptive, smooth)
+   ========================================================================== */
+
+/* Floating stickers */
+@keyframes floatSticker1 {
+  0%, 100% { transform: rotate(6deg) translateY(0px); }
+  50% { transform: rotate(7.5deg) translateY(-5px); }
+}
+
+@keyframes floatSticker2 {
+  0%, 100% { transform: rotate(-6deg) translateY(0px); }
+  50% { transform: rotate(-4.5deg) translateY(-4px); }
+}
+
+.animate-sticker-1 {
+  animation: floatSticker1 3.8s ease-in-out infinite;
+}
+
+.animate-sticker-2 {
+  animation: floatSticker2 4.2s ease-in-out infinite 0.4s;
+}
+
+/* Card subtle hover elevation */
+.hover-card-lift {
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.hover-card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 0px #1e1b16;
+}
+
+/* Food image zoom */
+.zoom-img-container {
+  overflow: hidden;
+}
+
+.zoom-img-container img {
+  transition: transform 0.35s ease;
+}
+
+.zoom-img-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Roulette wheel */
+#roulette-wheel {
+  transition: transform 3.2s cubic-bezier(0.12, 0.85, 0.25, 1);
+  transform-origin: center center;
+  will-change: transform;
+}
+
+/* Pointer tick while spinning */
+@keyframes pointerTick {
+  0%, 100% { transform: translateX(-50%) rotate(0deg); }
+  40% { transform: translateX(-50%) rotate(-10deg); }
+  80% { transform: translateX(-50%) rotate(8deg); }
+}
+
+.pointer-ticking {
+  animation: pointerTick 0.12s infinite ease-in-out;
+}
+
+/* Selected potion card highlight */
+.potion-highlight {
+  border-color: #ffddb9 !important;
+  box-shadow: 0 0 16px rgba(255, 221, 185, 0.35);
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+}
+
+/* Order cards entry */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.order-card-enter {
+  animation: slideInUp 0.3s ease forwards;
+}
+
+/* Confetti particles */
+.roulette-confetti {
+  position: fixed;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 9999;
+  animation: confettiBurst 1.6s ease-out forwards;
+}
+
+@keyframes confettiBurst {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) rotate(540deg);
+  }
+}
+
+/* Toast message */
+#toast-msg {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  z-index: 999;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  pointer-events: none;
+}
+
+#toast-msg.active {
+  transform: translateY(0);
+  opacity: 1;
+}

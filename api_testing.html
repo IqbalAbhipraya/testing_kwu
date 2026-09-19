@@ -1,0 +1,81 @@
+<div class="order-tracker" style="max-width: 500px; font-family: sans-serif; margin: 20px auto;">
+  <h3>Track Your Orders</h3>
+  <div style="display: flex; gap: 8px;">
+    <input type="text" id="phoneInput" placeholder="Enter WhatsApp / Phone No (e.g. 0882123919638)" style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 6px;">
+    <button onclick="checkOrderStatus()" style="padding: 10px 16px; background-color: #007bff; color: white; border: none; border-radius: 6px; cursor: pointer;">Check Status</button>
+  </div>
+  
+  <div id="statusResult" style="margin-top: 20px;"></div>
+</div>
+
+<script>
+  async function checkOrderStatus() {
+    const phoneNo = document.getElementById('phoneInput').value.trim();
+    const resultDiv = document.getElementById('statusResult');
+
+    if (!phoneNo) {
+      resultDiv.innerHTML = "<p style='color: red;'>Please enter your phone number.</p>";
+      return;
+    }
+
+    resultDiv.innerHTML = "<p style='color: #666;'>Searching orders...</p>";
+
+    // Replace with your Google Apps Script Web App URL
+    const API_URL = "https://script.google.com/macros/s/AKfycbw11jg4D_8gfogGQhviVET-Hom6LAlDvUIg_pEEfklQ4zQFuYeKQ2GQ16y0f9zCRF_jtA/exec";
+
+    try {
+      const button = document.querySelector("button");
+      button.disabled = true;
+      setTimeout(() => { button.disabled = false; }, 3000);
+      const response = await fetch(`${API_URL}?phoneNo=${encodeURIComponent(phoneNo)}`, {
+        method: 'GET',
+        redirect: 'follow'
+      });
+      
+
+      const data = await response.json();
+
+      if (data.status === 'success') {
+        let html = `
+          <div style="background: #f8f9fa; border: 1px solid #e9ecef; border-radius: 8px; padding: 15px; margin-bottom: 15px;">
+            <h4 style="margin: 0 0 5px 0;">Customer: ${data.customerName}</h4>
+            <p style="margin: 0; color: #666; font-size: 0.9em;">Found ${data.totalOrders} order(s)</p>
+          </div>
+        `;
+
+        data.orders.forEach((order, index) => {
+          // Status tag colors
+          let statusBg = '#e2e3e5';
+          let statusColor = '#383d41';
+
+          if (order.orderStatus === 'Order Received') { statusBg = '#cce5ff'; statusColor = '#004085'; }
+          else if (order.orderStatus === 'On-Make') { statusBg = '#fff3cd'; statusColor = '#856404'; }
+          else if (order.orderStatus === 'Ready to Deliver') { statusBg = '#d1ecf1'; statusColor = '#0c5460'; }
+          else if (order.orderStatus === 'Done' || order.orderStatus === 'Delivered') { statusBg = '#d4edda'; statusColor = '#155724'; }
+
+          html += `
+            <div style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 12px; background: #fff;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <span style="font-size: 0.85em; color: #777;">${order.timestamp}</span>
+                <span style="background: ${statusBg}; color: ${statusColor}; font-weight: bold; font-size: 0.85em; padding: 4px 10px; border-radius: 12px;">
+                  ${order.orderStatus}
+                </span>
+              </div>
+              <p style="margin: 0; font-size: 1em;"><strong>Item:</strong> ${order.menu}</p>
+            </div>
+          `;
+        });
+
+        resultDiv.innerHTML = html;
+
+      } else if (data.status === 'not_found') {
+        resultDiv.innerHTML = "<p style='color: red;'>No orders found for this phone number.</p>";
+      } else {
+        resultDiv.innerHTML = "<p style='color: red;'>Error retrieving orders. Please try again.</p>";
+      }
+    } catch (error) {
+      console.error(error);
+      resultDiv.innerHTML = "<p style='color: red;'>Unable to connect to order server.</p>";
+    }
+  }
+</script>
