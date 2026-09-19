@@ -461,3 +461,51 @@ main > :last-child {
   scrollbar-width: none;
 }
 
+/* ==========================================
+   LANGUAGE SWITCHER (ID / EN)
+   ========================================== */
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  background-color: #f1ede8;
+  border: 1px solid rgba(30, 27, 22, 0.12);
+  border-radius: 9999px;
+  padding: 2px;
+  gap: 2px;
+  box-shadow: 1px 1px 0px rgba(30, 27, 22, 0.2);
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+  color: #53433e;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  letter-spacing: 0.04em;
+}
+
+@media (min-width: 640px) {
+  .lang-btn {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+}
+
+.lang-btn:hover:not(.active) {
+  color: #1e1b16;
+  background-color: rgba(30, 27, 22, 0.06);
+}
+
+.lang-btn.active {
+  background-color: #af101a;
+  color: #ffffff;
+  box-shadow: 1.5px 1.5px 0px #1e1b16;
+  transform: translateY(-0.5px);
+}
+
+

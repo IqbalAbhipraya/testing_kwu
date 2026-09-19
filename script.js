@@ -1,11 +1,71 @@
 /**
  * TORI SNACKS & SIPS - Script Logic
- * - Real Google Apps Script Order Tracking (api_testing.html logic)
+ * - Multi-Language (i18n) Engine (Indonesian default + English toggle)
+ * - Real Google Apps Script Order Tracking
  * - Potion Roulette Spin & Celebrations
  * - Smooth Scrolling & Navigation
  */
 
 const API_URL = "https://script.google.com/macros/s/AKfycbw11jg4D_8gfogGQhviVET-Hom6LAlDvUIg_pEEfklQ4zQFuYeKQ2GQ16y0f9zCRF_jtA/exec";
+
+// ==========================================
+// 0. Multi-Language (i18n) Controller
+// Default Language: 'id' (Bahasa Indonesia)
+// ==========================================
+let currentLang = localStorage.getItem('tori_lang') || 'id';
+
+function setLanguage(lang) {
+  if (typeof TRANSLATIONS === 'undefined' || !TRANSLATIONS[lang]) return;
+  currentLang = lang;
+  localStorage.setItem('tori_lang', lang);
+  document.documentElement.lang = lang;
+
+  // Update all static data-i18n elements
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key] !== undefined) {
+      el.innerHTML = TRANSLATIONS[lang][key];
+    }
+  });
+
+  // Update placeholder inputs
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key] !== undefined) {
+      el.setAttribute('placeholder', TRANSLATIONS[lang][key]);
+    }
+  });
+
+  // Update active state on language switcher buttons
+  const idBtn = document.getElementById('lang-btn-id');
+  const enBtn = document.getElementById('lang-btn-en');
+  if (idBtn && enBtn) {
+    if (lang === 'id') {
+      idBtn.classList.add('active');
+      enBtn.classList.remove('active');
+    } else {
+      enBtn.classList.add('active');
+      idBtn.classList.remove('active');
+    }
+  }
+
+  // Update dynamic order count if present
+  const orderCountEl = document.getElementById('order-count');
+  if (orderCountEl && orderCountEl.dataset.orderCount) {
+    const count = orderCountEl.dataset.orderCount;
+    const template = TRANSLATIONS[lang].track_orders_found || 'Found {n} order(s)';
+    orderCountEl.innerText = template.replace('{n}', count);
+  }
+
+  // Update check status button label if idle
+  const checkBtn = document.getElementById('check-status-btn');
+  if (checkBtn && !checkBtn.disabled) {
+    const textSpan = checkBtn.querySelector('.btn-label-text');
+    if (textSpan) {
+      textSpan.innerText = TRANSLATIONS[lang].track_btn;
+    }
+  }
+}
 
 // ==========================================
 // 1. Order Tracking API Logic
@@ -14,11 +74,12 @@ async function checkOrderStatus() {
   const input = document.getElementById('tracking-input');
   const resultsContainer = document.getElementById('tracking-results');
   const checkBtn = document.getElementById('check-status-btn');
+  const t = (typeof TRANSLATIONS !== 'undefined' && TRANSLATIONS[currentLang]) ? TRANSLATIONS[currentLang] : {};
 
   const phoneNo = input ? input.value.trim() : '';
 
   if (!phoneNo) {
-    alert('Please enter a WhatsApp number!');
+    alert(currentLang === 'id' ? 'Silakan masukkan nomor WhatsApp Anda!' : 'Please enter your WhatsApp number!');
     if (input) input.focus();
     return;
   }
@@ -26,13 +87,14 @@ async function checkOrderStatus() {
   // Set loading state
   if (checkBtn) {
     checkBtn.disabled = true;
-    checkBtn.innerText = 'Searching...';
+    const textSpan = checkBtn.querySelector('.btn-label-text');
+    if (textSpan) textSpan.innerText = t.track_btn_loading || 'Searching...';
   }
 
   resultsContainer.innerHTML = `
     <div class="bg-surface-container-low p-space-md rounded-xl text-center py-8">
-      <span class="font-headline-sm text-headline-sm text-on-surface block mb-1">Checking Live Orders...</span>
-      <span class="font-body-sm text-body-sm text-on-surface-variant">Searching orders for <strong>${escapeHtml(phoneNo)}</strong>...</span>
+      <span class="font-headline-sm text-headline-sm text-on-surface block mb-1" data-i18n="track_connecting">${t.track_connecting || 'Checking Live Orders...'}</span>
+      <span class="font-body-sm text-body-sm text-on-surface-variant"><span data-i18n="track_searching_for">${t.track_searching_for || 'Searching orders for'}</span> <strong>${escapeHtml(phoneNo)}</strong>...</span>
     </div>
   `;
 
@@ -45,41 +107,54 @@ async function checkOrderStatus() {
     const data = await response.json();
 
     if (data.status === 'success') {
+      const ordersFoundText = (t.track_orders_found || 'Found {n} order(s)').replace('{n}', data.totalOrders);
       let ordersHtml = `
         <!-- Customer Header Tag -->
         <div class="bg-surface-container-low p-space-md rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
           <div>
-            <span class="font-headline-sm text-headline-sm text-on-surface">Customer: <strong class="text-primary font-black" id="customer-name">${escapeHtml(data.customerName)}</strong></span>
-            <span class="font-body-sm text-body-sm text-on-surface-variant block" id="order-count">Found ${data.totalOrders} order(s)</span>
+            <span class="font-headline-sm text-headline-sm text-on-surface"><span data-i18n="track_customer_label">${t.track_customer_label || 'Customer:'}</span> <strong class="text-primary font-black" id="customer-name">${escapeHtml(data.customerName)}</strong></span>
+            <span class="font-body-sm text-body-sm text-on-surface-variant block" id="order-count" data-order-count="${data.totalOrders}">${ordersFoundText}</span>
           </div>
-          <span class="font-label-badge text-label-badge text-tertiary-container bg-surface-container px-3 py-1 rounded-full uppercase self-start sm:self-auto">
-            Order Batch #04
+          <span class="font-label-badge text-label-badge text-tertiary-container bg-surface-container px-3 py-1 rounded-full uppercase self-start sm:self-auto font-bold" data-i18n="track_batch_badge">
+            ${t.track_batch_badge || 'Order Batch #04'}
           </span>
         </div>
       `;
 
       (data.orders || []).forEach(order => {
         let badgeStyle = 'bg-[#E2DFDE] text-[#474746]';
-        const st = order.orderStatus || '';
+        const rawStatus = (order.orderStatus || '').trim();
+        const st = rawStatus.toLowerCase();
+        let statusKey = '';
 
-        if (st === 'Delivered' || st === 'Done') {
-          badgeStyle = 'bg-[#E8F8F0] text-[#2E7D32]';
-        } else if (st === 'Ready to Deliver' || st === 'Ready') {
+        if (st.includes('ready') || st.includes('siap')) {
           badgeStyle = 'bg-[#E1F5FE] text-[#0277BD]';
-        } else if (st === 'On-Make') {
+          statusKey = 'status_ready';
+        } else if (st === 'delivered' || st === 'done' || st.includes('selesai') || st.includes('diambil')) {
+          badgeStyle = 'bg-[#E8F8F0] text-[#2E7D32]';
+          statusKey = 'status_delivered';
+        } else if (st.includes('make') || st.includes('goreng') || st.includes('proses') || st.includes('masak')) {
           badgeStyle = 'bg-[#FFF3CD] text-[#856404]';
-        } else if (st === 'Order Received') {
+          statusKey = 'status_on_make';
+        } else if (st.includes('received') || st.includes('terima')) {
           badgeStyle = 'bg-[#CCE5FF] text-[#004085]';
+          statusKey = 'status_received';
+        } else if (st.includes('cancel') || st.includes('batal')) {
+          badgeStyle = 'bg-[#FFEBEE] text-[#C62828]';
+          statusKey = 'status_canceled';
         }
+
+        const displayStatus = (statusKey && t[statusKey]) ? t[statusKey] : rawStatus;
+        const i18nAttr = statusKey ? `data-i18n="${statusKey}"` : '';
 
         ordersHtml += `
           <div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm order-card-enter">
             <div>
               <span class="font-body-sm text-body-sm text-on-surface-variant block mb-1">${escapeHtml(order.timestamp)}</span>
-              <span class="font-headline-sm text-headline-sm text-on-surface">Item: <span class="font-medium text-on-surface-variant">${escapeHtml(order.menu)}</span></span>
+              <span class="font-headline-sm text-headline-sm text-on-surface"><span data-i18n="track_item_label">${t.track_item_label || 'Item:'}</span> <span class="font-medium text-on-surface-variant">${escapeHtml(order.menu)}</span></span>
             </div>
-            <span class="${badgeStyle} font-label-badge text-label-badge px-4 py-1.5 rounded-full uppercase self-start sm:self-auto">
-              ${escapeHtml(st)}
+            <span class="${badgeStyle} font-label-badge text-label-badge px-4 py-1.5 rounded-full uppercase self-start sm:self-auto font-bold" ${i18nAttr}>
+              ${escapeHtml(displayStatus)}
             </span>
           </div>
         `;
@@ -89,16 +164,16 @@ async function checkOrderStatus() {
     } else if (data.status === 'not_found') {
       resultsContainer.innerHTML = `
         <div class="bg-surface-container-low p-space-md rounded-xl text-center py-6 border border-dashed border-outline-variant">
-          <span class="font-headline-sm text-headline-sm text-primary uppercase block mb-1">No Orders Found</span>
-          <p class="font-body-md text-body-md text-on-surface-variant mb-2">No active orders registered under WhatsApp number <strong>${escapeHtml(phoneNo)}</strong>.</p>
-          <span class="font-body-sm text-body-sm text-on-surface-variant block">Please check that you entered the exact number submitted in the Google Form.</span>
+          <span class="font-headline-sm text-headline-sm text-primary uppercase block mb-1" data-i18n="track_not_found_title">${t.track_not_found_title || 'No Orders Found'}</span>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-2"><span data-i18n="track_not_found_desc">${t.track_not_found_desc || 'No active orders registered under WhatsApp number'}</span> <strong>${escapeHtml(phoneNo)}</strong>.</p>
+          <span class="font-body-sm text-body-sm text-on-surface-variant block" data-i18n="track_not_found_tip">${t.track_not_found_tip || 'Please check that you entered the exact number submitted in the Google Form.'}</span>
         </div>
       `;
     } else {
       resultsContainer.innerHTML = `
         <div class="bg-error-container text-on-error-container p-space-md rounded-xl text-center py-4">
-          <p class="font-headline-sm text-headline-sm uppercase">Error Retrieving Orders</p>
-          <p class="font-body-sm text-body-sm mt-1">Please try again in a few moments or contact kitchen admin.</p>
+          <p class="font-headline-sm text-headline-sm uppercase" data-i18n="track_error_title">${t.track_error_title || 'Error Retrieving Orders'}</p>
+          <p class="font-body-sm text-body-sm mt-1" data-i18n="track_error_desc">${t.track_error_desc || 'Please try again in a few moments or contact kitchen admin.'}</p>
         </div>
       `;
     }
@@ -106,14 +181,15 @@ async function checkOrderStatus() {
     console.error("Fetch order error:", error);
     resultsContainer.innerHTML = `
       <div class="bg-error-container text-on-error-container p-space-md rounded-xl text-center py-4">
-        <p class="font-headline-sm text-headline-sm uppercase">Connection Error</p>
-        <p class="font-body-sm text-body-sm mt-1">Unable to connect to order server. Please check your connection.</p>
+        <p class="font-headline-sm text-headline-sm uppercase">${t.track_conn_error_title || 'Connection Error'}</p>
+        <p class="font-body-sm text-body-sm mt-1">${t.track_conn_error_desc || 'Unable to connect to order server. Please check your connection.'}</p>
       </div>
     `;
   } finally {
     if (checkBtn) {
       checkBtn.disabled = false;
-      checkBtn.innerText = 'Check Status';
+      const textSpan = checkBtn.querySelector('.btn-label-text');
+      if (textSpan) textSpan.innerText = t.track_btn || 'Check Status';
     }
   }
 }
@@ -135,12 +211,12 @@ let currentRotation = 0;
 let isSpinning = false;
 
 const drinkNames = [
-  { name: 'Energy Potion (Matcha Latte)', color: '#2e7d32', id: 'potion-card-0' },
-  { name: 'Ocean Potion (Blue Lemonade)', color: '#0288d1', id: 'potion-card-1' },
-  { name: 'Galaxy Potion (Taro Latte)', color: '#7b1fa2', id: 'potion-card-2' },
-  { name: 'Love Potion (Strawberry Milk)', color: '#d81b60', id: 'potion-card-3' },
-  { name: 'Lucky Potion (Mango Yakult)', color: '#f57c00', id: 'potion-card-4' },
-  { name: 'Rage Potion (Dark Chocolate)', color: '#4e342e', id: 'potion-card-5' }
+  { key: 'potion_energy', color: '#2e7d32', id: 'potion-card-0' },
+  { key: 'potion_ocean', color: '#0288d1', id: 'potion-card-1' },
+  { key: 'potion_galaxy', color: '#7b1fa2', id: 'potion-card-2' },
+  { key: 'potion_love', color: '#d81b60', id: 'potion-card-3' },
+  { key: 'potion_lucky', color: '#f57c00', id: 'potion-card-4' },
+  { key: 'potion_rage', color: '#4e342e', id: 'potion-card-5' }
 ];
 
 function spinRoulette() {
@@ -173,8 +249,9 @@ function spinRoulette() {
   const randomAngle = Math.floor(Math.random() * 360);
   currentRotation += extraSpins + randomAngle;
 
+  const t = (typeof TRANSLATIONS !== 'undefined' && TRANSLATIONS[currentLang]) ? TRANSLATIONS[currentLang] : {};
   wheel.style.transform = `rotate(${currentRotation}deg)`;
-  resultText.innerHTML = '<span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary animate-ping"></span> Spinning magic potion wheel...</span>';
+  resultText.innerHTML = `<span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary animate-ping"></span> ${t.roulette_spinning || 'Spinning magic potion wheel...'}</span>`;
 
   // Wheel animation takes 3.2s (3200ms) to decelerate to a stop
   setTimeout(() => {
@@ -184,7 +261,11 @@ function spinRoulette() {
     const index = Math.floor(effectiveAngle / 60) % 6;
     const selected = drinkNames[index];
 
-    resultText.innerHTML = `🎉 Fate Selected: <strong class="text-[#ffddb9] font-black uppercase underline decoration-2">${selected.name}</strong>!`;
+    const prefix = t.roulette_result_prefix || 'Destiny has spoken! Your potion is:';
+    const selectedName = (t[selected.key + '_name'] && t[selected.key + '_flavor'])
+      ? `${t[selected.key + '_name']} (${t[selected.key + '_flavor']})`
+      : selected.key;
+    resultText.innerHTML = `🎉 ${prefix} <strong class="text-[#ffddb9] font-black uppercase underline decoration-2">${selectedName}</strong>!`;
 
     const winningCard = document.getElementById(selected.id);
     if (winningCard) {
@@ -317,6 +398,7 @@ function initSmoothScroll() {
 // 6. DOM Ready Initializations
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
+  setLanguage(currentLang);
   initScrollReveal();
   initMobileScrollSpy();
   initSmoothScroll();
