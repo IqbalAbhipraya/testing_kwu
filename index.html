@@ -126,46 +126,49 @@
   <script src="script.js" defer></script>
 </head>
 
-<body class="bg-surface text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<body class="bg-surface text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed pb-24 sm:pb-0">
 
   <!-- ==========================================
        HEADER
        ========================================== -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.06)]">
+  <header class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.06)] w-full max-w-full">
     <!-- Announcement Banner -->
-    <div class="bg-primary text-on-primary font-label-badge text-label-badge text-center py-1.5 px-margin tracking-wide overflow-hidden whitespace-nowrap border-b border-inverse-surface/10">
-      <span>🔥 TELKOM UNIVERSITY MARKET DAY SPECIAL • PRE-ORDER OPEN • 4 WEEKS COUNTDOWN</span>
+    <div class="bg-primary text-on-primary font-label-badge text-[11px] sm:text-label-badge text-center py-1 sm:py-1.5 px-3 tracking-wide overflow-hidden whitespace-nowrap border-b border-inverse-surface/10 flex items-center justify-center gap-2 w-full">
+      <span class="inline-block w-1.5 h-1.5 rounded-full bg-tertiary-fixed animate-ping shrink-0"></span>
+      <span class="sm:hidden font-bold truncate">🔥 TEL-U MARKET DAY • BATCH 04 LIVE</span>
+      <span class="hidden sm:inline truncate">🔥 TELKOM UNIVERSITY MARKET DAY SPECIAL • PRE-ORDER OPEN • BATCH 04</span>
     </div>
 
     <!-- Main Navigation Bar -->
-    <div class="h-20 max-w-7xl mx-auto px-margin lg:px-margin-desktop flex items-center justify-between gap-space-md">
-      <div class="flex items-center gap-space-sm shrink-0">
-        <img alt="Street Eats Mascot Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU57B4bIq7A70X2x8_4EPWSA2usjBy03WT9XrpbK__0IzwCxYKROwsxUAOn4RzG3iSQOIDzdKyiq6891oY1CegH2_gbsTzY3C6lxSVwDBsX77ZtIcWt1L_s3iiSRCE-rFfv-I0nEXewXEAsTLReH7zauLadn2wMdYQgVxFSUbWv1xUTjUAkk7BSakFdhiCm-kY06bekBX3kWEXm1Ip8S62qvDZBnXV31--lEHvsoCYeUhR_DRu84RJ4g">
+    <div class="h-14 sm:h-20 max-w-7xl mx-auto px-3 sm:px-margin lg:px-margin-desktop flex items-center justify-between gap-2 sm:gap-space-md w-full">
+      <div class="flex items-center gap-2 sm:gap-space-sm shrink-0">
+        <img alt="Street Eats Mascot Logo" class="h-7 sm:h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU57B4bIq7A70X2x8_4EPWSA2usjBy03WT9XrpbK__0IzwCxYKROwsxUAOn4RzG3iSQOIDzdKyiq6891oY1CegH2_gbsTzY3C6lxSVwDBsX77ZtIcWt1L_s3iiSRCE-rFfv-I0nEXewXEAsTLReH7zauLadn2wMdYQgVxFSUbWv1xUTjUAkk7BSakFdhiCm-kY06bekBX3kWEXm1Ip8S62qvDZBnXV31--lEHvsoCYeUhR_DRu84RJ4g">
         <a class="flex flex-col" data-path="menu" href="#menu">
-          <span class="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface leading-tight">TORI SNACKS</span>
-          <span class="font-label-badge text-label-badge text-primary uppercase">x MARKET DAY</span>
+          <span class="font-headline-sm text-sm sm:text-headline-sm uppercase tracking-tight text-on-surface leading-tight font-black whitespace-nowrap">TORI SNACKS</span>
+          <span class="font-label-badge text-[9px] sm:text-label-badge text-primary uppercase font-bold whitespace-nowrap">x MARKET DAY</span>
         </a>
       </div>
 
       <nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary font-bold">
-        <a aria-current="page" class="transition-colors text-primary font-bold" data-path="menu" href="#menu">Menu (Famichiki &amp; Drinks)</a>
+        <a aria-current="page" class="transition-colors text-primary font-bold hover:opacity-80" data-path="menu" href="#menu">Menu (Famichiki &amp; Drinks)</a>
         <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="combo-sets-and-bundles" href="#combos-section">Combo Sets &amp; Bundles</a>
         <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="track-my-order" href="#track-section">Track My Order</a>
         <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="about-our-stall" href="#booth-details">About Our Stall</a>
       </nav>
 
-      <div class="flex items-center gap-space-sm">
-        <div id="header-quick-track" class="hidden sm:flex items-center bg-surface-container rounded-full px-space-md py-1.5 gap-space-xs cursor-pointer hover:bg-surface-container-high transition-colors">
+      <div class="flex items-center gap-1.5 sm:gap-space-sm shrink-0">
+        <div id="header-quick-track" class="hidden sm:flex items-center bg-surface-container rounded-full px-space-md py-1.5 gap-space-xs cursor-pointer hover:bg-surface-container-high transition-colors btn-tactile">
           <span class="material-symbols-outlined text-[16px] text-on-surface-variant">search</span>
           <span class="font-label-badge text-label-badge text-on-surface-variant uppercase">Track:</span>
           <span class="font-body-sm text-body-sm text-on-surface">08xxxxxxx</span>
         </div>
-        <a class="inline-flex items-center gap-space-xs bg-primary-container text-on-primary font-label-badge text-label-badge px-space-md py-2.5 rounded-xl shadow-[3px_3px_0px_rgba(30,30,30,0.9)] hover:bg-primary transition-all active:translate-x-0.5 active:translate-y-0.5" href="https://forms.gle/mZKQudvXEUE7D7Ty5" rel="noopener noreferrer" target="_blank">
-          <span class="whitespace-nowrap">Order via Google Form</span>
-          <span class="material-symbols-outlined text-[16px]">open_in_new</span>
+        <a class="inline-flex items-center gap-1 bg-primary-container text-on-primary font-label-badge text-xs sm:text-label-badge px-2.5 sm:px-space-md py-1.5 sm:py-2.5 rounded-xl shadow-[2px_2px_0px_rgba(30,30,30,0.9)] hover:bg-primary transition-all btn-tactile shrink-0" href="https://forms.gle/mZKQudvXEUE7D7Ty5" rel="noopener noreferrer" target="_blank">
+          <span class="whitespace-nowrap font-bold sm:hidden">Order</span>
+          <span class="whitespace-nowrap font-bold hidden sm:inline">Order Form</span>
+          <span class="material-symbols-outlined text-[14px] sm:text-[16px]">open_in_new</span>
         </a>
-        <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0">
-          <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+        <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary hidden sm:flex items-center justify-center shrink-0">
+          <span class="material-symbols-outlined text-on-primary text-[16px] sm:text-[18px]">person</span>
         </div>
       </div>
     </div>
@@ -174,107 +177,107 @@
   <!-- ==========================================
        MAIN
        ========================================== -->
-  <main class="w-full pt-20 bg-surface min-h-[calc(100vh-80px)]">
-    <div class="flex flex-col w-full">
+  <main class="w-full pt-16 sm:pt-24 bg-surface min-h-[calc(100vh-80px)] overflow-x-hidden">
+    <div class="flex flex-col w-full max-w-full overflow-x-hidden">
 
       <!-- Dynamic Paper Texture Backing with Subtle Retro Grain -->
-      <div class="relative w-full overflow-hidden bg-surface">
-        <!-- Decorative Floating Stickers & Ambient Glows -->
+      <div class="relative w-full max-w-full overflow-hidden bg-surface">
+        <!-- Decorative Floating Ambient Glows -->
         <div class="absolute -top-12 -left-12 w-64 h-64 rounded-full bg-tertiary-fixed-dim/20 blur-3xl pointer-events-none"></div>
-        <div class="absolute top-80 -right-16 w-80 h-80 rounded-full bg-primary-fixed/20 blur-3xl pointer-events-none"></div>
+        <div class="absolute top-80 right-0 sm:-right-16 w-60 sm:w-80 h-60 sm:h-80 rounded-full bg-primary-fixed/20 blur-3xl pointer-events-none"></div>
 
         <!-- HERO SECTION -->
-        <section class="max-w-7xl mx-auto px-margin lg:px-margin-desktop pt-space-lg pb-space-xl">
+        <section class="max-w-7xl mx-auto px-4 sm:px-margin lg:px-margin-desktop pt-2 sm:pt-space-lg pb-space-xl w-full">
           <!-- Announcement Banner -->
-          <div class="flex flex-wrap items-center justify-between gap-space-sm bg-surface-container-highest px-space-md py-space-sm rounded-xl mb-space-lg shadow-sm mt-space-lg">
+          <div class="reveal-on-scroll reveal-fade-down flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-surface-container-highest px-3.5 sm:px-space-md py-2.5 sm:py-space-sm rounded-xl mb-6 sm:mb-space-lg shadow-sm mt-2 sm:mt-space-lg border border-on-surface/5 w-full">
             <div class="flex items-center gap-space-xs">
-              <span class="bg-primary text-on-primary font-label-badge text-label-badge px-2.5 py-1 rounded-full uppercase">TEL-U POP-UP</span>
-              <span class="font-headline-sm text-headline-sm uppercase tracking-tight text-on-surface">Campus Market Day Special</span>
+              <span class="bg-primary text-on-primary font-label-badge text-[10px] sm:text-label-badge px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full uppercase">TEL-U POP-UP</span>
+              <span class="font-headline-sm text-xs sm:text-headline-sm uppercase tracking-tight text-on-surface font-bold">Campus Market Day Special</span>
             </div>
             <div class="flex items-center gap-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-primary animate-ping"></span>
-              <span class="font-label-badge text-label-badge text-primary uppercase">4 Weeks Until Official Opening • Batch 04 Pre-Order Live</span>
+              <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+              <span class="font-label-badge text-[11px] sm:text-label-badge text-primary uppercase font-bold">Batch 04 Pre-Order Live • Pickup Booth #14</span>
             </div>
           </div>
 
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-space-lg items-center w-full">
             <!-- Hero Text & Quick Action -->
-            <div class="lg:col-span-7 flex flex-col gap-space-md">
+            <div class="lg:col-span-7 flex flex-col gap-3.5 sm:gap-space-md reveal-on-scroll reveal-fade-up w-full">
               <div class="inline-flex items-center gap-2 self-start bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full shadow-sm">
-                <span class="material-symbols-outlined text-[18px]">verified</span>
-                <span class="font-label-badge text-label-badge uppercase">Same Chicken. Different Vibes. (ファミチキ)</span>
+                <span class="material-symbols-outlined text-[16px] sm:text-[18px]">verified</span>
+                <span class="font-label-badge text-[11px] sm:text-label-badge uppercase">Same Chicken. Different Vibes. (ファミチキ)</span>
               </div>
-              <h1 class="font-display-hero text-display-hero uppercase text-on-surface tracking-tighter">
+              <h1 class="font-display-hero text-display-hero uppercase text-on-surface tracking-tighter break-words">
                 CRISPY &amp; JUICY <br class="hidden sm:inline">
-                <span class="text-primary underline decoration-tertiary-fixed-dim decoration-wavy decoration-4">JAPANESE STREET</span> EATS &amp; POTIONS
+                <span class="text-primary underline decoration-tertiary-fixed-dim decoration-wavy decoration-3 sm:decoration-4">JAPANESE STREET</span> EATS &amp; POTIONS
               </h1>
-              <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+              <p class="font-body-lg text-[15px] sm:text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
                 Authentic Tokyo konbini-style crispy fried chicken cutlets marinated in secret dashi batter, paired with our viral 6-flavor color-shifting Potion Roulette drinks. Freshly fried, insanely crunchy.
               </p>
               <!-- Dual CTAs -->
-              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-md pt-space-xs">
-                <a class="group flex items-center justify-center gap-space-sm bg-primary text-on-primary font-headline-sm text-headline-sm uppercase px-space-xl py-4 rounded-xl shadow-[4px_4px_0px_#1e1b16] hover:bg-primary-container active:translate-x-0.5 active:translate-y-0.5 transition-all" href="https://forms.gle/mZKQudvXEUE7D7Ty5" rel="noopener noreferrer" target="_blank">
+              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-space-md pt-1 sm:pt-space-xs w-full">
+                <a class="group flex items-center justify-center gap-space-sm bg-primary text-on-primary font-headline-sm text-[16px] sm:text-headline-sm uppercase px-6 sm:px-space-xl py-3.5 sm:py-4 rounded-xl shadow-[4px_4px_0px_#1e1b16] hover:bg-primary-container btn-tactile text-center w-full sm:w-auto" href="https://forms.gle/mZKQudvXEUE7D7Ty5" rel="noopener noreferrer" target="_blank">
                   <span>Order via Google Form</span>
-                  <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">open_in_new</span>
+                  <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform text-[18px] sm:text-[22px]">open_in_new</span>
                 </a>
-                <a class="flex items-center justify-center gap-space-xs bg-surface-container-low text-on-surface font-label-badge text-label-badge uppercase px-space-lg py-4 rounded-xl shadow-[3px_3px_0px_#1e1b16] hover:bg-surface-container-high active:translate-x-0.5 active:translate-y-0.5 transition-all" href="#track-section">
-                  <span class="material-symbols-outlined text-primary text-[20px]">search</span>
+                <a class="flex items-center justify-center gap-space-xs bg-surface-container-low text-on-surface font-label-badge text-[12px] sm:text-label-badge uppercase px-5 sm:px-space-lg py-3.5 sm:py-4 rounded-xl shadow-[3px_3px_0px_#1e1b16] hover:bg-surface-container-high btn-tactile text-center w-full sm:w-auto" href="#track-section">
+                  <span class="material-symbols-outlined text-primary text-[18px] sm:text-[20px]">search</span>
                   <span>Track Existing Order</span>
                 </a>
               </div>
-              <span class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1.5">
+              <span class="font-body-sm text-[12px] sm:text-body-sm text-on-surface-variant flex items-center gap-1.5">
                 <span class="material-symbols-outlined text-tertiary-container text-[16px]">info</span>
-                Orders instantly queue into our student booth kitchen terminal!
+                Freshly prepared and made hot to order at our campus booth!
               </span>
-              <!-- Trust / Feature Badges -->
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm pt-space-md">
-                <div class="bg-surface-container p-space-sm rounded-lg flex flex-col items-start">
-                  <span class="font-label-badge text-label-badge text-primary uppercase">100% Halal</span>
-                  <span class="font-body-sm text-body-sm text-on-surface">Daily Fresh Meat</span>
+              <!-- Trust / Feature Badges (Mobile-friendly 2x2 or 4x1 grid) -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-space-sm pt-2 sm:pt-space-md w-full">
+                <div class="bg-surface-container p-2.5 sm:p-space-sm rounded-xl flex flex-col items-start hover-card-lift border border-on-surface/5">
+                  <span class="font-label-badge text-[11px] sm:text-label-badge text-primary uppercase font-bold">100% Halal</span>
+                  <span class="font-body-sm text-[11px] sm:text-body-sm text-on-surface">Daily Fresh Meat</span>
                 </div>
-                <div class="bg-surface-container p-space-sm rounded-lg flex flex-col items-start">
-                  <span class="font-label-badge text-label-badge text-primary uppercase">Rp 12.000</span>
-                  <span class="font-body-sm text-body-sm text-on-surface">Flat Flavor Price</span>
+                <div class="bg-surface-container p-2.5 sm:p-space-sm rounded-xl flex flex-col items-start hover-card-lift border border-on-surface/5">
+                  <span class="font-label-badge text-[11px] sm:text-label-badge text-primary uppercase font-bold">Rp 12.000</span>
+                  <span class="font-body-sm text-[11px] sm:text-body-sm text-on-surface">Flat Flavor Price</span>
                 </div>
-                <div class="bg-surface-container p-space-sm rounded-lg flex flex-col items-start">
-                  <span class="font-label-badge text-label-badge text-primary uppercase">Spin Wheel</span>
-                  <span class="font-body-sm text-body-sm text-on-surface">Mystery Sip Game</span>
+                <div class="bg-surface-container p-2.5 sm:p-space-sm rounded-xl flex flex-col items-start hover-card-lift border border-on-surface/5">
+                  <span class="font-label-badge text-[11px] sm:text-label-badge text-primary uppercase font-bold">Spin Wheel</span>
+                  <span class="font-body-sm text-[11px] sm:text-body-sm text-on-surface">Mystery Sip Game</span>
                 </div>
-                <div class="bg-surface-container p-space-sm rounded-lg flex flex-col items-start">
-                  <span class="font-label-badge text-label-badge text-primary uppercase">Booth #14</span>
-                  <span class="font-body-sm text-body-sm text-on-surface">Student Hall TUP</span>
+                <div class="bg-surface-container p-2.5 sm:p-space-sm rounded-xl flex flex-col items-start hover-card-lift border border-on-surface/5">
+                  <span class="font-label-badge text-[11px] sm:text-label-badge text-primary uppercase font-bold">Booth #14</span>
+                  <span class="font-body-sm text-[11px] sm:text-body-sm text-on-surface">Student Hall TUP</span>
                 </div>
               </div>
             </div>
 
             <!-- Hero Food Visual Composition -->
-            <div class="lg:col-span-5 relative flex justify-center mt-space-lg lg:mt-0">
-              <div class="relative w-full max-w-md bg-surface-container-low p-space-md rounded-2xl shadow-[6px_6px_0px_#1e1b16] flex flex-col items-center hover-card-lift">
-                <!-- Floating Sticker -->
-                <div class="absolute -top-4 -right-4 bg-primary text-on-primary font-price-display text-price-display px-4 py-2 rounded-full shadow-[3px_3px_0px_#1e1b16] rotate-6 z-10 animate-sticker-1">
+            <div class="lg:col-span-5 relative flex justify-center mt-6 lg:mt-0 pt-4 sm:pt-6 reveal-on-scroll reveal-fade-up delay-150 w-full">
+              <div class="relative w-full max-w-md bg-surface-container-low p-space-sm sm:p-space-md rounded-2xl shadow-[5px_5px_0px_#1e1b16] sm:shadow-[6px_6px_0px_#1e1b16] flex flex-col items-center hover-card-lift card-interactive border border-on-surface/10">
+                <!-- Floating Sticker (Safe in-bounds on mobile, playful offset on desktop) -->
+                <div class="absolute -top-3 right-2 sm:-top-5 sm:-right-2 bg-primary text-on-primary font-price-display text-xs sm:text-price-display px-2.5 sm:px-4 py-1 sm:py-2 rounded-full shadow-[2px_2px_0px_#1e1b16] sm:shadow-[3px_3px_0px_#1e1b16] rotate-2 sm:rotate-6 z-20 animate-sticker-1 whitespace-nowrap">
                   Rp 12.000
                 </div>
-                <div class="absolute -top-3 -left-3 bg-tertiary-fixed text-on-tertiary-fixed font-label-badge text-label-badge px-3 py-1 rounded-lg -rotate-6 z-10 uppercase animate-sticker-2">
+                <div class="absolute -top-3 left-2 sm:-top-5 sm:-left-2 bg-tertiary-fixed text-on-tertiary-fixed font-label-badge text-[10px] sm:text-label-badge px-2 sm:px-3 py-0.5 sm:py-1 rounded-lg -rotate-2 sm:-rotate-6 z-20 uppercase animate-sticker-2 whitespace-nowrap shadow-sm">
                   Crispy &amp; Juicy! 🔥
                 </div>
                 <!-- Image Container -->
-                <div class="w-full h-72 rounded-xl overflow-hidden bg-surface-container flex items-center justify-center relative zoom-img-container">
+                <div class="w-full h-60 sm:h-72 rounded-xl overflow-hidden bg-surface-container flex items-center justify-center relative zoom-img-container card-shimmer">
                   <img class="w-full h-full object-cover" data-alt="A macro studio shot of golden crunchy Japanese Famichiki fried chicken cutlet steaming hot in a red and white branded paper pouch, crispy craggy batter texture, vibrant lighting, clean commercial food photography against warm cream studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyTiB4ZPdKD3JUe0vddWTgWKROcIQOpMH3lWdMGCKNgVqP2sxm7QauFEZl6a_ng4LaOJ8xmivkI21diVv0HveL0mEIWFc3pcewvKEmW8dq-R8O4lezae-1kq_NAgbFMCnWGKrkz_dKYN---Je662GEiCrQVwgo9-yeEFZFLcG46Tcy_M-Ahj72dIP4B14KkG-pdKFmZQR0obTwnMVBBagokx7Pf0XA2L-msgT1qMA8szUVOUJ7GDuXRg">
-                  <div class="absolute bottom-3 left-3 bg-on-surface/85 backdrop-blur-sm text-surface-container-lowest px-3 py-1 rounded-full text-label-badge font-label-badge uppercase">
+                  <div class="absolute bottom-3 left-3 bg-on-surface/85 backdrop-blur-sm text-surface-container-lowest px-3 py-1 rounded-full text-label-badge font-label-badge uppercase text-[11px] sm:text-xs">
                     Original Famichiki
                   </div>
                 </div>
-                <div class="w-full mt-space-md flex items-center justify-between">
+                <div class="w-full mt-3 sm:mt-space-md flex items-center justify-between">
                   <div>
-                    <span class="font-label-badge text-label-badge text-primary uppercase block">Crowd Favorite</span>
-                    <span class="font-headline-sm text-headline-sm text-on-surface">Herb Salt &amp; Garlic Crust</span>
+                    <span class="font-label-badge text-[11px] sm:text-label-badge text-primary uppercase block font-bold">Crowd Favorite</span>
+                    <span class="font-headline-sm text-sm sm:text-headline-sm text-on-surface font-black">Herb Salt &amp; Garlic Crust</span>
                   </div>
-                  <div class="flex items-center gap-1 text-tertiary-container">
-                    <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                  <div class="flex items-center gap-0.5 sm:gap-1 text-tertiary-container">
+                    <span class="material-symbols-outlined text-[18px] sm:text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[18px] sm:text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[18px] sm:text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[18px] sm:text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-[18px] sm:text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
                   </div>
                 </div>
               </div>
@@ -287,118 +290,118 @@
            SECTION 1: FAMICHIKI FLAVOR SHOWCASE
            (3x2 Bento Grid - Pure Display, No Add Button)
            ========================================== -->
-      <section id="menu" class="max-w-7xl mx-auto px-margin lg:px-margin-desktop py-space-xl">
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-sm mb-space-lg">
+      <section id="menu" class="max-w-7xl mx-auto px-4 sm:px-margin lg:px-margin-desktop py-8 sm:py-space-xl w-full">
+        <div class="reveal-on-scroll reveal-fade-up flex flex-col sm:flex-row sm:items-end justify-between gap-space-sm mb-6 sm:mb-space-lg w-full">
           <div>
             <div class="inline-flex items-center gap-1.5 text-primary font-label-badge text-label-badge uppercase">
               <span class="material-symbols-outlined text-[16px]">restaurant_menu</span>
               <span>CHOOSE YOUR FLAVOR</span>
             </div>
-            <h2 class="font-display-hero-mobile lg:font-headline-lg text-display-hero-mobile lg:text-headline-lg uppercase text-on-surface tracking-tight">
+            <h2 class="font-display-hero-mobile lg:font-headline-lg text-display-hero-mobile lg:text-headline-lg uppercase text-on-surface tracking-tight font-black">
               FAMICHIKI CRISPY CUTLETS
             </h2>
-            <p class="font-body-md text-body-md text-on-surface-variant">Thick boneless chicken breast, soaked in umami shoyu brine, double-dredged for maximum acoustic crunch.</p>
+            <p class="font-body-md text-sm sm:text-body-md text-on-surface-variant max-w-xl">Thick boneless chicken breast, soaked in umami shoyu brine, double-dredged for maximum acoustic crunch.</p>
           </div>
-          <div class="bg-primary text-on-primary font-headline-sm text-headline-sm px-4 py-2 rounded-xl shadow-[3px_3px_0px_#1e1b16] self-start sm:self-auto">
+          <div class="bg-primary text-on-primary font-headline-sm text-sm sm:text-headline-sm px-4 py-2 rounded-xl shadow-[3px_3px_0px_#1e1b16] self-start sm:self-auto font-black whitespace-nowrap">
             ALL Rp 12.000 / pcs
           </div>
         </div>
 
         <!-- 6 Flavors Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-space-lg">
           <!-- 1. ORIGINAL -->
-          <div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col justify-between hover-card-lift">
+          <div class="bg-surface-container-lowest p-4 sm:p-space-md rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col justify-between hover-card-lift card-interactive card-shimmer border border-on-surface/10 reveal-on-scroll reveal-fade-up delay-100">
             <div>
-              <div class="h-48 w-full rounded-xl overflow-hidden bg-surface-container relative mb-space-sm zoom-img-container">
+              <div class="h-44 sm:h-48 w-full rounded-xl overflow-hidden bg-surface-container relative mb-3 sm:mb-space-sm zoom-img-container">
                 <img class="w-full h-full object-cover" data-alt="Close-up appetizing shot of an original golden crispy Japanese fried chicken cutlet piece with light herb seasoning crumbs, crunchy golden brown texture, warm food magazine photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV0x7PrIyh_M6m0FnBPNp6LzFxHBw1Zd4xIVbov2gGz5HXD0TJNv60Cceoi07VOiBEF4BxYO5myThiZ3eJHRY9ecT6yZJPpkammfdDNejotrOrYoNV1zo1FW7EMENvAoq4vhLyx0K9JkheJk5LQ2MeLBwhFF8PQ9fjPrgIGi8rG9InbtUieyGKv6qxhdV8jqYLOp_fsKDyJQZppWrUqX8UYpbsX27bbK3ChQUkYxVy8Qhb3YqWs6lY0Q">
-                <span class="absolute top-2.5 left-2.5 bg-surface-container-low text-on-surface font-label-badge text-label-badge px-2 py-0.5 rounded-md shadow-sm uppercase">Signature</span>
-                <span class="absolute bottom-2.5 right-2.5 bg-primary text-on-primary font-label-badge text-label-badge px-2.5 py-1 rounded-full shadow-sm">Rp 12.000</span>
+                <span class="absolute top-2.5 left-2.5 bg-surface-container-low text-on-surface font-label-badge text-[11px] sm:text-label-badge px-2 py-0.5 rounded-md shadow-sm uppercase font-bold">Signature</span>
+                <span class="absolute bottom-2.5 right-2.5 bg-primary text-on-primary font-label-badge text-xs sm:text-label-badge px-2.5 py-1 rounded-full shadow-sm font-bold">Rp 12.000</span>
               </div>
               <div class="flex items-center justify-between mb-1">
-                <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface">ORIGINAL</h3>
-                <span class="text-tertiary font-label-badge text-label-badge uppercase">Spice 0/3</span>
+                <h3 class="font-headline-sm text-base sm:text-headline-sm uppercase text-on-surface font-black">ORIGINAL</h3>
+                <span class="text-tertiary font-label-badge text-xs sm:text-label-badge uppercase font-bold">Spice 0/3</span>
               </div>
-              <p class="font-body-md text-body-md text-on-surface-variant">Classic crispy chicken with savory secret herb dashi rub. Pure, comforting, golden crunch.</p>
+              <p class="font-body-md text-xs sm:text-body-md text-on-surface-variant">Classic crispy chicken with savory secret herb dashi rub. Pure, comforting, golden crunch.</p>
             </div>
           </div>
 
           <!-- 2. SPICY -->
-          <div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col justify-between hover-card-lift">
+          <div class="bg-surface-container-lowest p-4 sm:p-space-md rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col justify-between hover-card-lift card-interactive card-shimmer border border-on-surface/10 reveal-on-scroll reveal-fade-up delay-150">
             <div>
-              <div class="h-48 w-full rounded-xl overflow-hidden bg-surface-container relative mb-space-sm zoom-img-container">
+              <div class="h-44 sm:h-48 w-full rounded-xl overflow-hidden bg-surface-container relative mb-3 sm:mb-space-sm zoom-img-container">
                 <img class="w-full h-full object-cover" data-alt="Fiery red-tinted crispy Japanese spicy fried chicken coated in spicy chili pepper togarashi flakes and aromatic paprika powder, mouth-watering hot street food photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoG-uJ5N6EkkJEFcJasXvutD43bnw7Xb8mhuRSFJSi3qyRtgN69DWG0H8e99qBiCr_Vist5sTa9TuxjJKPKQzI_ctU260QkOF8Sog2b3LdcUeQ8yD78GRDK6duRv7Z5jL3l8e4JWMzzIf8kL6cNBYAa424iTujcWwZ1g1mUHeBcFcw16JWDZjei-l-hb-VUVv0lclHKEUUoY8w4VwmF9BiP66wdDy_juOk9Js67rREvlvZ3NpEpwVMyg">
-                <span class="absolute top-2.5 left-2.5 bg-error text-on-error font-label-badge text-label-badge px-2 py-0.5 rounded-md shadow-sm uppercase">Hot Hit 🔥</span>
-                <span class="absolute bottom-2.5 right-2.5 bg-primary text-on-primary font-label-badge text-label-badge px-2.5 py-1 rounded-full shadow-sm">Rp 12.000</span>
+                <span class="absolute top-2.5 left-2.5 bg-error text-on-error font-label-badge text-[11px] sm:text-label-badge px-2 py-0.5 rounded-md shadow-sm uppercase font-bold">Hot Hit 🔥</span>
+                <span class="absolute bottom-2.5 right-2.5 bg-primary text-on-primary font-label-badge text-xs sm:text-label-badge px-2.5 py-1 rounded-full shadow-sm font-bold">Rp 12.000</span>
               </div>
               <div class="flex items-center justify-between mb-1">
-                <h3 class="font-headline-sm text-headline-sm uppercase text-primary">SPICY TOGARASHI</h3>
-                <span class="text-error font-label-badge text-label-badge uppercase">Spice 3/3 🔥</span>
+                <h3 class="font-headline-sm text-base sm:text-headline-sm uppercase text-primary font-black">SPICY TOGARASHI</h3>
+                <span class="text-error font-label-badge text-xs sm:text-label-badge uppercase font-bold">Spice 3/3 🔥</span>
               </div>
-              <p class="font-body-md text-body-md text-on-surface-variant">A punchy heat with layered chili oil, seven-spice Japanese pepper, and smoky cayenne paprika.</p>
+              <p class="font-body-md text-xs sm:text-body-md text-on-surface-variant">A punchy heat with layered chili oil, seven-spice Japanese pepper, and smoky cayenne paprika.</p>
             </div>
           </div>
 
           <!-- 3. CHEESE -->
-          <div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col justify-between hover-card-lift">
+          <div class="bg-surface-container-lowest p-4 sm:p-space-md rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col justify-between hover-card-lift card-interactive card-shimmer border border-on-surface/10 reveal-on-scroll reveal-fade-up delay-200">
             <div>
-              <div class="h-48 w-full rounded-xl overflow-hidden bg-surface-container relative mb-space-sm zoom-img-container">
+              <div class="h-44 sm:h-48 w-full rounded-xl overflow-hidden bg-surface-container relative mb-3 sm:mb-space-sm zoom-img-container">
                 <img class="w-full h-full object-cover" data-alt="Crispy golden Japanese chicken cutlet covered in rich golden yellow melted cheddar cheese sauce drizzle, glistening decadent street snack food photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0NHCh-VK-AoWBIzERHgsAowId9XL_vgI97bsJoZ8WOGBlnHhFG4RmE1v9IvGCbQ-0C-phzoWdAEWBSeHED6xcOcdtHTVeZ9pVG3e0Evhw_XNvilPAHMY1O2j_Hf8xMuPTZ_RVPNbh3G782WkYbScyJjlVtKRFxMJwRwJQnpP5nHsZPHliIjfksZS7Qjd037CqcdhvOdauL1OEVtm-h4XnwLON3GKRYOb7DKEjKlQajY8U89velaIBMg">
-                <span class="absolute top-2.5 left-2.5 bg-tertiary-fixed text-on-tertiary-fixed font-label-badge text-label-badge px-2 py-0.5 rounded-md shadow-sm uppercase">Cheesy</span>
-                <span class="absolute bottom-2.5 right-2.5 bg-primary text-on-primary font-label-badge text-label-badge px-2.5 py-1 rounded-full shadow-sm">Rp 12.000</span>
+                <span class="absolute top-2.5 left-2.5 bg-tertiary-fixed text-on-tertiary-fixed font-label-badge text-[11px] sm:text-label-badge px-2 py-0.5 rounded-md shadow-sm uppercase font-bold">Cheesy</span>
+                <span class="absolute bottom-2.5 right-2.5 bg-primary text-on-primary font-label-badge text-xs sm:text-label-badge px-2.5 py-1 rounded-full shadow-sm font-bold">Rp 12.000</span>
               </div>
               <div class="flex items-center justify-between mb-1">
-                <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface">CHEESE DRIZZLE</h3>
-                <span class="text-tertiary-container font-label-badge text-label-badge uppercase">Spice 0/3</span>
+                <h3 class="font-headline-sm text-base sm:text-headline-sm uppercase text-on-surface font-black">CHEESE DRIZZLE</h3>
+                <span class="text-tertiary-container font-label-badge text-xs sm:text-label-badge uppercase font-bold">Spice 0/3</span>
               </div>
-              <p class="font-body-md text-body-md text-on-surface-variant">Melted artisan cheddar cheese emulsion poured hot over steaming fried chicken crust.</p>
+              <p class="font-body-md text-xs sm:text-body-md text-on-surface-variant">Melted artisan cheddar cheese emulsion poured hot over steaming fried chicken crust.</p>
             </div>
           </div>
 
           <!-- 4. TERIYAKI -->
-          <div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col justify-between hover-card-lift">
+          <div class="bg-surface-container-lowest p-4 sm:p-space-md rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col justify-between hover-card-lift card-interactive card-shimmer border border-on-surface/10 reveal-on-scroll reveal-fade-up delay-250">
             <div>
-              <div class="h-48 w-full rounded-xl overflow-hidden bg-surface-container relative mb-space-sm zoom-img-container">
+              <div class="h-44 sm:h-48 w-full rounded-xl overflow-hidden bg-surface-container relative mb-3 sm:mb-space-sm zoom-img-container">
                 <img class="w-full h-full object-cover" data-alt="Glossy dark amber teriyaki glazed crispy Japanese fried chicken cutlet sprinkled with toasted white sesame seeds and scallion slivers, mouthwatering restaurant styling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRuNJ5s0JMPwhcfNbkFSPJ3Bt3mzfQsFqPQ6WnLAIN0825DLx_HMn7ghIb0chu9NoqED47hJL4Tqz7z5WQBis6kbD9WwcXqjnLq65ops04JMxv3cZX6InQkRVdfpLBVGgkHgT13YNkQtjf2KEWpnEFigEisEzUwNw5iMff7TdZu2eElz5dBZW9pHjB5M5A3I0SB2ODauC2_6hBvW64FZxhaEkCIqxtgOMjaYRLuK6yCsidoE4JuoGnWA">
-                <span class="absolute top-2.5 left-2.5 bg-surface-container-high text-on-surface font-label-badge text-label-badge px-2 py-0.5 rounded-md shadow-sm uppercase">Glazed</span>
-                <span class="absolute bottom-2.5 right-2.5 bg-primary text-on-primary font-label-badge text-label-badge px-2.5 py-1 rounded-full shadow-sm">Rp 12.000</span>
+                <span class="absolute top-2.5 left-2.5 bg-surface-container-high text-on-surface font-label-badge text-[11px] sm:text-label-badge px-2 py-0.5 rounded-md shadow-sm uppercase font-bold">Glazed</span>
+                <span class="absolute bottom-2.5 right-2.5 bg-primary text-on-primary font-label-badge text-xs sm:text-label-badge px-2.5 py-1 rounded-full shadow-sm font-bold">Rp 12.000</span>
               </div>
               <div class="flex items-center justify-between mb-1">
-                <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface">TERIYAKI GLAZE</h3>
-                <span class="text-tertiary-container font-label-badge text-label-badge uppercase">Sweet &amp; Savory</span>
+                <h3 class="font-headline-sm text-base sm:text-headline-sm uppercase text-on-surface font-black">TERIYAKI GLAZE</h3>
+                <span class="text-tertiary-container font-label-badge text-xs sm:text-label-badge uppercase font-bold">Sweet &amp; Savory</span>
               </div>
-              <p class="font-body-md text-body-md text-on-surface-variant">Sweet soy reduction brewed with mirin, ginger, and garlic, garnished with roasted sesame.</p>
+              <p class="font-body-md text-xs sm:text-body-md text-on-surface-variant">Sweet soy reduction brewed with mirin, ginger, and garlic, garnished with roasted sesame.</p>
             </div>
           </div>
 
           <!-- 5. KARAAGE -->
-          <div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col justify-between hover-card-lift">
+          <div class="bg-surface-container-lowest p-4 sm:p-space-md rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col justify-between hover-card-lift card-interactive card-shimmer border border-on-surface/10 reveal-on-scroll reveal-fade-up delay-300">
             <div>
-              <div class="h-48 w-full rounded-xl overflow-hidden bg-surface-container relative mb-space-sm zoom-img-container">
+              <div class="h-44 sm:h-48 w-full rounded-xl overflow-hidden bg-surface-container relative mb-3 sm:mb-space-sm zoom-img-container">
                 <img class="w-full h-full object-cover" data-alt="A heap of golden bite-sized Japanese chicken karaage nuggets in a paper street food basket, with crisp potato starch crust and juicy dark meat chicken" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTfIF5RA0RGRNkZ-yE3d8_hEj5OxLkUZJS0GPBXE9hbXsmoj6s_SncOOzkim8yhPs76jNKC5ULwPprvkdi4qVGzuWxD-bqJs88GXEH_ldaWQHSHOPcaJwfRNKaA14uJ7SNOPEz-5maZHcrxfhjfYRX342P-OrRB1uk5-Nksv4SDLMqQk_B37QdiYn7d_5UmZjmxcqlA4iI8Xl4tmVlpD8I2hT6azIak1PbXaXVptOQIz6fgTrptHCCJQ">
-                <span class="absolute top-2.5 left-2.5 bg-surface-container-high text-on-surface font-label-badge text-label-badge px-2 py-0.5 rounded-md shadow-sm uppercase">Izakaya Style</span>
-                <span class="absolute bottom-2.5 right-2.5 bg-primary text-on-primary font-label-badge text-label-badge px-2.5 py-1 rounded-full shadow-sm">Rp 12.000</span>
+                <span class="absolute top-2.5 left-2.5 bg-surface-container-high text-on-surface font-label-badge text-[11px] sm:text-label-badge px-2 py-0.5 rounded-md shadow-sm uppercase font-bold">Izakaya Style</span>
+                <span class="absolute bottom-2.5 right-2.5 bg-primary text-on-primary font-label-badge text-xs sm:text-label-badge px-2.5 py-1 rounded-full shadow-sm font-bold">Rp 12.000</span>
               </div>
               <div class="flex items-center justify-between mb-1">
-                <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface">KARAAGE BITES</h3>
-                <span class="text-tertiary font-label-badge text-label-badge uppercase">Extra Juicy</span>
+                <h3 class="font-headline-sm text-base sm:text-headline-sm uppercase text-on-surface font-black">KARAAGE BITES</h3>
+                <span class="text-tertiary font-label-badge text-xs sm:text-label-badge uppercase font-bold">Extra Juicy</span>
               </div>
-              <p class="font-body-md text-body-md text-on-surface-variant">Ginger-shoyu marinated chicken thigh chunks coated with potato starch for shatteringly light crunch.</p>
+              <p class="font-body-md text-xs sm:text-body-md text-on-surface-variant">Ginger-shoyu marinated chicken thigh chunks coated with potato starch for shatteringly light crunch.</p>
             </div>
           </div>
 
           <!-- 6. MAC N CHEESE -->
-          <div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col justify-between hover-card-lift">
+          <div class="bg-surface-container-lowest p-4 sm:p-space-md rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col justify-between hover-card-lift card-interactive card-shimmer border border-on-surface/10 reveal-on-scroll reveal-fade-up delay-350">
             <div>
-              <div class="h-48 w-full rounded-xl overflow-hidden bg-surface-container relative mb-space-sm zoom-img-container">
+              <div class="h-44 sm:h-48 w-full rounded-xl overflow-hidden bg-surface-container relative mb-3 sm:mb-space-sm zoom-img-container">
                 <img class="w-full h-full object-cover" data-alt="Crispy fried chicken cutlet piled high with creamy macaroni and melted double cheese sauce topping, decadent comfort food shot with parsley dusting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAUXuxnHlUdDtrj662A8NY7lO-P-Rr5KmCgbxlUngpWggFrOBiG1VxHLmBb3yZZu0XC1MD65ymXmsf6PpfSFWh_HYTbVJrvqWsgwPQ20CLNuNpM5m3Zd4qllK-zLSBmxYkIbcNnQVAXsd3rC2NBR_oK6oGmxFa-PL2ucR35TWGEt5DsSjnat382I-al7Y7M9SdFv-Nd94RwcKQItz68lytrHdWMYLjIxw9Dvde9xa2iUmuP7A2tTKqpg">
-                <span class="absolute top-2.5 left-2.5 bg-tertiary-fixed text-on-tertiary-fixed font-label-badge text-label-badge px-2 py-0.5 rounded-md shadow-sm uppercase">Student Pick</span>
-                <span class="absolute bottom-2.5 right-2.5 bg-primary text-on-primary font-label-badge text-label-badge px-2.5 py-1 rounded-full shadow-sm">Rp 12.000</span>
+                <span class="absolute top-2.5 left-2.5 bg-tertiary-fixed text-on-tertiary-fixed font-label-badge text-[11px] sm:text-label-badge px-2 py-0.5 rounded-md shadow-sm uppercase font-bold">Student Pick</span>
+                <span class="absolute bottom-2.5 right-2.5 bg-primary text-on-primary font-label-badge text-xs sm:text-label-badge px-2.5 py-1 rounded-full shadow-sm font-bold">Rp 12.000</span>
               </div>
               <div class="flex items-center justify-between mb-1">
-                <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface">MAC N CHEESE</h3>
-                <span class="text-tertiary-container font-label-badge text-label-badge uppercase">Indulgent</span>
+                <h3 class="font-headline-sm text-base sm:text-headline-sm uppercase text-on-surface font-black">MAC N CHEESE</h3>
+                <span class="text-tertiary-container font-label-badge text-xs sm:text-label-badge uppercase font-bold">Indulgent</span>
               </div>
-              <p class="font-body-md text-body-md text-on-surface-variant">Elbow macaroni smothered in buttery bechamel cheese sauce loaded directly over crisp cutlet.</p>
+              <p class="font-body-md text-xs sm:text-body-md text-on-surface-variant">Elbow macaroni smothered in buttery bechamel cheese sauce loaded directly over crisp cutlet.</p>
             </div>
           </div>
         </div>
@@ -407,106 +410,111 @@
       <!-- ==========================================
            SECTION 2: MAGICAL CRAFT POTIONS & INTERACTIVE SPIN WHEEL
            ========================================== -->
-      <section class="max-w-7xl mx-auto px-margin lg:px-margin-desktop py-space-xl">
-        <div class="bg-[#24211e] text-[#fff8f0] p-space-lg lg:p-space-xl rounded-3xl shadow-[6px_6px_0px_#1e1b16] relative overflow-hidden">
-          <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md mb-space-lg border-b border-white/10 pb-space-md">
+      <!-- ==========================================
+           SECTION 2: MAGICAL CRAFT POTIONS & INTERACTIVE SPIN WHEEL
+           ========================================== -->
+      <section id="potions-section" class="max-w-7xl mx-auto px-4 sm:px-margin lg:px-margin-desktop py-8 sm:py-space-xl">
+        <div class="reveal-on-scroll reveal-fade-up bg-[#24211e] text-[#fff8f0] p-5 sm:p-space-lg lg:p-space-xl rounded-3xl shadow-[6px_6px_0px_#1e1b16] relative overflow-hidden border border-white/10">
+          <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3 sm:gap-space-md mb-6 sm:mb-space-lg border-b border-white/10 pb-4 sm:pb-space-md">
             <div>
-              <div class="inline-flex items-center gap-2 bg-[#d32f2f] text-white px-3 py-1 rounded-full text-label-badge font-label-badge uppercase mb-2">
+              <div class="inline-flex items-center gap-2 bg-[#d32f2f] text-white px-3 py-1 rounded-full text-label-badge font-label-badge uppercase mb-2 text-xs">
                 <span class="material-symbols-outlined text-[16px]">local_bar</span>
-                <span>POTION ROULETTE • SPIN. GET A FLAVOR. ENJOY!</span>
+                <span>POTION ROULETTE • SPIN &amp; SIP</span>
               </div>
-              <h2 class="font-display-hero-mobile lg:font-headline-lg text-display-hero-mobile lg:text-headline-lg uppercase text-white tracking-tight">MAGICAL CRAFT POTIONS</h2>
-              <p class="font-body-md text-body-md text-white/70 max-w-xl">Signature iced brews served in collector cups. Feeling lucky? Spin the roulette wheel to let destiny choose your potion flavor!</p>
+              <h2 class="font-display-hero-mobile lg:font-headline-lg text-display-hero-mobile lg:text-headline-lg uppercase text-white tracking-tight font-black">MAGICAL CRAFT POTIONS</h2>
+              <p class="font-body-md text-sm sm:text-body-md text-white/70 max-w-xl">Signature iced brews served in collector cups. Feeling lucky? Spin the roulette wheel to let destiny choose your potion flavor!</p>
             </div>
-            <div class="flex items-center gap-3">
-              <div class="bg-primary text-on-primary font-price-display text-price-display px-4 py-2 rounded-2xl shadow-[3px_3px_0px_rgba(0,0,0,0.5)]">Rp 12.000 / cup</div>
-              <span class="font-label-badge text-label-badge uppercase tracking-wider text-white/60">16 OZ REGULAR CUP</span>
+            <div class="flex items-center gap-3 self-start lg:self-auto">
+              <div class="bg-primary text-on-primary font-price-display text-sm sm:text-price-display px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-2xl shadow-[3px_3px_0px_rgba(0,0,0,0.5)] font-black">Rp 12.000 / cup</div>
+              <span class="font-label-badge text-xs uppercase tracking-wider text-white/60">16 OZ REGULAR CUP</span>
             </div>
           </div>
 
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
-            <!-- 6 Potion Flavors Grid -->
-            <div class="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-space-md">
-              <!-- 1. Energy Potion -->
-              <div id="potion-card-0" class="bg-white/5 border border-white/10 rounded-2xl p-space-sm flex flex-col items-center text-center transition-all">
-                <div class="w-full h-32 rounded-xl overflow-hidden mb-space-xs bg-black/20 zoom-img-container">
-                  <img class="w-full h-full object-cover" data-alt="Cold iced matcha green tea latte in clear cup with lid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBchBN53TA2S2SkzyPmHkxcf4JpIxB--SHg-1oaKMi4aQMAEyqyHguCl-3KhB_6ObPiCvC6o75YI4lUnjNOB8J_ltojKHhvpqIrSpaGLuKV-nInwwvUn3mcKNbQdZEsk99OC530aeZ_Srp23404i7hLVwN402wklXdToQ1-2XcnFZev2d6ZzwxZQsbBZRQM-v957ijs9yspXLy8E5dxtsFxOJtrnYrV_eQMPjKnsAvIn3mVdcurcgosmw">
-                </div>
-                <span class="bg-[#2e7d32] text-white text-[11px] font-label-badge px-2 py-0.5 rounded uppercase mb-1">Energy Potion</span>
-                <span class="font-headline-sm text-sm uppercase text-white">Matcha Latte</span>
-                <span class="font-body-sm text-xs text-white/70">Earthy Uji Green Tea</span>
-              </div>
-
-              <!-- 2. Ocean Potion -->
-              <div id="potion-card-1" class="bg-white/5 border border-white/10 rounded-2xl p-space-sm flex flex-col items-center text-center transition-all">
-                <div class="w-full h-32 rounded-xl overflow-hidden mb-space-xs bg-black/20 zoom-img-container">
-                  <img class="w-full h-full object-cover" data-alt="Bright blue ocean lemonade iced drink in clear cup" src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&amp;auto=format&amp;fit=crop&amp;q=60" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&amp;auto=format&amp;fit=crop&amp;q=60';">
-                </div>
-                <span class="bg-[#0288d1] text-white text-[11px] font-label-badge px-2 py-0.5 rounded uppercase mb-1">Ocean Potion</span>
-                <span class="font-headline-sm text-sm uppercase text-white">Blue Lemonade</span>
-                <span class="font-body-sm text-xs text-white/70">Fizzy Citrus Spark</span>
-              </div>
-
-              <!-- 3. Galaxy Potion -->
-              <div id="potion-card-2" class="bg-white/5 border border-white/10 rounded-2xl p-space-sm flex flex-col items-center text-center transition-all">
-                <div class="w-full h-32 rounded-xl overflow-hidden mb-space-xs bg-black/20 zoom-img-container">
-                  <img class="w-full h-full object-cover" data-alt="Creamy purple taro iced latte beverage in clear cup" src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&amp;auto=format&amp;fit=crop&amp;q=60">
-                </div>
-                <span class="bg-[#7b1fa2] text-white text-[11px] font-label-badge px-2 py-0.5 rounded uppercase mb-1">Galaxy Potion</span>
-                <span class="font-headline-sm text-sm uppercase text-white">Taro Latte</span>
-                <span class="font-body-sm text-xs text-white/70">Velvety &amp; Creamy</span>
-              </div>
-
-              <!-- 4. Love Potion -->
-              <div id="potion-card-3" class="bg-white/5 border border-white/10 rounded-2xl p-space-sm flex flex-col items-center text-center transition-all">
-                <div class="w-full h-32 rounded-xl overflow-hidden mb-space-xs bg-black/20 zoom-img-container">
-                  <img class="w-full h-full object-cover" data-alt="Pink strawberry milk drink with iced layers in clear plastic cup" src="https://images.unsplash.com/photo-1553787499-6f9133860278?w=500&amp;auto=format&amp;fit=crop&amp;q=60">
-                </div>
-                <span class="bg-[#d81b60] text-white text-[11px] font-label-badge px-2 py-0.5 rounded uppercase mb-1">Love Potion</span>
-                <span class="font-headline-sm text-sm uppercase text-white">Strawberry Milk</span>
-                <span class="font-body-sm text-xs text-white/70">Sweet Berry Bliss</span>
-              </div>
-
-              <!-- 5. Lucky Potion -->
-              <div id="potion-card-4" class="bg-white/5 border border-white/10 rounded-2xl p-space-sm flex flex-col items-center text-center transition-all">
-                <div class="w-full h-32 rounded-xl overflow-hidden mb-space-xs bg-black/20 zoom-img-container">
-                  <img class="w-full h-full object-cover" data-alt="Tropical yellow iced mango yakult drink with ice cubes in clear takeaway cup" src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=500&amp;auto=format&amp;fit=crop&amp;q=60">
-                </div>
-                <span class="bg-[#f57c00] text-white text-[11px] font-label-badge px-2 py-0.5 rounded uppercase mb-1">Lucky Potion</span>
-                <span class="font-headline-sm text-sm uppercase text-white">Mango Yakult</span>
-                <span class="font-body-sm text-xs text-white/70">Tangy Tropical Fusion</span>
-              </div>
-
-              <!-- 6. Rage Potion -->
-              <div id="potion-card-5" class="bg-white/5 border border-white/10 rounded-2xl p-space-sm flex flex-col items-center text-center transition-all">
-                <div class="w-full h-32 rounded-xl overflow-hidden mb-space-xs bg-black/20 zoom-img-container">
-                  <img class="w-full h-full object-cover" data-alt="Rich iced dark chocolate beverage with chocolate drizzle in cup" src="https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=500&amp;auto=format&amp;fit=crop&amp;q=60">
-                </div>
-                <span class="bg-[#4e342e] text-white text-[11px] font-label-badge px-2 py-0.5 rounded uppercase mb-1">Rage Potion</span>
-                <span class="font-headline-sm text-sm uppercase text-white">Dark Chocolate</span>
-                <span class="font-body-sm text-xs text-white/70">Deep Cocoa Rush</span>
-              </div>
-            </div>
-
-            <!-- Interactive Wheel Spinner -->
-            <div class="lg:col-span-4 bg-white/5 border border-white/10 p-space-md rounded-2xl flex flex-col items-center text-center">
-              <div class="relative w-48 h-48 my-2 flex items-center justify-center">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-space-lg items-center">
+            
+            <!-- Interactive Wheel Spinner (Positioned FIRST on mobile, RIGHT side on desktop) -->
+            <div class="order-1 lg:order-2 lg:col-span-4 bg-white/5 border border-white/15 p-4 sm:p-space-md rounded-2xl flex flex-col items-center text-center shadow-inner reveal-on-scroll reveal-scale-up">
+              <div class="relative w-44 h-44 sm:w-48 sm:h-48 my-2 flex items-center justify-center">
                 <!-- Pointer -->
-                <div id="roulette-pointer" class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[16px] border-t-white drop-shadow"></div>
+                <div id="roulette-pointer" class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[16px] border-t-white drop-shadow-md"></div>
                 <!-- Rotating Wheel -->
-                <div class="w-44 h-44 rounded-full border-4 border-white shadow-xl flex items-center justify-center overflow-hidden" id="roulette-wheel" style="background: conic-gradient(#2e7d32 0deg 60deg, #0288d1 60deg 120deg, #7b1fa2 120deg 180deg, #d81b60 180deg 240deg, #f57c00 240deg 300deg, #4e342e 300deg 360deg);">
-                  <div class="w-14 h-14 rounded-full bg-white text-on-surface font-headline-sm text-[12px] flex items-center justify-center uppercase font-black shadow-md z-10 select-none">SPIN</div>
+                <div class="w-40 h-40 sm:w-44 sm:h-44 rounded-full border-4 border-white shadow-2xl flex items-center justify-center overflow-hidden" id="roulette-wheel" style="background: conic-gradient(#2e7d32 0deg 60deg, #0288d1 60deg 120deg, #7b1fa2 120deg 180deg, #d81b60 180deg 240deg, #f57c00 240deg 300deg, #4e342e 300deg 360deg);">
+                  <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-on-surface font-headline-sm text-[11px] sm:text-[12px] flex items-center justify-center uppercase font-black shadow-lg z-10 select-none">SPIN</div>
                 </div>
               </div>
-              <div class="mt-2">
-                <span class="font-headline-sm text-headline-sm uppercase text-white block">INDECISIVE?</span>
-                <p class="font-body-sm text-xs text-white/70 mt-0.5" id="roulette-result">Click spin &amp; let fate choose your beverage for market day!</p>
+              <div class="mt-2 w-full">
+                <span class="font-headline-sm text-sm sm:text-headline-sm uppercase text-white block font-black">INDECISIVE?</span>
+                <p class="font-body-sm text-xs text-white/80 mt-1 min-h-[36px] flex items-center justify-center px-2" id="roulette-result">Tap spin &amp; let fate choose your beverage for market day!</p>
               </div>
-              <button class="mt-4 w-full bg-primary hover:bg-primary-container text-on-primary font-headline-sm text-headline-sm uppercase py-3 rounded-xl shadow-[3px_3px_0px_#000000] active:translate-x-0.5 active:translate-y-0.5 transition-all flex items-center justify-center gap-2 cursor-pointer" id="spin-button" onclick="spinRoulette()">
+              <button class="mt-3 w-full bg-primary hover:bg-primary-container text-on-primary font-headline-sm text-sm sm:text-headline-sm uppercase py-3 rounded-xl shadow-[3px_3px_0px_#000000] btn-tactile flex items-center justify-center gap-2 cursor-pointer font-bold" id="spin-button" onclick="spinRoulette()">
                 <span>SPIN WHEEL</span>
                 <span class="material-symbols-outlined text-[18px]">casino</span>
               </button>
             </div>
+
+            <!-- 6 Potion Flavors Grid (Positioned SECOND on mobile, LEFT side on desktop) -->
+            <div class="order-2 lg:order-1 lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-space-md">
+              <!-- 1. Energy Potion -->
+              <div id="potion-card-0" class="bg-white/5 border border-white/10 rounded-2xl p-2.5 sm:p-space-sm flex flex-col items-center text-center transition-all card-interactive card-shimmer hover:border-white/30 reveal-on-scroll reveal-fade-up delay-75">
+                <div class="w-full h-28 sm:h-32 rounded-xl overflow-hidden mb-2 bg-black/20 zoom-img-container">
+                  <img class="w-full h-full object-cover" data-alt="Cold iced matcha green tea latte in clear cup with lid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBchBN53TA2S2SkzyPmHkxcf4JpIxB--SHg-1oaKMi4aQMAEyqyHguCl-3KhB_6ObPiCvC6o75YI4lUnjNOB8J_ltojKHhvpqIrSpaGLuKV-nInwwvUn3mcKNbQdZEsk99OC530aeZ_Srp23404i7hLVwN402wklXdToQ1-2XcnFZev2d6ZzwxZQsbBZRQM-v957ijs9yspXLy8E5dxtsFxOJtrnYrV_eQMPjKnsAvIn3mVdcurcgosmw">
+                </div>
+                <span class="bg-[#2e7d32] text-white text-[10px] sm:text-[11px] font-label-badge px-2 py-0.5 rounded uppercase mb-1 font-bold">Energy Potion</span>
+                <span class="font-headline-sm text-xs sm:text-sm uppercase text-white font-bold">Matcha Latte</span>
+                <span class="font-body-sm text-[11px] sm:text-xs text-white/70">Earthy Uji Green Tea</span>
+              </div>
+
+              <!-- 2. Ocean Potion -->
+              <div id="potion-card-1" class="bg-white/5 border border-white/10 rounded-2xl p-2.5 sm:p-space-sm flex flex-col items-center text-center transition-all card-interactive card-shimmer hover:border-white/30 reveal-on-scroll reveal-fade-up delay-150">
+                <div class="w-full h-28 sm:h-32 rounded-xl overflow-hidden mb-2 bg-black/20 zoom-img-container">
+                  <img class="w-full h-full object-cover" data-alt="Bright blue ocean lemonade iced drink in clear cup" src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&amp;auto=format&amp;fit=crop&amp;q=60" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&amp;auto=format&amp;fit=crop&amp;q=60';">
+                </div>
+                <span class="bg-[#0288d1] text-white text-[10px] sm:text-[11px] font-label-badge px-2 py-0.5 rounded uppercase mb-1 font-bold">Ocean Potion</span>
+                <span class="font-headline-sm text-xs sm:text-sm uppercase text-white font-bold">Blue Lemonade</span>
+                <span class="font-body-sm text-[11px] sm:text-xs text-white/70">Fizzy Citrus Spark</span>
+              </div>
+
+              <!-- 3. Galaxy Potion -->
+              <div id="potion-card-2" class="bg-white/5 border border-white/10 rounded-2xl p-2.5 sm:p-space-sm flex flex-col items-center text-center transition-all card-interactive card-shimmer hover:border-white/30 reveal-on-scroll reveal-fade-up delay-200">
+                <div class="w-full h-28 sm:h-32 rounded-xl overflow-hidden mb-2 bg-black/20 zoom-img-container">
+                  <img class="w-full h-full object-cover" data-alt="Creamy purple taro iced latte beverage in clear cup" src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&amp;auto=format&amp;fit=crop&amp;q=60">
+                </div>
+                <span class="bg-[#7b1fa2] text-white text-[10px] sm:text-[11px] font-label-badge px-2 py-0.5 rounded uppercase mb-1 font-bold">Galaxy Potion</span>
+                <span class="font-headline-sm text-xs sm:text-sm uppercase text-white font-bold">Taro Latte</span>
+                <span class="font-body-sm text-[11px] sm:text-xs text-white/70">Velvety &amp; Creamy</span>
+              </div>
+
+              <!-- 4. Love Potion -->
+              <div id="potion-card-3" class="bg-white/5 border border-white/10 rounded-2xl p-2.5 sm:p-space-sm flex flex-col items-center text-center transition-all card-interactive card-shimmer hover:border-white/30 reveal-on-scroll reveal-fade-up delay-250">
+                <div class="w-full h-28 sm:h-32 rounded-xl overflow-hidden mb-2 bg-black/20 zoom-img-container">
+                  <img class="w-full h-full object-cover" data-alt="Pink strawberry milk drink with iced layers in clear plastic cup" src="https://images.unsplash.com/photo-1553787499-6f9133860278?w=500&amp;auto=format&amp;fit=crop&amp;q=60">
+                </div>
+                <span class="bg-[#d81b60] text-white text-[10px] sm:text-[11px] font-label-badge px-2 py-0.5 rounded uppercase mb-1 font-bold">Love Potion</span>
+                <span class="font-headline-sm text-xs sm:text-sm uppercase text-white font-bold">Strawberry Milk</span>
+                <span class="font-body-sm text-[11px] sm:text-xs text-white/70">Sweet Berry Bliss</span>
+              </div>
+
+              <!-- 5. Lucky Potion -->
+              <div id="potion-card-4" class="bg-white/5 border border-white/10 rounded-2xl p-2.5 sm:p-space-sm flex flex-col items-center text-center transition-all card-interactive card-shimmer hover:border-white/30 reveal-on-scroll reveal-fade-up delay-300">
+                <div class="w-full h-28 sm:h-32 rounded-xl overflow-hidden mb-2 bg-black/20 zoom-img-container">
+                  <img class="w-full h-full object-cover" data-alt="Tropical yellow iced mango yakult drink with ice cubes in clear takeaway cup" src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=500&amp;auto=format&amp;fit=crop&amp;q=60">
+                </div>
+                <span class="bg-[#f57c00] text-white text-[10px] sm:text-[11px] font-label-badge px-2 py-0.5 rounded uppercase mb-1 font-bold">Lucky Potion</span>
+                <span class="font-headline-sm text-xs sm:text-sm uppercase text-white font-bold">Mango Yakult</span>
+                <span class="font-body-sm text-[11px] sm:text-xs text-white/70">Tangy Tropical Fusion</span>
+              </div>
+
+              <!-- 6. Rage Potion -->
+              <div id="potion-card-5" class="bg-white/5 border border-white/10 rounded-2xl p-2.5 sm:p-space-sm flex flex-col items-center text-center transition-all card-interactive card-shimmer hover:border-white/30 reveal-on-scroll reveal-fade-up delay-350">
+                <div class="w-full h-28 sm:h-32 rounded-xl overflow-hidden mb-2 bg-black/20 zoom-img-container">
+                  <img class="w-full h-full object-cover" data-alt="Rich iced dark chocolate beverage with chocolate drizzle in cup" src="https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=500&amp;auto=format&amp;fit=crop&amp;q=60">
+                </div>
+                <span class="bg-[#4e342e] text-white text-[10px] sm:text-[11px] font-label-badge px-2 py-0.5 rounded uppercase mb-1 font-bold">Rage Potion</span>
+                <span class="font-headline-sm text-xs sm:text-sm uppercase text-white font-bold">Dark Chocolate</span>
+                <span class="font-body-sm text-[11px] sm:text-xs text-white/70">Deep Cocoa Rush</span>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -515,44 +523,44 @@
            SECTION 3: BALANCED COMBO SETS
            (The Ultimate Combo + Duo Student Pack, No Add-Ons)
            ========================================== -->
-      <section class="max-w-7xl mx-auto px-margin lg:px-margin-desktop py-space-xl" id="combos-section">
-        <div class="text-center mb-space-lg">
-          <div class="inline-flex items-center gap-1.5 text-primary font-label-badge text-label-badge uppercase mb-1">
+      <section class="max-w-7xl mx-auto px-4 sm:px-margin lg:px-margin-desktop py-8 sm:py-space-xl" id="combos-section">
+        <div class="text-center mb-6 sm:mb-space-lg reveal-on-scroll reveal-fade-up">
+          <div class="inline-flex items-center gap-1.5 text-primary font-label-badge text-xs sm:text-label-badge uppercase mb-1">
             <span class="material-symbols-outlined text-[16px]">lunch_dining</span>
             <span>VALUE BUNDLES &amp; PAIRINGS</span>
           </div>
-          <h2 class="font-display-hero-mobile lg:font-headline-lg text-display-hero-mobile lg:text-headline-lg uppercase text-on-surface tracking-tight">COMBO SETS &amp; BUNDLES</h2>
-          <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">Maximum flavor at student-friendly pricing. Bundled fresh cutlets with our signature roulette potion drinks.</p>
+          <h2 class="font-display-hero-mobile lg:font-headline-lg text-display-hero-mobile lg:text-headline-lg uppercase text-on-surface tracking-tight font-black">COMBO SETS &amp; BUNDLES</h2>
+          <p class="font-body-md text-sm sm:text-body-md text-on-surface-variant max-w-xl mx-auto">Maximum flavor at student-friendly pricing. Bundled fresh cutlets with our signature roulette potion drinks.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg items-stretch">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-space-lg items-stretch">
           <!-- Combo 1: The Ultimate Combo Set -->
-          <div class="bg-surface-container p-space-lg rounded-3xl shadow-[5px_5px_0px_#1e1b16] flex flex-col justify-between relative overflow-hidden hover-card-lift">
+          <div class="bg-surface-container p-5 sm:p-space-lg rounded-3xl shadow-[5px_5px_0px_#1e1b16] flex flex-col justify-between relative overflow-hidden hover-card-lift card-interactive card-shimmer border border-on-surface/10 reveal-on-scroll reveal-fade-up delay-100">
             <div>
-              <div class="flex items-start justify-between gap-space-sm mb-space-md">
+              <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-space-sm mb-4 sm:mb-space-md">
                 <div>
-                  <span class="bg-primary text-on-primary font-label-badge text-label-badge px-3 py-1 rounded-full uppercase">BEST VALUE</span>
-                  <h3 class="font-headline-lg text-headline-lg uppercase text-on-surface mt-2">THE ULTIMATE COMBO SET</h3>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">Famichiki Cutlet + Any Potion Drink + Side Snack Karaage Pack</p>
+                  <span class="bg-primary text-on-primary font-label-badge text-[11px] sm:text-label-badge px-3 py-1 rounded-full uppercase font-bold">BEST VALUE</span>
+                  <h3 class="font-headline-lg text-xl sm:text-headline-lg uppercase text-on-surface mt-2 font-black">THE ULTIMATE COMBO SET</h3>
+                  <p class="font-body-sm text-xs sm:text-body-sm text-on-surface-variant">Famichiki Cutlet + Any Potion Drink + Side Snack Karaage Pack</p>
                 </div>
-                <div class="bg-primary text-on-primary font-price-display text-price-display px-4 py-2 rounded-2xl shadow-[3px_3px_0px_#1e1b16] text-right shrink-0">
+                <div class="bg-primary text-on-primary font-price-display text-base sm:text-price-display px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-2xl shadow-[3px_3px_0px_#1e1b16] text-right shrink-0 self-start font-black">
                   Rp 25.000
-                  <span class="block font-body-sm text-body-sm text-primary-fixed-dim line-through font-normal">Rp 34.000</span>
+                  <span class="block font-body-sm text-[11px] sm:text-body-sm text-primary-fixed-dim line-through font-normal">Rp 34.000</span>
                 </div>
               </div>
 
-              <div class="w-full h-64 rounded-2xl overflow-hidden bg-surface-container-high mb-space-md relative zoom-img-container">
+              <div class="w-full h-52 sm:h-64 rounded-2xl overflow-hidden bg-surface-container-high mb-4 sm:mb-space-md relative zoom-img-container">
                 <img class="w-full h-full object-cover" data-alt="The ultimate combo meal of Japanese crispy Famichiki chicken cutlet, iced Taro latte craft drink, and crispy karaage nuggets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBchBN53TA2S2SkzyPmHkxcf4JpIxB--SHg-1oaKMi4aQMAEyqyHguCl-3KhB_6ObPiCvC6o75YI4lUnjNOB8J_ltojKHhvpqIrSpaGLuKV-nInwwvUn3mcKNbQdZEsk99OC530aeZ_Srp23404i7hLVwN402wklXdToQ1-2XcnFZev2d6ZzwxZQsbBZRQM-v957ijs9yspXLy8E5dxtsFxOJtrnYrV_eQMPjKnsAvIn3mVdcurcgosmw">
-                <span class="absolute bottom-3 left-3 bg-inverse-surface/90 text-inverse-on-surface font-label-badge text-label-badge px-3 py-1 rounded-lg uppercase shadow-sm">Save Rp 9.000 with this bundle</span>
+                <span class="absolute bottom-3 left-3 bg-inverse-surface/90 text-inverse-on-surface font-label-badge text-[11px] sm:text-label-badge px-2.5 sm:px-3 py-1 rounded-lg uppercase shadow-sm">Save Rp 9.000 with this bundle</span>
               </div>
             </div>
 
-            <div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex items-center justify-between gap-space-sm">
+            <div class="bg-surface-container-lowest p-3.5 sm:p-space-md rounded-2xl shadow-sm flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-space-sm border border-on-surface/5">
               <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-primary text-[20px]">verified</span>
-                <span class="font-label-badge text-label-badge uppercase text-on-surface">Complete Meal Pairing</span>
+                <span class="material-symbols-outlined text-primary text-[18px] sm:text-[20px]">verified</span>
+                <span class="font-label-badge text-xs sm:text-label-badge uppercase text-on-surface font-bold">Complete Meal Pairing</span>
               </div>
-              <a class="bg-primary hover:bg-primary-container text-on-primary font-label-badge text-label-badge uppercase px-4 py-2.5 rounded-xl shadow-[2px_2px_0px_#1e1b16] active:translate-x-0.5 active:translate-y-0.5 transition-all flex items-center gap-1.5" href="https://forms.gle/mZKQudvXEUE7D7Ty5" rel="noopener noreferrer" target="_blank">
+              <a class="bg-primary hover:bg-primary-container text-on-primary font-label-badge text-xs sm:text-label-badge uppercase px-4 py-2.5 rounded-xl shadow-[2px_2px_0px_#1e1b16] btn-tactile flex items-center justify-center gap-1.5 font-bold" href="https://forms.gle/mZKQudvXEUE7D7Ty5" rel="noopener noreferrer" target="_blank">
                 <span>Order in Google Form</span>
                 <span class="material-symbols-outlined text-[16px]">open_in_new</span>
               </a>
@@ -560,32 +568,32 @@
           </div>
 
           <!-- Combo 2: Duo Student Pack -->
-          <div class="bg-surface-container-low p-space-lg rounded-3xl shadow-[5px_5px_0px_#1e1b16] flex flex-col justify-between relative overflow-hidden hover-card-lift">
+          <div class="bg-surface-container-low p-5 sm:p-space-lg rounded-3xl shadow-[5px_5px_0px_#1e1b16] flex flex-col justify-between relative overflow-hidden hover-card-lift card-interactive card-shimmer border border-on-surface/10 reveal-on-scroll reveal-fade-up delay-200">
             <div>
-              <div class="flex items-start justify-between gap-space-sm mb-space-md">
+              <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-space-sm mb-4 sm:mb-space-md">
                 <div>
-                  <span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-badge text-label-badge px-3 py-1 rounded-full uppercase">STUDENT FAVORITE</span>
-                  <h3 class="font-headline-lg text-headline-lg uppercase text-on-surface mt-2">DUO STUDENT PACK</h3>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">2 Famichiki Cutlets + 2 Potion Drinks + Extra Sauce Dip</p>
+                  <span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-badge text-[11px] sm:text-label-badge px-3 py-1 rounded-full uppercase font-bold">STUDENT FAVORITE</span>
+                  <h3 class="font-headline-lg text-xl sm:text-headline-lg uppercase text-on-surface mt-2 font-black">DUO STUDENT PACK</h3>
+                  <p class="font-body-sm text-xs sm:text-body-sm text-on-surface-variant">2 Famichiki Cutlets + 2 Potion Drinks + Extra Sauce Dip</p>
                 </div>
-                <div class="bg-primary text-on-primary font-price-display text-price-display px-4 py-2 rounded-2xl shadow-[3px_3px_0px_#1e1b16] text-right shrink-0">
+                <div class="bg-primary text-on-primary font-price-display text-base sm:text-price-display px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-2xl shadow-[3px_3px_0px_#1e1b16] text-right shrink-0 self-start font-black">
                   Rp 45.000
-                  <span class="block font-body-sm text-body-sm text-primary-fixed-dim line-through font-normal">Rp 52.000</span>
+                  <span class="block font-body-sm text-[11px] sm:text-body-sm text-primary-fixed-dim line-through font-normal">Rp 52.000</span>
                 </div>
               </div>
 
-              <div class="w-full h-64 rounded-2xl overflow-hidden bg-surface-container-high mb-space-md relative flex items-center justify-center zoom-img-container">
+              <div class="w-full h-52 sm:h-64 rounded-2xl overflow-hidden bg-surface-container-high mb-4 sm:mb-space-md relative flex items-center justify-center zoom-img-container">
                 <img class="w-full h-full object-cover" data-alt="Duo Japanese fried chicken cutlets with cold drinks and savory sauce dip spread" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAUXuxnHlUdDtrj662A8NY7lO-P-Rr5KmCgbxlUngpWggFrOBiG1VxHLmBb3yZZu0XC1MD65ymXmsf6PpfSFWh_HYTbVJrvqWsgwPQ20CLNuNpM5m3Zd4qllK-zLSBmxYkIbcNnQVAXsd3rC2NBR_oK6oGmxFa-PL2ucR35TWGEt5DsSjnat382I-al7Y7M9SdFv-Nd94RwcKQItz68lytrHdWMYLjIxw9Dvde9xa2iUmuP7A2tTKqpg">
-                <span class="absolute bottom-3 left-3 bg-inverse-surface/90 text-inverse-on-surface font-label-badge text-label-badge px-3 py-1 rounded-lg uppercase shadow-sm">Share &amp; Save Rp 7.000</span>
+                <span class="absolute bottom-3 left-3 bg-inverse-surface/90 text-inverse-on-surface font-label-badge text-[11px] sm:text-label-badge px-2.5 sm:px-3 py-1 rounded-lg uppercase shadow-sm">Share &amp; Save Rp 7.000</span>
               </div>
             </div>
 
-            <div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex items-center justify-between gap-space-sm">
+            <div class="bg-surface-container-lowest p-3.5 sm:p-space-md rounded-2xl shadow-sm flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-space-sm border border-on-surface/5">
               <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-primary text-[20px]">group</span>
-                <span class="font-label-badge text-label-badge uppercase text-on-surface">Perfect for 2 People</span>
+                <span class="material-symbols-outlined text-primary text-[18px] sm:text-[20px]">group</span>
+                <span class="font-label-badge text-xs sm:text-label-badge uppercase text-on-surface font-bold">Perfect for 2 People</span>
               </div>
-              <a class="bg-primary hover:bg-primary-container text-on-primary font-label-badge text-label-badge uppercase px-4 py-2.5 rounded-xl shadow-[2px_2px_0px_#1e1b16] active:translate-x-0.5 active:translate-y-0.5 transition-all flex items-center gap-1.5" href="https://forms.gle/mZKQudvXEUE7D7Ty5" rel="noopener noreferrer" target="_blank">
+              <a class="bg-primary hover:bg-primary-container text-on-primary font-label-badge text-xs sm:text-label-badge uppercase px-4 py-2.5 rounded-xl shadow-[2px_2px_0px_#1e1b16] btn-tactile flex items-center justify-center gap-1.5 font-bold" href="https://forms.gle/mZKQudvXEUE7D7Ty5" rel="noopener noreferrer" target="_blank">
                 <span>Order in Google Form</span>
                 <span class="material-symbols-outlined text-[16px]">open_in_new</span>
               </a>
@@ -593,48 +601,49 @@
           </div>
         </div>
 
-        <div class="mt-space-lg bg-surface-container p-space-sm rounded-xl flex items-center justify-center gap-space-sm text-center">
-          <span class="material-symbols-outlined text-tertiary-container text-[24px]">savings</span>
-          <span class="font-body-sm text-body-sm text-on-surface">All combos include free loyalty stamp card! Buy 5 cutlets get 1 free Potion drink on Tel-U Market Day.</span>
+        <div class="mt-6 sm:mt-space-lg bg-surface-container p-3 sm:p-space-sm rounded-xl flex items-center justify-center gap-2 sm:gap-space-sm text-center border border-on-surface/5 reveal-on-scroll reveal-fade-up">
+          <span class="material-symbols-outlined text-tertiary-container text-[20px] sm:text-[24px]">savings</span>
+          <span class="font-body-sm text-xs sm:text-body-sm text-on-surface font-medium">All combos include free loyalty stamp card! Buy 5 cutlets get 1 free Potion drink on Tel-U Market Day.</span>
         </div>
       </section>
 
       <!-- ==========================================
-           SECTION 4: 'TRACK YOUR ORDERS' LIVE PROTOTYPE
-           (Live Google Apps Script Integration from api_testing.html)
+           SECTION 4: 'TRACK YOUR ORDERS'
            ========================================== -->
-      <section class="max-w-4xl mx-auto px-margin lg:px-margin-desktop py-space-xl" id="track-section">
-        <div class="bg-surface-container-lowest p-space-lg lg:p-space-xl rounded-3xl shadow-[6px_6px_0px_#1e1b16]">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs mb-space-lg pb-space-sm border-b border-surface-container">
+      <section class="max-w-4xl mx-auto px-4 sm:px-margin lg:px-margin-desktop py-8 sm:py-space-xl" id="track-section">
+        <div class="bg-surface-container-lowest p-5 sm:p-space-lg lg:p-space-xl rounded-3xl shadow-[6px_6px_0px_#1e1b16] border border-on-surface/10 reveal-on-scroll reveal-fade-up">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-space-xs mb-6 sm:mb-space-lg pb-4 sm:pb-space-sm border-b border-surface-container">
             <div>
-              <div class="flex items-center gap-2">
+              <div class="flex items-center gap-2 mb-1">
                 <span class="w-2.5 h-2.5 rounded-full bg-[#2E7D32] animate-pulse"></span>
-                <span class="font-label-badge text-label-badge text-primary uppercase">LIVE SYNC TERMINAL</span>
+                <span class="font-label-badge text-xs sm:text-label-badge text-primary uppercase font-bold">LIVE ORDER STATUS</span>
               </div>
-              <h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">Track Your Orders</h2>
-              <p class="font-body-sm text-body-sm text-on-surface-variant">Input your WhatsApp phone number registered in the Google Pre-order form.</p>
+              <h2 class="font-headline-lg text-xl sm:text-headline-lg uppercase text-on-surface font-black">Track Your Orders</h2>
+              <p class="font-body-sm text-xs sm:text-body-sm text-on-surface-variant">Input your WhatsApp phone number registered during pre-order.</p>
             </div>
-            <span class="bg-surface-container px-3 py-1 rounded-full font-label-badge text-label-badge text-on-surface-variant self-start sm:self-auto">
-              Live Google Sheets Sync
+            <span class="bg-surface-container px-3 py-1 rounded-full font-label-badge text-[11px] sm:text-label-badge text-on-surface-variant self-start sm:self-auto font-bold">
+              Live Queue Updates
             </span>
           </div>
 
-          <!-- Phone Search Input Bar -->
-          <div class="flex flex-col sm:flex-row items-stretch gap-space-sm mb-space-lg">
+          <!-- Phone Search Input Bar (Mobile ergonomic flex/stack) -->
+          <div class="flex flex-col sm:flex-row items-stretch gap-2.5 sm:gap-space-sm mb-6 sm:mb-space-lg">
             <div class="relative flex-1">
-              <input class="w-full bg-surface-container-low px-4 py-3.5 rounded-xl font-label-badge text-label-badge text-on-surface placeholder:text-on-secondary-container shadow-inner focus:outline-none focus:bg-surface-container transition-all" id="tracking-input" placeholder="Enter WhatsApp No (e.g. 088212386621)" type="text">
+              <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">phone_iphone</span>
+              <input class="w-full bg-surface-container-low pl-11 pr-4 py-3 sm:py-3.5 rounded-xl font-label-badge text-xs sm:text-label-badge text-on-surface placeholder:text-on-secondary-container shadow-inner focus:outline-none focus:bg-surface-container transition-all" id="tracking-input" placeholder="Enter WhatsApp No (e.g. 088212386621)" type="text">
             </div>
-            <button id="check-status-btn" class="bg-[#0070F3] hover:bg-blue-600 text-surface-container-lowest font-headline-sm text-headline-sm uppercase px-space-xl py-3.5 rounded-xl shadow-[3px_3px_0px_#1e1b16] active:translate-x-0.5 active:translate-y-0.5 transition-all cursor-pointer" onclick="checkOrderStatus()">
-              Check Status
+            <button id="check-status-btn" class="bg-[#0070F3] hover:bg-blue-600 text-surface-container-lowest font-headline-sm text-sm sm:text-headline-sm uppercase px-6 sm:px-space-xl py-3 sm:py-3.5 rounded-xl shadow-[3px_3px_0px_#1e1b16] btn-tactile cursor-pointer font-bold flex items-center justify-center gap-1.5" onclick="checkOrderStatus()">
+              <span>Check Status</span>
+              <span class="material-symbols-outlined text-[18px]">search</span>
             </button>
           </div>
 
           <!-- Live Dynamic Results Container (Populated via script.js when searching) -->
-          <div class="flex flex-col gap-space-md" id="tracking-results"></div>
+          <div class="flex flex-col gap-3 sm:gap-space-md" id="tracking-results"></div>
 
-          <div class="mt-space-md pt-space-md border-t border-surface-container flex flex-col sm:flex-row items-center justify-between gap-space-xs font-body-sm text-body-sm text-on-surface-variant">
-            <span>Stall updates every 3 minutes. Pick up booth: <strong class="text-on-surface">Booth #14 Pavilion</strong></span>
-            <a class="text-primary hover:underline font-label-badge text-label-badge uppercase" href="https://wa.me/" target="_blank">Need help? Chat Kitchen Admin</a>
+          <div class="mt-4 sm:mt-space-md pt-4 sm:pt-space-md border-t border-surface-container flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-space-xs font-body-sm text-xs sm:text-body-sm text-on-surface-variant text-center sm:text-left">
+            <span>Stall updates every 3 minutes. Pick up: <strong class="text-on-surface">Booth #14 Pavilion</strong></span>
+            <a class="text-primary hover:underline font-label-badge text-xs sm:text-label-badge uppercase font-bold" href="https://wa.me/" target="_blank">Need help? Chat Kitchen Admin</a>
           </div>
         </div>
       </section>
@@ -642,54 +651,54 @@
       <!-- ==========================================
            SECTION 5: HOW IT WORKS & FAQ (3-step guide)
            ========================================== -->
-      <section class="max-w-7xl mx-auto px-margin lg:px-margin-desktop py-space-xl">
-        <div class="text-center mb-space-lg">
-          <span class="font-label-badge text-label-badge text-primary uppercase">Simple 3-Step Pre-Order Flow</span>
-          <h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">How To Get Your Crispy Fix</h2>
+      <section class="max-w-7xl mx-auto px-4 sm:px-margin lg:px-margin-desktop py-8 sm:py-space-xl">
+        <div class="text-center mb-6 sm:mb-space-lg reveal-on-scroll reveal-fade-up">
+          <span class="font-label-badge text-xs sm:text-label-badge text-primary uppercase font-bold">Simple 3-Step Pre-Order Flow</span>
+          <h2 class="font-headline-lg text-xl sm:text-headline-lg uppercase text-on-surface font-black">How To Get Your Crispy Fix</h2>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-space-lg">
           <!-- Step 1 -->
-          <div class="bg-surface-container-low p-space-lg rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col items-center text-center hover-card-lift">
-            <div class="w-14 h-14 rounded-full bg-primary text-on-primary font-headline-md text-headline-md flex items-center justify-center mb-space-sm shadow-md">
+          <div class="bg-surface-container-low p-5 sm:p-space-lg rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col items-center text-center hover-card-lift card-interactive card-shimmer border border-on-surface/10 reveal-on-scroll reveal-fade-up delay-100">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary text-on-primary font-headline-md text-lg sm:text-headline-md flex items-center justify-center mb-3 sm:mb-space-sm shadow-md font-black">
               1
             </div>
-            <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">Fill Google Form</h3>
-            <p class="font-body-md text-body-md text-on-surface-variant">
+            <h3 class="font-headline-sm text-base sm:text-headline-sm uppercase text-on-surface mb-1 sm:mb-space-xs font-black">Fill Google Form</h3>
+            <p class="font-body-md text-xs sm:text-body-md text-on-surface-variant leading-relaxed">
               Choose your cutlet flavor seasonings, drinks, and bundle add-ons through our quick order questionnaire.
             </p>
           </div>
           <!-- Step 2 -->
-          <div class="bg-surface-container-low p-space-lg rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col items-center text-center hover-card-lift">
-            <div class="w-14 h-14 rounded-full bg-primary text-on-primary font-headline-md text-headline-md flex items-center justify-center mb-space-sm shadow-md">
+          <div class="bg-surface-container-low p-5 sm:p-space-lg rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col items-center text-center hover-card-lift card-interactive card-shimmer border border-on-surface/10 reveal-on-scroll reveal-fade-up delay-200">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary text-on-primary font-headline-md text-lg sm:text-headline-md flex items-center justify-center mb-3 sm:mb-space-sm shadow-md font-black">
               2
             </div>
-            <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">Confirm &amp; QRIS Pay</h3>
-            <p class="font-body-md text-body-md text-on-surface-variant">
+            <h3 class="font-headline-sm text-base sm:text-headline-sm uppercase text-on-surface mb-1 sm:mb-space-xs font-black">Confirm &amp; QRIS Pay</h3>
+            <p class="font-body-md text-xs sm:text-body-md text-on-surface-variant leading-relaxed">
               Receive automated WhatsApp order invoice. Pay seamlessly with all Indonesian e-wallets or cash at booth.
             </p>
           </div>
           <!-- Step 3 -->
-          <div class="bg-surface-container-low p-space-lg rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col items-center text-center hover-card-lift">
-            <div class="w-14 h-14 rounded-full bg-primary text-on-primary font-headline-md text-headline-md flex items-center justify-center mb-space-sm shadow-md">
+          <div class="bg-surface-container-low p-5 sm:p-space-lg rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col items-center text-center hover-card-lift card-interactive card-shimmer border border-on-surface/10 reveal-on-scroll reveal-fade-up delay-300">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary text-on-primary font-headline-md text-lg sm:text-headline-md flex items-center justify-center mb-3 sm:mb-space-sm shadow-md font-black">
               3
             </div>
-            <h3 class="font-headline-sm text-headline-sm uppercase text-on-surface mb-space-xs">Track &amp; Pick Up</h3>
-            <p class="font-body-md text-body-md text-on-surface-variant">
-              Watch the live kitchen monitor above. When your tag lights up <span class="text-[#0277BD] font-bold">Ready</span>, grab your hot bag at Booth #14!
+            <h3 class="font-headline-sm text-base sm:text-headline-sm uppercase text-on-surface mb-1 sm:mb-space-xs font-black">Track &amp; Pick Up</h3>
+            <p class="font-body-md text-xs sm:text-body-md text-on-surface-variant leading-relaxed">
+              Watch your live order status above. When your tag lights up <span class="text-[#0277BD] font-bold">Ready</span>, grab your hot bag at Booth #14!
             </p>
           </div>
         </div>
 
         <!-- Final Call To Action Banner -->
-        <div class="mt-space-xl bg-primary-container text-on-primary p-space-lg lg:p-space-xl rounded-3xl shadow-[6px_6px_0px_#1e1b16] flex flex-col md:flex-row items-center justify-between gap-space-lg">
+        <div class="mt-8 sm:mt-space-xl bg-primary-container text-on-primary p-6 sm:p-space-lg lg:p-space-xl rounded-3xl shadow-[6px_6px_0px_#1e1b16] flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-space-lg border border-on-surface/10 reveal-on-scroll reveal-scale-up">
           <div class="flex flex-col gap-1 text-center md:text-left">
-            <span class="font-label-badge text-label-badge uppercase tracking-wider text-tertiary-fixed">LIMITED PRE-ORDER QUOTA: 150 BATCHES / DAY</span>
-            <h3 class="font-display-hero-mobile text-display-hero-mobile uppercase tracking-tight">Don't Miss Out On Market Day Crunch!</h3>
-            <p class="font-body-md text-body-md text-primary-fixed">Fresh chicken cutlets sell out by 13:00 WIB during university test runs.</p>
+            <span class="font-label-badge text-xs sm:text-label-badge uppercase tracking-wider text-tertiary-fixed font-bold">LIMITED PRE-ORDER QUOTA: 150 BATCHES / DAY</span>
+            <h3 class="font-display-hero-mobile text-xl sm:text-display-hero-mobile uppercase tracking-tight font-black">Don't Miss Out On Market Day Crunch!</h3>
+            <p class="font-body-md text-xs sm:text-body-md text-primary-fixed">Fresh chicken cutlets sell out by 13:00 WIB during university test runs.</p>
           </div>
-          <a class="bg-surface-container-lowest text-on-surface hover:bg-surface-container font-headline-sm text-headline-sm uppercase px-space-xl py-4 rounded-xl shadow-[4px_4px_0px_#1e1b16] active:translate-x-0.5 active:translate-y-0.5 transition-all whitespace-nowrap inline-flex items-center gap-2" href="https://forms.gle/mZKQudvXEUE7D7Ty5" rel="noopener noreferrer" target="_blank">
+          <a class="bg-surface-container-lowest text-on-surface hover:bg-surface-container font-headline-sm text-sm sm:text-headline-sm uppercase px-6 sm:px-space-xl py-3.5 sm:py-4 rounded-xl shadow-[4px_4px_0px_#1e1b16] btn-tactile whitespace-nowrap inline-flex items-center gap-2 font-bold w-full sm:w-auto justify-center" href="https://forms.gle/mZKQudvXEUE7D7Ty5" rel="noopener noreferrer" target="_blank">
             <span>Open Google Form</span>
-            <span class="material-symbols-outlined text-[20px]">open_in_new</span>
+            <span class="material-symbols-outlined text-[18px] sm:text-[20px]">open_in_new</span>
           </a>
         </div>
       </section>
@@ -701,45 +710,71 @@
        FOOTER
        ========================================== -->
   <footer class="w-full bg-surface-container-low text-on-surface border-t border-surface-container-high" id="booth-details">
-    <div class="max-w-7xl mx-auto px-margin lg:px-margin-desktop py-space-xl">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-space-lg mb-space-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-margin lg:px-margin-desktop py-8 sm:py-space-xl">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-space-lg mb-8 sm:mb-space-xl">
         <div class="md:col-span-2 flex flex-col gap-space-sm">
           <div class="flex items-center gap-space-xs">
-            <span class="font-headline-sm text-headline-sm uppercase text-primary">TORI SNACKS &amp; SIPS</span>
-            <span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-badge text-label-badge px-2 py-0.5 rounded-full">BATCH #04</span>
+            <span class="font-headline-sm text-headline-sm uppercase text-primary font-black">TORI SNACKS &amp; SIPS</span>
+            <span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-badge text-xs px-2 py-0.5 rounded-full font-bold">BATCH #04</span>
           </div>
-          <p class="font-body-md text-body-md text-on-surface-variant max-w-md">A student entrepreneurship market day stall project bringing authentic Japanese crispy chicken, crunchy bites, and playful craft potions straight to Telkom University.</p>
+          <p class="font-body-md text-sm sm:text-body-md text-on-surface-variant max-w-md leading-relaxed">A student entrepreneurship market day stall project bringing authentic Japanese crispy chicken, crunchy bites, and playful craft potions straight to Telkom University.</p>
           <div class="flex items-center gap-space-sm mt-space-xs">
             <span class="material-symbols-outlined text-primary text-[20px]">pin_drop</span>
-            <span class="font-body-sm text-body-sm font-bold text-on-surface">Booth #14, Student Pavilion Hall, Bandung</span>
+            <span class="font-body-sm text-xs sm:text-body-sm font-bold text-on-surface">Booth #14, Student Pavilion Hall, Bandung</span>
           </div>
         </div>
 
-        <div class="flex flex-col gap-space-xs">
-          <span class="font-headline-sm text-headline-sm uppercase text-on-surface">Stall Details</span>
-          <span class="font-body-sm text-body-sm text-on-surface-variant">Instagram: <strong class="text-on-surface">@torisnacks.tup</strong></span>
-          <span class="font-body-sm text-body-sm text-on-surface-variant">Open: <strong class="text-on-surface">09:00 AM – 17:00 WIB</strong></span>
-          <span class="font-body-sm text-body-sm text-on-surface-variant">Payment: <strong class="text-on-surface">QRIS &amp; Cash Accepted</strong></span>
+        <div class="flex flex-col gap-1 sm:gap-space-xs">
+          <span class="font-headline-sm text-base sm:text-headline-sm uppercase text-on-surface font-black">Stall Details</span>
+          <span class="font-body-sm text-xs sm:text-body-sm text-on-surface-variant">Instagram: <strong class="text-on-surface">@torisnacks.tup</strong></span>
+          <span class="font-body-sm text-xs sm:text-body-sm text-on-surface-variant">Open: <strong class="text-on-surface">09:00 AM – 17:00 WIB</strong></span>
+          <span class="font-body-sm text-xs sm:text-body-sm text-on-surface-variant">Payment: <strong class="text-on-surface">QRIS &amp; Cash Accepted</strong></span>
         </div>
 
-        <div class="flex flex-col gap-space-xs">
-          <span class="font-headline-sm text-headline-sm uppercase text-on-surface">Project Transparency</span>
-          <div class="bg-surface-container p-space-sm rounded-lg flex flex-col gap-space-xs">
+        <div class="flex flex-col gap-1 sm:gap-space-xs">
+          <span class="font-headline-sm text-base sm:text-headline-sm uppercase text-on-surface font-black">Fresh Quality</span>
+          <div class="bg-surface-container p-3 sm:p-space-sm rounded-xl flex flex-col gap-1 sm:gap-space-xs border border-on-surface/5">
             <div class="flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
-              <span class="font-label-badge text-label-badge text-on-surface">LIVE QUEUE STATUS</span>
+              <span class="w-2 h-2 rounded-full bg-[#2E7D32] animate-pulse"></span>
+              <span class="font-label-badge text-xs text-on-surface font-bold">FRESHLY COOKED</span>
             </div>
-            <p class="font-body-sm text-body-sm text-on-surface-variant">Order statuses and pre-order batches sync automatically from our shared Google Sheets terminal.</p>
+            <p class="font-body-sm text-[11px] sm:text-body-sm text-on-surface-variant">Every cutlet is freshly fried and packaged on-site at Booth #14 during Market Day.</p>
           </div>
         </div>
       </div>
 
-      <div class="pt-space-md border-t border-surface-container-high flex flex-col sm:flex-row items-center justify-between gap-space-sm font-body-sm text-body-sm text-on-surface-variant">
+      <div class="pt-4 sm:pt-space-md border-t border-surface-container-high flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-space-sm font-body-sm text-xs text-on-surface-variant text-center sm:text-left">
         <span>© 2025 TORI SNACKS &amp; SIPS • Telkom University Market Day Project</span>
         <span>Crafted with crispy love &amp; student fuel</span>
       </div>
     </div>
   </footer>
+
+  <!-- ==========================================
+       MOBILE STICKY BOTTOM DOCK (Phone UX Redesign)
+       ========================================== -->
+  <nav id="mobile-nav-dock" class="fixed bottom-3 inset-x-2 sm:inset-x-3 z-40 sm:hidden bg-surface/95 backdrop-blur-lg border border-on-surface/10 rounded-2xl p-1 shadow-[0_4px_20px_rgba(0,0,0,0.18)] flex items-center justify-between mobile-nav-dock max-w-md mx-auto" aria-label="Mobile Bottom Navigation">
+    <a id="mobile-nav-menu" href="#menu" class="mobile-nav-item flex-1 min-w-0 flex flex-col items-center justify-center py-1.5 px-1 rounded-xl text-on-surface-variant transition-all text-center">
+      <span class="material-symbols-outlined text-[18px]">restaurant_menu</span>
+      <span class="text-[9px] font-bold uppercase tracking-tight mt-0.5 truncate w-full">Flavors</span>
+    </a>
+    <a id="mobile-nav-potions" href="#potions-section" class="mobile-nav-item flex-1 min-w-0 flex flex-col items-center justify-center py-1.5 px-1 rounded-xl text-on-surface-variant transition-all text-center">
+      <span class="material-symbols-outlined text-[18px]">casino</span>
+      <span class="text-[9px] font-bold uppercase tracking-tight mt-0.5 truncate w-full">Roulette</span>
+    </a>
+    <a id="mobile-nav-combos" href="#combos-section" class="mobile-nav-item flex-1 min-w-0 flex flex-col items-center justify-center py-1.5 px-1 rounded-xl text-on-surface-variant transition-all text-center">
+      <span class="material-symbols-outlined text-[18px]">lunch_dining</span>
+      <span class="text-[9px] font-bold uppercase tracking-tight mt-0.5 truncate w-full">Combos</span>
+    </a>
+    <a id="mobile-nav-track" href="#track-section" class="mobile-nav-item flex-1 min-w-0 flex flex-col items-center justify-center py-1.5 px-1 rounded-xl text-on-surface-variant transition-all text-center">
+      <span class="material-symbols-outlined text-[18px]">receipt_long</span>
+      <span class="text-[9px] font-bold uppercase tracking-tight mt-0.5 truncate w-full">Track</span>
+    </a>
+    <a href="https://forms.gle/mZKQudvXEUE7D7Ty5" target="_blank" rel="noopener noreferrer" class="flex-1 min-w-0 flex flex-col items-center justify-center py-1.5 px-2 rounded-xl bg-primary text-on-primary font-bold shadow-sm active:scale-95 transition-all text-center btn-tactile">
+      <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+      <span class="text-[9px] font-bold uppercase tracking-tight mt-0.5 truncate w-full">Order</span>
+    </a>
+  </nav>
 
 </body>
 </html>

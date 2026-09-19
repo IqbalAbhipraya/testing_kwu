@@ -31,7 +31,7 @@ async function checkOrderStatus() {
 
   resultsContainer.innerHTML = `
     <div class="bg-surface-container-low p-space-md rounded-xl text-center py-8">
-      <span class="font-headline-sm text-headline-sm text-on-surface block mb-1">Connecting to Kitchen Terminal...</span>
+      <span class="font-headline-sm text-headline-sm text-on-surface block mb-1">Checking Live Orders...</span>
       <span class="font-body-sm text-body-sm text-on-surface-variant">Searching orders for <strong>${escapeHtml(phoneNo)}</strong>...</span>
     </div>
   `;
@@ -53,7 +53,7 @@ async function checkOrderStatus() {
             <span class="font-body-sm text-body-sm text-on-surface-variant block" id="order-count">Found ${data.totalOrders} order(s)</span>
           </div>
           <span class="font-label-badge text-label-badge text-tertiary-container bg-surface-container px-3 py-1 rounded-full uppercase self-start sm:self-auto">
-            Terminal Batch #4
+            Order Batch #04
           </span>
         </div>
       `;
@@ -156,6 +156,11 @@ function spinRoulette() {
   isSpinning = true;
   btn.disabled = true;
 
+  // Haptic feedback on mobile if supported
+  if (navigator.vibrate) {
+    try { navigator.vibrate([40, 30, 40]); } catch (e) {}
+  }
+
   // Clear previous highlights
   drinkNames.forEach(d => {
     const el = document.getElementById(d.id);
@@ -169,8 +174,9 @@ function spinRoulette() {
   currentRotation += extraSpins + randomAngle;
 
   wheel.style.transform = `rotate(${currentRotation}deg)`;
-  resultText.innerText = 'Spinning magic wheel...';
+  resultText.innerHTML = '<span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary animate-ping"></span> Spinning magic potion wheel...</span>';
 
+  // Wheel animation takes 3.2s (3200ms) to decelerate to a stop
   setTimeout(() => {
     if (pointer) pointer.classList.remove('pointer-ticking');
 
@@ -178,39 +184,143 @@ function spinRoulette() {
     const index = Math.floor(effectiveAngle / 60) % 6;
     const selected = drinkNames[index];
 
-    resultText.innerHTML = `🎉 Fate Selected: <strong class="text-[#ffddb9] font-black uppercase underline">${selected.name}</strong>!`;
+    resultText.innerHTML = `🎉 Fate Selected: <strong class="text-[#ffddb9] font-black uppercase underline decoration-2">${selected.name}</strong>!`;
 
     const winningCard = document.getElementById(selected.id);
     if (winningCard) {
       winningCard.classList.add('potion-highlight');
+      // Scroll winning card into view on small screens if needed
+      if (window.innerWidth < 1024) {
+        winningCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
     }
 
     launchConfetti(selected.color);
 
+    // Haptic celebration pulse
+    if (navigator.vibrate) {
+      try { navigator.vibrate([60, 50, 80, 50, 120]); } catch (e) {}
+    }
+
     isSpinning = false;
     btn.disabled = false;
-  }, 1000);
+  }, 3200);
 }
 
 function launchConfetti(accentColor) {
-  const colors = [accentColor, '#ffddb9', '#ffffff', '#af101a', '#ffb961'];
-  for (let i = 0; i < 24; i++) {
+  const colors = [accentColor, '#ffddb9', '#ffffff', '#af101a', '#ffb961', '#ffd54f'];
+  for (let i = 0; i < 30; i++) {
     const p = document.createElement('div');
     p.className = 'roulette-confetti';
     p.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-    p.style.left = `${window.innerWidth / 2 + (Math.random() * 160 - 80)}px`;
-    p.style.top = `${window.innerHeight * 0.45 + (Math.random() * 80 - 40)}px`;
-    p.style.setProperty('--dx', `${(Math.random() - 0.5) * 350}px`);
-    p.style.setProperty('--dy', `${Math.random() * 250 + 80}px`);
+    p.style.left = `${window.innerWidth / 2 + (Math.random() * 200 - 100)}px`;
+    p.style.top = `${window.innerHeight * 0.42 + (Math.random() * 100 - 50)}px`;
+    p.style.setProperty('--dx', `${(Math.random() - 0.5) * 420}px`);
+    p.style.setProperty('--dy', `${Math.random() * 320 + 80}px`);
     document.body.appendChild(p);
     setTimeout(() => p.remove(), 1600);
   }
 }
 
 // ==========================================
-// 3. Quick Header Search & Event Listeners
+// 3. Scroll Reveal Engine (IntersectionObserver)
+// ==========================================
+function initScrollReveal() {
+  const elements = document.querySelectorAll('.reveal-on-scroll');
+  if (!elements.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        // Unobserve after revealing for optimal performance
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    root: null,
+    threshold: 0.08,
+    rootMargin: '0px 0px -30px 0px'
+  });
+
+  elements.forEach(el => observer.observe(el));
+}
+
+// ==========================================
+// 4. Mobile Bottom Navigation Scroll Spy
+// ==========================================
+function initMobileScrollSpy() {
+  const sections = [
+    { id: 'menu', navId: 'mobile-nav-menu' },
+    { id: 'potions-section', navId: 'mobile-nav-potions' },
+    { id: 'combos-section', navId: 'mobile-nav-combos' },
+    { id: 'track-section', navId: 'mobile-nav-track' }
+  ];
+
+  const updateActiveNav = () => {
+    const scrollPosition = window.scrollY + 200;
+
+    let currentSectionId = null;
+    sections.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) {
+        const top = el.offsetTop;
+        const height = el.offsetHeight;
+        if (scrollPosition >= top && scrollPosition < top + height) {
+          currentSectionId = id;
+        }
+      }
+    });
+
+    sections.forEach(({ id, navId }) => {
+      const navItem = document.getElementById(navId);
+      if (navItem) {
+        if (id === currentSectionId) {
+          navItem.classList.add('active');
+        } else {
+          navItem.classList.remove('active');
+        }
+      }
+    });
+  };
+
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+  updateActiveNav();
+}
+
+// ==========================================
+// 5. Smooth Anchor Scrolling with Header Offset
+// ==========================================
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href').substring(1);
+      if (!targetId) return;
+
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        const headerOffset = 90;
+        const elementPosition = targetEl.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+}
+
+// ==========================================
+// 6. DOM Ready Initializations
 // ==========================================
 document.addEventListener('DOMContentLoaded', () => {
+  initScrollReveal();
+  initMobileScrollSpy();
+  initSmoothScroll();
+
   const trackingInput = document.getElementById('tracking-input');
   if (trackingInput) {
     trackingInput.addEventListener('keydown', (e) => {
@@ -226,7 +336,9 @@ document.addEventListener('DOMContentLoaded', () => {
     quickTrackPill.addEventListener('click', () => {
       const trackSection = document.getElementById('track-section');
       if (trackSection) {
-        trackSection.scrollIntoView({ behavior: 'smooth' });
+        const headerOffset = 90;
+        const offsetPosition = trackSection.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
         setTimeout(() => {
           if (trackingInput) trackingInput.focus();
         }, 400);

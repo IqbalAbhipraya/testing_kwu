@@ -2,20 +2,33 @@
    TORI SNACKS & SIPS - Exact Styling & Micro-Animations
    ========================================================================== */
 
-@layer base {
-  html, body {
-    margin: 0;
-    padding: 0;
-  }
-  body {
-    overscroll-behavior: none;
-  }
-  main > :first-child {
-    margin-top: 0 !important;
-  }
-  main > :last-child {
-    margin-bottom: 0 !important;
-  }
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  position: relative;
+  box-sizing: border-box;
+}
+
+main > :first-child {
+  margin-top: 0 !important;
+}
+main > :last-child {
+  margin-bottom: 0 !important;
 }
 
 ::-webkit-scrollbar {
@@ -28,8 +41,8 @@
 .font-display-hero,
 .text-display-hero {
   font-family: 'Epilogue', sans-serif !important;
-  font-size: 56px !important;
-  line-height: 60px !important;
+  font-size: clamp(32px, 7vw, 56px) !important;
+  line-height: clamp(38px, 8vw, 60px) !important;
   letter-spacing: -0.03em !important;
   font-weight: 900 !important;
 }
@@ -37,8 +50,8 @@
 .text-display-hero-mobile,
 .font-display-hero-mobile {
   font-family: 'Epilogue', sans-serif !important;
-  font-size: 36px !important;
-  line-height: 40px !important;
+  font-size: clamp(26px, 6vw, 36px) !important;
+  line-height: clamp(30px, 7vw, 40px) !important;
   letter-spacing: -0.02em !important;
   font-weight: 900 !important;
 }
@@ -110,18 +123,41 @@
 }
 
 /* ==========================================================================
-   ENHANCED MICRO-ANIMATIONS (Non-disruptive, smooth)
+   ENHANCED MICRO-ANIMATIONS & SCROLL REVEALS
    ========================================================================== */
 
 /* Floating stickers */
 @keyframes floatSticker1 {
   0%, 100% { transform: rotate(6deg) translateY(0px); }
-  50% { transform: rotate(7.5deg) translateY(-5px); }
+  50% { transform: rotate(7.5deg) translateY(-6px); }
 }
 
 @keyframes floatSticker2 {
   0%, 100% { transform: rotate(-6deg) translateY(0px); }
-  50% { transform: rotate(-4.5deg) translateY(-4px); }
+  50% { transform: rotate(-4.5deg) translateY(-5px); }
+}
+
+@media (max-width: 640px) {
+  @keyframes floatSticker1 {
+    0%, 100% { transform: rotate(2deg) translateY(0px); }
+    50% { transform: rotate(3deg) translateY(-3px); }
+  }
+
+  @keyframes floatSticker2 {
+    0%, 100% { transform: rotate(-2deg) translateY(0px); }
+    50% { transform: rotate(-1deg) translateY(-3px); }
+  }
+}
+
+@keyframes gentleBob {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes pulseRing {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.08); opacity: 0.3; }
+  100% { transform: scale(0.95); opacity: 0.8; }
 }
 
 .animate-sticker-1 {
@@ -132,27 +168,156 @@
   animation: floatSticker2 4.2s ease-in-out infinite 0.4s;
 }
 
-/* Card subtle hover elevation */
-.hover-card-lift {
-  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+.animate-bob {
+  animation: gentleBob 3s ease-in-out infinite;
 }
 
-.hover-card-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 6px 6px 0px #1e1b16;
+/* ==========================================================================
+   SCROLL REVEAL UTILITIES (IntersectionObserver driven)
+   ========================================================================== */
+.reveal-on-scroll {
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Food image zoom */
+.reveal-fade-up {
+  transform: translateY(32px);
+}
+
+.reveal-fade-down {
+  transform: translateY(-24px);
+}
+
+.reveal-slide-left {
+  transform: translateX(-32px);
+}
+
+.reveal-slide-right {
+  transform: translateX(32px);
+}
+
+@media (max-width: 768px) {
+  .reveal-slide-left,
+  .reveal-slide-right {
+    transform: translateY(24px);
+  }
+}
+
+.reveal-scale-up {
+  transform: scale(0.92);
+}
+
+/* Revealed active state */
+.reveal-on-scroll.is-visible {
+  opacity: 1 !important;
+  transform: translate(0, 0) scale(1) !important;
+}
+
+/* Stagger Delays */
+.delay-75  { transition-delay: 75ms; }
+.delay-100 { transition-delay: 100ms; }
+.delay-150 { transition-delay: 150ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-250 { transition-delay: 250ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .animate-sticker-1,
+  .animate-sticker-2,
+  .animate-bob {
+    animation: none !important;
+  }
+}
+
+/* ==========================================================================
+   CARD TACTILE PHYSICS & HOVER EFFECTS
+   ========================================================================== */
+.hover-card-lift,
+.card-interactive {
+  position: relative;
+  transition: transform 0.24s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              box-shadow 0.24s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform, box-shadow;
+}
+
+.hover-card-lift:hover,
+.card-interactive:hover {
+  transform: translateY(-6px);
+  box-shadow: 7px 7px 0px #1e1b16 !important;
+}
+
+.card-interactive:active {
+  transform: translateY(-1px) translateX(1px);
+  box-shadow: 3px 3px 0px #1e1b16 !important;
+}
+
+/* Card shimmer light sweep */
+.card-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.22) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+  transition: left 0.75s ease;
+  z-index: 5;
+}
+
+.card-shimmer:hover::after {
+  left: 140%;
+}
+
+/* Food image zoom & subtle rotation tilt */
 .zoom-img-container {
   overflow: hidden;
 }
 
 .zoom-img-container img {
-  transition: transform 0.35s ease;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
+.hover-card-lift:hover .zoom-img-container img,
+.card-interactive:hover .zoom-img-container img,
 .zoom-img-container:hover img {
-  transform: scale(1.05);
+  transform: scale(1.07) rotate(0.6deg);
+}
+
+/* Tactile button physics */
+.btn-tactile {
+  transition: transform 0.16s cubic-bezier(0.2, 0.8, 0.2, 1), 
+              box-shadow 0.16s cubic-bezier(0.2, 0.8, 0.2, 1),
+              background-color 0.16s ease;
+}
+
+.btn-tactile:hover {
+  transform: translateY(-2px);
+}
+
+.btn-tactile:active {
+  transform: translate(2px, 2px) !important;
+  box-shadow: 1px 1px 0px #1e1b16 !important;
 }
 
 /* Roulette wheel */
@@ -165,27 +330,38 @@
 /* Pointer tick while spinning */
 @keyframes pointerTick {
   0%, 100% { transform: translateX(-50%) rotate(0deg); }
-  40% { transform: translateX(-50%) rotate(-10deg); }
-  80% { transform: translateX(-50%) rotate(8deg); }
+  40% { transform: translateX(-50%) rotate(-12deg); }
+  80% { transform: translateX(-50%) rotate(10deg); }
 }
 
 .pointer-ticking {
   animation: pointerTick 0.12s infinite ease-in-out;
 }
 
-/* Selected potion card highlight */
+/* Selected potion card highlight & pulse */
+@keyframes potionPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 2px #ffddb9, 0 0 22px rgba(255, 221, 185, 0.55);
+    transform: scale(1.03);
+  }
+  50% {
+    box-shadow: 0 0 0 4px #ffb961, 0 0 32px rgba(255, 185, 97, 0.85);
+    transform: scale(1.05);
+  }
+}
+
 .potion-highlight {
   border-color: #ffddb9 !important;
-  box-shadow: 0 0 16px rgba(255, 221, 185, 0.35);
-  transform: scale(1.02);
-  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.14) !important;
+  animation: potionPulse 1.6s ease-in-out infinite;
+  z-index: 10;
 }
 
 /* Order cards entry */
 @keyframes slideInUp {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
@@ -194,14 +370,14 @@
 }
 
 .order-card-enter {
-  animation: slideInUp 0.3s ease forwards;
+  animation: slideInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* Confetti particles */
 .roulette-confetti {
   position: fixed;
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 2px;
   pointer-events: none;
   z-index: 9999;
@@ -211,18 +387,18 @@
 @keyframes confettiBurst {
   0% {
     opacity: 1;
-    transform: translate(0, 0) rotate(0deg);
+    transform: translate(0, 0) rotate(0deg) scale(1);
   }
   100% {
     opacity: 0;
-    transform: translate(var(--dx), var(--dy)) rotate(540deg);
+    transform: translate(var(--dx), var(--dy)) rotate(640deg) scale(0.6);
   }
 }
 
 /* Toast message */
 #toast-msg {
   position: fixed;
-  bottom: 1.25rem;
+  bottom: 5.5rem;
   right: 1.25rem;
   z-index: 999;
   transform: translateY(100px);
@@ -235,3 +411,34 @@
   transform: translateY(0);
   opacity: 1;
 }
+
+/* ==========================================
+   MOBILE-SPECIFIC ENHANCEMENTS
+   ========================================== */
+/* Mobile floating bottom dock */
+.mobile-nav-dock {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(30, 27, 22, 0.12);
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+
+.mobile-nav-item.active {
+  color: #af101a !important;
+  background-color: #ffdad6;
+}
+
+/* Smooth tap highlights for mobile touch */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Category filter tabs horizontal scroll styling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
