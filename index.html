@@ -1,786 +1,185 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="web_standard" name="shell-type">
-  <title>TORI SNACKS &amp; SIPS</title>
-
-  <!-- Google Fonts & Material Symbols -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800;900&amp;family=Plus+Jakarta+Sans:wght@500;600;700&amp;family=Space+Grotesk:wght@700&amp;display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-
-  <!-- Tailwind CSS Play CDN with Plugins -->
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-
-  <!-- Exact Tailwind Theme Configuration (Synchronous for Pixel-Perfect Fonts) -->
-  <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-            "on-surface": "#1e1b16",
-            "on-tertiary": "#ffffff",
-            "on-primary-fixed-variant": "#930010",
-            "tertiary-fixed": "#ffddb9",
-            "surface-container-high": "#eee7dd",
-            "on-secondary-fixed-variant": "#474746",
-            "surface-dim": "#e0d9d0",
-            "secondary-fixed": "#e5e2e1",
-            "on-primary": "#ffffff",
-            "surface-container": "#f4ede3",
-            "on-background": "#1e1b16",
-            "inverse-on-surface": "#f7f0e6",
-            "outline-variant": "#e4beba",
-            "inverse-surface": "#33302a",
-            "surface-container-highest": "#e8e2d8",
-            "primary": "#af101a",
-            "on-secondary-container": "#636262",
-            "secondary-container": "#e2dfde",
-            "tertiary-container": "#9e6300",
-            "outline": "#8f6f6c",
-            "on-tertiary-fixed": "#2b1700",
-            "primary-fixed-dim": "#ffb3ac",
-            "on-primary-container": "#fff2f0",
-            "on-secondary": "#ffffff",
-            "inverse-primary": "#ffb3ac",
-            "surface": "#fff8f0",
-            "on-error": "#ffffff",
-            "tertiary-fixed-dim": "#ffb961",
-            "on-primary-fixed": "#410003",
-            "secondary": "#5f5e5e",
-            "secondary-fixed-dim": "#c8c6c5",
-            "on-error-container": "#93000a",
-            "primary-container": "#d32f2f",
-            "surface-variant": "#e8e2d8",
-            "surface-bright": "#fff8f0",
-            "error-container": "#ffdad6",
-            "on-tertiary-fixed-variant": "#663e00",
-            "error": "#ba1a1a",
-            "on-secondary-fixed": "#1b1b1c",
-            "surface-container-lowest": "#ffffff",
-            "on-tertiary-container": "#fff3ea",
-            "primary-fixed": "#ffdad6",
-            "tertiary": "#7d4d00",
-            "on-surface-variant": "#5b403d",
-            "surface-container-low": "#faf3e9",
-            "background": "#fff8f0",
-            "surface-tint": "#ba1a20"
-          },
-          "borderRadius": {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
-          "spacing": {
-            "gutter-desktop": "1.5rem",
-            "space-md": "0.875rem",
-            "space-sm": "0.5rem",
-            "space-xs": "0.25rem",
-            "margin": "1rem",
-            "space-xl": "2rem",
-            "gutter": "1rem",
-            "margin-desktop": "2.5rem",
-            "space-lg": "1.25rem"
-          },
-          "fontFamily": {
-            "label-badge": ["Space Grotesk"],
-            "headline-sm": ["Epilogue"],
-            "headline-md": ["Epilogue"],
-            "body-sm": ["Plus Jakarta Sans"],
-            "price-display": ["Epilogue"],
-            "headline-lg-mobile": ["Epilogue"],
-            "body-md": ["Plus Jakarta Sans"],
-            "display-hero-mobile": ["Epilogue"],
-            "headline-lg": ["Epilogue"],
-            "body-lg": ["Plus Jakarta Sans"],
-            "display-hero": ["Epilogue"]
-          },
-          "fontSize": {
-            "label-badge": ["13px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "700" }],
-            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "700" }],
-            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "800" }],
-            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
-            "price-display": ["20px", { "lineHeight": "22px", "fontWeight": "900" }],
-            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "800" }],
-            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
-            "display-hero-mobile": ["36px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "900" }],
-            "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
-            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
-            "display-hero": ["56px", { "lineHeight": "60px", "letterSpacing": "-0.03em", "fontWeight": "900" }]
-          }
-        }
-      }
-    };
-  </script>
-
-  <!-- External Stylesheet (Custom Styling & Animations) -->
-  <link rel="stylesheet" href="style.css?v=2.4">
-
-  <!-- Multi-Language Translations Dictionary -->
-  <script src="translations.js?v=2.5"></script>
-
-  <!-- External Script (Order Tracking & Interactive Logic) -->
-  <script src="script.js?v=2.6" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Torikon - Ayam Goreng Krispi Ala Famichiki</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="nugget" viewBox="0 0 200 160">
+      <path d="M28 88C8 58 38 22 82 28C102 6 152 12 168 44C198 54 196 104 170 124C160 150 110 156 90 140C54 150 22 130 28 88Z" fill="#F5B03A" stroke="#8A2B27" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M58 62c10-14 30-16 44-8" stroke="#fff" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <path d="M48 80c2-5 5-8 9-10" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none"/>
+      <ellipse cx="112" cy="92" rx="10" ry="6" fill="#E08A1E" transform="rotate(-24 112 92)"/>
+      <ellipse cx="76" cy="108" rx="8" ry="5" fill="#E08A1E" transform="rotate(18 76 108)"/>
+      <ellipse cx="146" cy="72" rx="7" ry="4.5" fill="#E08A1E" transform="rotate(-10 146 72)"/>
+      <ellipse cx="132" cy="120" rx="8" ry="5" fill="#E08A1E" transform="rotate(30 132 120)"/>
+      <circle cx="96" cy="76" r="4" fill="#E08A1E"/><circle cx="160" cy="98" r="4" fill="#E08A1E"/><circle cx="58" cy="100" r="3.5" fill="#E08A1E"/>
+    </symbol>
+    <symbol id="nuggetHot" viewBox="0 0 200 160">
+      <path d="M28 88C8 58 38 22 82 28C102 6 152 12 168 44C198 54 196 104 170 124C160 150 110 156 90 140C54 150 22 130 28 88Z" fill="#F29A2E" stroke="#8A2B27" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M58 62c10-14 30-16 44-8" stroke="#fff" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <path d="M48 80c2-5 5-8 9-10" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none"/>
+      <rect x="104" y="86" width="20" height="8" rx="4" fill="#D9423F" transform="rotate(-24 114 90)"/>
+      <rect x="66" y="104" width="16" height="7" rx="3.5" fill="#D9423F" transform="rotate(18 74 108)"/>
+      <rect x="138" y="66" width="15" height="7" rx="3.5" fill="#D9423F" transform="rotate(-10 146 70)"/>
+      <rect x="124" y="114" width="16" height="7" rx="3.5" fill="#D9423F" transform="rotate(30 132 118)"/>
+      <circle cx="94" cy="76" r="4" fill="#C0392B"/><circle cx="160" cy="98" r="4" fill="#C0392B"/><circle cx="56" cy="100" r="3.5" fill="#C0392B"/>
+      <ellipse cx="86" cy="122" rx="7" ry="4.5" fill="#E08A1E"/><ellipse cx="148" cy="54" rx="7" ry="4.5" fill="#E08A1E"/>
+    </symbol>
+    <symbol id="spark" viewBox="0 0 140 90">
+      <path d="M46 18c8-14 30-6 24 12-3 10-14 18-24 24-10-6-21-14-24-24-6-18 16-26 24-12z" fill="#F23D3D"/>
+      <rect x="88" y="24" width="44" height="13" rx="6.5" fill="#FFB81C" transform="rotate(-18 110 30)"/>
+      <rect x="92" y="50" width="32" height="12" rx="6" fill="#FFB81C"/>
+    </symbol>
+    <symbol id="heart" viewBox="0 0 60 56">
+      <path d="M30 52C8 36 2 24 6 14 10 4 24 4 30 14 36 4 50 4 54 14 58 24 52 36 30 52z" fill="#F23D3D" stroke="#8A2B27" stroke-width="3.5" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="pack" viewBox="0 0 220 250">
+      <g transform="translate(46 4) rotate(-10 40 40)"><use href="#nugget" width="100" height="80"/></g>
+      <g transform="translate(96 14) rotate(14 40 40)"><use href="#nuggetHot" width="92" height="74"/></g>
+      <path d="M28 96L50 84L70 98L92 82L112 98L134 82L154 98L174 84L194 96L184 232Q110 250 36 232Z" fill="#F8EFE4" stroke="#8A2B27" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M34 124H188" stroke="#8A2B27" stroke-width="4" stroke-dasharray="9 8" stroke-linecap="round"/>
+      <use href="#heart" x="82" y="152" width="56" height="52"/>
+      <path d="M44 112l-14 0" stroke="#8A2B27" stroke-width="4" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
 
-<body class="bg-surface text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed pb-24 sm:pb-0">
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Torikon home"><img src="logo.png" alt="">Torikon</a>
+    <nav class="links" aria-label="Main">
+      <a class="t hide-s" href="#menu" data-i18n="navMenu">Menu</a>
+      <a class="t hide-s" href="#how" data-i18n="navHow">Cara Pesan</a>
+      <a class="t" href="#track" data-i18n="navTrack">Lacak Pesanan</a>
+      <a class="btn btn-red btn-sm order-link" href="#order" data-i18n="navOrder">Pesan Sekarang</a>
+      <button class="lang-btn" id="langToggle" type="button" aria-label="Ganti ke Bahasa Inggris">EN</button>
+    </nav>
+  </div>
+</header>
 
-  <!-- ==========================================
-       HEADER
-       ========================================== -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.06)] w-full max-w-full">
-    <!-- Announcement Banner -->
-    <div class="bg-primary text-on-primary font-label-badge text-[11px] sm:text-label-badge text-center py-1 sm:py-1.5 px-3 tracking-wide overflow-hidden whitespace-nowrap border-b border-inverse-surface/10 flex items-center justify-center gap-2 w-full">
-      <span class="inline-block w-1.5 h-1.5 rounded-full bg-tertiary-fixed animate-ping shrink-0"></span>
-      <span class="sm:hidden font-bold truncate" data-i18n="announcement_status">🔥 TEL-U MARKET DAY • BATCH 04 DIBUKA</span>
-      <span class="hidden sm:inline truncate" data-i18n="announcement_status">🔥 TELKOM UNIVERSITY MARKET DAY SPECIAL • PRE-ORDER BATCH 04 DIBUKA • BOOTH #14</span>
-    </div>
-
-    <!-- Main Navigation Bar -->
-    <div class="h-14 sm:h-20 max-w-7xl mx-auto px-3 sm:px-margin lg:px-margin-desktop flex items-center justify-between gap-2 sm:gap-space-md w-full">
-      <div class="flex items-center gap-2 sm:gap-space-sm shrink-0">
-        <img alt="Street Eats Mascot Logo" class="h-7 sm:h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU57B4bIq7A70X2x8_4EPWSA2usjBy03WT9XrpbK__0IzwCxYKROwsxUAOn4RzG3iSQOIDzdKyiq6891oY1CegH2_gbsTzY3C6lxSVwDBsX77ZtIcWt1L_s3iiSRCE-rFfv-I0nEXewXEAsTLReH7zauLadn2wMdYQgVxFSUbWv1xUTjUAkk7BSakFdhiCm-kY06bekBX3kWEXm1Ip8S62qvDZBnXV31--lEHvsoCYeUhR_DRu84RJ4g">
-        <a class="flex flex-col" data-path="menu" href="#menu">
-          <span class="font-headline-sm text-sm sm:text-headline-sm uppercase tracking-tight text-on-surface leading-tight font-black whitespace-nowrap">TORI SNACKS</span>
-          <span class="font-label-badge text-[9px] sm:text-label-badge text-primary uppercase font-bold whitespace-nowrap">x MARKET DAY</span>
-        </a>
-      </div>
-
-      <nav class="hidden xl:flex items-center gap-6 xl:gap-8 shrink-0" data-active-classes="text-primary font-bold">
-        <a aria-current="page" class="transition-colors text-primary font-bold hover:opacity-80 whitespace-nowrap" data-path="menu" href="#menu" data-i18n="nav_menu">Menu</a>
-        <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="combo-sets-and-bundles" href="#combos-section" data-i18n="nav_combos">Paket Hemat</a>
-        <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="track-my-order" href="#track-section" data-i18n="nav_track">Lacak Pesanan</a>
-        <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" data-path="about-our-stall" href="#booth-details" data-i18n="nav_about">Tentang Kami</a>
-      </nav>
-
-      <div class="flex items-center gap-1.5 sm:gap-space-sm shrink-0">
-        <!-- Language Switcher (ID / EN) -->
-        <div class="lang-switcher" role="group" aria-label="Language selection">
-          <button id="lang-btn-id" class="lang-btn active" onclick="setLanguage('id')">ID</button>
-          <button id="lang-btn-en" class="lang-btn" onclick="setLanguage('en')">EN</button>
+<main id="top">
+  <div class="hero-bg">
+    <span class="dots a" aria-hidden="true"></span><span class="dots b" aria-hidden="true"></span>
+    <i class="cr" style="left:6%;top:26%;--r:30deg" aria-hidden="true"></i>
+    <i class="cr red dot" style="left:48%;top:10%;--d:.8s" aria-hidden="true"></i>
+    <i class="cr" style="left:44%;bottom:12%;--r:-40deg;--d:1.4s" aria-hidden="true"></i>
+    <i class="cr red" style="right:6%;bottom:16%;--r:55deg;--d:.4s" aria-hidden="true"></i>
+    <i class="cr dot" style="left:3%;bottom:34%;--d:2s" aria-hidden="true"></i>
+    <div class="wrap hero">
+      <div>
+        <span class="pill" data-i18n="heroPill">Ayam goreng ala Famichiki buatan sendiri</span>
+        <h1 data-i18n="heroH1">Renyah penuh <mark>keceriaan</mark>, dibuat dengan cinta.</h1>
+        <p class="lead" data-i18n="heroLead">Camilan ayam goreng krispi khas Jepang untuk mahasiswa. Pesan lewat formulir, lalu pantau pesananmu langsung di sini dengan nomor WhatsApp.</p>
+        <div class="cta">
+          <a class="btn btn-red order-link" href="#order" data-i18n="heroCtaOrder">Pesan via Google Form</a>
+          <a class="btn btn-white" href="#track" data-i18n="heroCtaTrack">Lacak Pesanan</a>
         </div>
-
-        <a href="#track-section" id="header-quick-track" class="hidden md:flex items-center bg-surface-container rounded-full px-space-md py-1.5 gap-space-xs cursor-pointer hover:bg-surface-container-high transition-colors btn-tactile">
-          <span class="material-symbols-outlined text-[16px] text-on-surface-variant">search</span>
-          <span class="font-label-badge text-label-badge text-on-surface-variant uppercase" data-i18n="nav_quick_track">Lacak:</span>
-          <span class="font-body-sm text-body-sm text-on-surface">08xxxxxxx</span>
-        </a>
-        <a class="inline-flex items-center gap-1 bg-primary-container text-on-primary font-label-badge text-xs sm:text-label-badge px-2.5 sm:px-space-md py-1.5 sm:py-2.5 rounded-xl shadow-[2px_2px_0px_rgba(30,30,30,0.9)] hover:bg-primary transition-all btn-tactile shrink-0" href="https://forms.gle/mZKQudvXEUE7D7Ty5" rel="noopener noreferrer" target="_blank">
-          <span class="whitespace-nowrap font-bold sm:hidden" data-i18n="btn_order_short">Pesan</span>
-          <span class="whitespace-nowrap font-bold hidden sm:inline" data-i18n="btn_order">Form Pesanan</span>
-          <span class="material-symbols-outlined text-[14px] sm:text-[16px]">open_in_new</span>
-        </a>
-      </div>
-    </div>
-  </header>
-
-  <!-- ==========================================
-       MAIN
-       ========================================== -->
-  <main class="w-full pt-16 sm:pt-24 bg-surface min-h-[calc(100vh-80px)] overflow-x-hidden">
-    <div class="flex flex-col w-full max-w-full overflow-x-hidden">
-
-      <!-- Dynamic Paper Texture Backing with Subtle Retro Grain -->
-      <div class="relative w-full max-w-full overflow-hidden bg-surface">
-        <!-- Decorative Floating Ambient Glows -->
-        <div class="absolute -top-12 -left-12 w-64 h-64 rounded-full bg-tertiary-fixed-dim/20 blur-3xl pointer-events-none"></div>
-        <div class="absolute top-80 right-0 sm:-right-16 w-60 sm:w-80 h-60 sm:h-80 rounded-full bg-primary-fixed/20 blur-3xl pointer-events-none"></div>
-
-        <!-- HERO SECTION -->
-        <section class="max-w-7xl mx-auto px-4 sm:px-margin lg:px-margin-desktop pt-2 sm:pt-space-lg pb-space-xl w-full">
-          <!-- Announcement Banner -->
-          <div class="reveal-on-scroll reveal-fade-down flex flex-col sm:flex-row sm:items-center justify-between gap-2 bg-surface-container-highest px-3.5 sm:px-space-md py-2.5 sm:py-space-sm rounded-xl mb-6 sm:mb-space-lg shadow-sm mt-2 sm:mt-space-lg border border-on-surface/5 w-full">
-            <div class="flex items-center gap-space-xs">
-              <span class="bg-primary text-on-primary font-label-badge text-[10px] sm:text-label-badge px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full uppercase" data-i18n="announcement_tag">TEL-U POP-UP</span>
-              <span class="font-headline-sm text-xs sm:text-headline-sm uppercase tracking-tight text-on-surface font-bold" data-i18n="announcement_sub">Spesial Market Day Kampus</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
-              <span class="font-label-badge text-[11px] sm:text-label-badge text-primary uppercase font-bold" data-i18n="announcement_status">Pre-Order Batch 04 Dibuka • Ambil di Booth #14</span>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-space-lg items-center w-full">
-            <!-- Hero Text & Quick Action -->
-            <div class="lg:col-span-7 flex flex-col gap-3.5 sm:gap-space-md reveal-on-scroll reveal-fade-up w-full">
-              <div class="inline-flex items-center gap-2 self-start bg-tertiary-fixed text-on-tertiary-fixed px-3 py-1 rounded-full shadow-sm">
-                <span class="material-symbols-outlined text-[16px] sm:text-[18px]">verified</span>
-                <span class="font-label-badge text-[11px] sm:text-label-badge uppercase" data-i18n="hero_badge">Ayam Sama. Sensasi Beda. (ファミチキ)</span>
-              </div>
-              <h1 class="font-display-hero text-display-hero uppercase text-on-surface tracking-tighter break-words" data-i18n="hero_title">
-                RENYAH &amp; JUICY <br class="hidden sm:inline">
-                <span class="text-primary underline decoration-tertiary-fixed-dim decoration-wavy decoration-3 sm:decoration-4">JAJANAN JEPANG</span> &amp; RAMUAN POTION
-              </h1>
-              <p class="font-body-lg text-[15px] sm:text-body-lg text-on-surface-variant max-w-xl leading-relaxed" data-i18n="hero_desc">
-                Ayam goreng fillet krispi khas konbini Tokyo yang dimarinasi bumbu rahasia dashi, dipadukan dengan 6 varian minuman Potion Roulette unik yang berubah warna. Digoreng segar, super kriuk!
-              </p>
-              <!-- Dual CTAs -->
-              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-space-md pt-1 sm:pt-space-xs w-full">
-                <a class="group flex items-center justify-center gap-space-sm bg-primary text-on-primary font-headline-sm text-[16px] sm:text-headline-sm uppercase px-6 sm:px-space-xl py-3.5 sm:py-4 rounded-xl shadow-[4px_4px_0px_#1e1b16] hover:bg-primary-container btn-tactile text-center w-full sm:w-auto" href="https://forms.gle/mZKQudvXEUE7D7Ty5" rel="noopener noreferrer" target="_blank">
-                  <span data-i18n="hero_cta_order">Pesan via Google Form</span>
-                  <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform text-[18px] sm:text-[22px]">open_in_new</span>
-                </a>
-                <a class="flex items-center justify-center gap-space-xs bg-surface-container-low text-on-surface font-label-badge text-[12px] sm:text-label-badge uppercase px-5 sm:px-space-lg py-3.5 sm:py-4 rounded-xl shadow-[3px_3px_0px_#1e1b16] hover:bg-surface-container-high btn-tactile text-center w-full sm:w-auto" href="#track-section">
-                  <span class="material-symbols-outlined text-primary text-[18px] sm:text-[20px]">search</span>
-                  <span data-i18n="nav_track">Lacak Pesanan</span>
-                </a>
-              </div>
-              <span class="font-body-sm text-[12px] sm:text-body-sm text-on-surface-variant flex items-center gap-1.5">
-                <span class="material-symbols-outlined text-tertiary-container text-[16px]">info</span>
-                <span data-i18n="hero_live_info">Segar disiapkan dan digoreng langsung panas-panas di booth!</span>
-              </span>
-              <!-- Trust / Feature Badges (Mobile-friendly 2x2 or 4x1 grid) -->
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-space-sm pt-2 sm:pt-space-md w-full">
-                <div class="bg-surface-container p-2.5 sm:p-space-sm rounded-xl flex flex-col items-start hover-card-lift border border-on-surface/5">
-                  <span class="font-label-badge text-[11px] sm:text-label-badge text-primary uppercase font-bold" data-i18n="badge_halal">100% Halal</span>
-                  <span class="font-body-sm text-[11px] sm:text-body-sm text-on-surface" data-i18n="badge_halal_sub">Daging Segar Tiap Hari</span>
-                </div>
-                <div class="bg-surface-container p-2.5 sm:p-space-sm rounded-xl flex flex-col items-start hover-card-lift border border-on-surface/5">
-                  <span class="font-label-badge text-[11px] sm:text-label-badge text-primary uppercase font-bold" data-i18n="badge_price">Rp 12.000</span>
-                  <span class="font-body-sm text-[11px] sm:text-body-sm text-on-surface" data-i18n="badge_price_sub">Harga Rata Semua Rasa</span>
-                </div>
-                <div class="bg-surface-container p-2.5 sm:p-space-sm rounded-xl flex flex-col items-start hover-card-lift border border-on-surface/5">
-                  <span class="font-label-badge text-[11px] sm:text-label-badge text-primary uppercase font-bold" data-i18n="badge_spin">Roda Putar</span>
-                  <span class="font-body-sm text-[11px] sm:text-body-sm text-on-surface" data-i18n="badge_spin_sub">Game Minuman Misteri</span>
-                </div>
-                <div class="bg-surface-container p-2.5 sm:p-space-sm rounded-xl flex flex-col items-start hover-card-lift border border-on-surface/5">
-                  <span class="font-label-badge text-[11px] sm:text-label-badge text-primary uppercase font-bold" data-i18n="badge_booth">Booth #14</span>
-                  <span class="font-body-sm text-[11px] sm:text-body-sm text-on-surface" data-i18n="badge_booth_sub">Gedung Pavilion TUP</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Hero Food Visual Composition -->
-            <div class="lg:col-span-5 relative flex justify-center mt-6 lg:mt-0 pt-4 sm:pt-6 reveal-on-scroll reveal-fade-up delay-150 w-full">
-              <div class="relative w-full max-w-md bg-surface-container-low p-space-sm sm:p-space-md rounded-2xl shadow-[5px_5px_0px_#1e1b16] sm:shadow-[6px_6px_0px_#1e1b16] flex flex-col items-center hover-card-lift card-interactive border border-on-surface/10">
-                <!-- Floating Sticker (Safe in-bounds on mobile, playful offset on desktop) -->
-                <div class="absolute -top-3 right-2 sm:-top-5 sm:-right-2 bg-primary text-on-primary font-price-display text-xs sm:text-price-display px-2.5 sm:px-4 py-1 sm:py-2 rounded-full shadow-[2px_2px_0px_#1e1b16] sm:shadow-[3px_3px_0px_#1e1b16] rotate-2 sm:rotate-6 z-20 animate-sticker-1 whitespace-nowrap">
-                  Rp 12.000
-                </div>
-                <div class="absolute -top-3 left-2 sm:-top-5 sm:-left-2 bg-tertiary-fixed text-on-tertiary-fixed font-label-badge text-[10px] sm:text-label-badge px-2 sm:px-3 py-0.5 sm:py-1 rounded-lg -rotate-2 sm:-rotate-6 z-20 uppercase animate-sticker-2 whitespace-nowrap shadow-sm">
-                  Kriuk &amp; Juicy! 🔥
-                </div>
-                <!-- Image Container -->
-                <div class="w-full h-60 sm:h-72 rounded-xl overflow-hidden bg-surface-container flex items-center justify-center relative zoom-img-container card-shimmer">
-                  <img class="w-full h-full object-cover" data-alt="A macro studio shot of golden crunchy Japanese Famichiki fried chicken cutlet steaming hot in a red and white branded paper pouch, crispy craggy batter texture, vibrant lighting, clean commercial food photography against warm cream studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyTiB4ZPdKD3JUe0vddWTgWKROcIQOpMH3lWdMGCKNgVqP2sxm7QauFEZl6a_ng4LaOJ8xmivkI21diVv0HveL0mEIWFc3pcewvKEmW8dq-R8O4lezae-1kq_NAgbFMCnWGKrkz_dKYN---Je662GEiCrQVwgo9-yeEFZFLcG46Tcy_M-Ahj72dIP4B14KkG-pdKFmZQR0obTwnMVBBagokx7Pf0XA2L-msgT1qMA8szUVOUJ7GDuXRg">
-                  <div class="absolute bottom-3 left-3 bg-on-surface/85 backdrop-blur-sm text-surface-container-lowest px-3 py-1 rounded-full text-label-badge font-label-badge uppercase text-[11px] sm:text-xs" data-i18n="hero_card_tag">
-                    KREASI TASTE OF TOKYO
-                  </div>
-                </div>
-                <div class="w-full mt-3 sm:mt-space-md flex items-center justify-between">
-                  <div>
-                    <span class="font-label-badge text-[11px] sm:text-label-badge text-primary uppercase block font-bold" data-i18n="hero_card_tag">KREASI TASTE OF TOKYO</span>
-                    <span class="font-headline-sm text-sm sm:text-headline-sm text-on-surface font-black" data-i18n="hero_card_desc">Fillet paha ayam tanpa tulang yang juicy berbalut tepung krispi rahasia renyah tahan lama.</span>
-                  </div>
-                  <div class="flex items-center gap-0.5 sm:gap-1 text-tertiary-container">
-                    <span class="material-symbols-outlined text-[18px] sm:text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[18px] sm:text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[18px] sm:text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[18px] sm:text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
-                    <span class="material-symbols-outlined text-[18px] sm:text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <!-- ==========================================
-           SECTION 1: FAMICHIKI FLAVOR SHOWCASE
-           (3x2 Bento Grid - Pure Display, No Add Button)
-           ========================================== -->
-      <section id="menu" class="max-w-7xl mx-auto px-4 sm:px-margin lg:px-margin-desktop py-8 sm:py-space-xl w-full">
-        <div class="reveal-on-scroll reveal-fade-up flex flex-col sm:flex-row sm:items-end justify-between gap-space-sm mb-6 sm:mb-space-lg w-full">
-          <div>
-            <div class="inline-flex items-center gap-1.5 text-primary font-label-badge text-label-badge uppercase">
-              <span class="material-symbols-outlined text-[16px]">restaurant_menu</span>
-              <span data-i18n="flavors_tag">6 BUMBU TABUR SIGNATURE</span>
-            </div>
-            <h2 class="font-display-hero-mobile lg:font-headline-lg text-display-hero-mobile lg:text-headline-lg uppercase text-on-surface tracking-tight font-black" data-i18n="flavors_title">
-              VARIAN RASA FAMICHIKI CRISPY
-            </h2>
-            <p class="font-body-md text-sm sm:text-body-md text-on-surface-variant max-w-xl" data-i18n="flavors_desc">Paha ayam fillet tebal bumbu dashi Jepang dengan 6 pilihan rasa bumbu tabur melimpah.</p>
-          </div>
-          <div class="bg-primary text-on-primary font-headline-sm text-sm sm:text-headline-sm px-4 py-2 rounded-xl shadow-[3px_3px_0px_#1e1b16] self-start sm:self-auto font-black whitespace-nowrap">
-            ALL Rp 12.000 / pcs
-          </div>
-        </div>
-
-        <!-- 6 Flavors Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-space-lg">
-          <!-- 1. ORIGINAL -->
-          <div class="bg-surface-container-lowest p-4 sm:p-space-md rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col justify-between hover-card-lift card-interactive card-shimmer border border-on-surface/10 reveal-on-scroll reveal-fade-up delay-100">
-            <div>
-              <div class="h-44 sm:h-48 w-full rounded-xl overflow-hidden bg-surface-container relative mb-3 sm:mb-space-sm zoom-img-container">
-                <img class="w-full h-full object-cover" data-alt="Close-up appetizing shot of an original golden crispy Japanese fried chicken cutlet piece with light herb seasoning crumbs, crunchy golden brown texture, warm food magazine photography style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV0x7PrIyh_M6m0FnBPNp6LzFxHBw1Zd4xIVbov2gGz5HXD0TJNv60Cceoi07VOiBEF4BxYO5myThiZ3eJHRY9ecT6yZJPpkammfdDNejotrOrYoNV1zo1FW7EMENvAoq4vhLyx0K9JkheJk5LQ2MeLBwhFF8PQ9fjPrgIGi8rG9InbtUieyGKv6qxhdV8jqYLOp_fsKDyJQZppWrUqX8UYpbsX27bbK3ChQUkYxVy8Qhb3YqWs6lY0Q">
-                <span class="absolute top-2.5 left-2.5 bg-surface-container-low text-on-surface font-label-badge text-[11px] sm:text-label-badge px-2 py-0.5 rounded-md shadow-sm uppercase font-bold">Signature</span>
-                <span class="absolute bottom-2.5 right-2.5 bg-primary text-on-primary font-label-badge text-xs sm:text-label-badge px-2.5 py-1 rounded-full shadow-sm font-bold">Rp 12.000</span>
-              </div>
-              <div class="flex items-center justify-between mb-1">
-                <h3 class="font-headline-sm text-base sm:text-headline-sm uppercase text-on-surface font-black">ORIGINAL</h3>
-                <span class="text-tertiary font-label-badge text-xs sm:text-label-badge uppercase font-bold">Spice 0/3</span>
-              </div>
-              <p class="font-body-md text-xs sm:text-body-md text-on-surface-variant" data-i18n="flavor_classic_desc">Bumbu rahasia Tokyo dengan sentuhan gurih dashi dan rempah otentik konbini.</p>
-            </div>
-          </div>
-
-          <!-- 2. SPICY -->
-          <div class="bg-surface-container-lowest p-4 sm:p-space-md rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col justify-between hover-card-lift card-interactive card-shimmer border border-on-surface/10 reveal-on-scroll reveal-fade-up delay-150">
-            <div>
-              <div class="h-44 sm:h-48 w-full rounded-xl overflow-hidden bg-surface-container relative mb-3 sm:mb-space-sm zoom-img-container">
-                <img class="w-full h-full object-cover" data-alt="Fiery red-tinted crispy Japanese spicy fried chicken coated in spicy chili pepper togarashi flakes and aromatic paprika powder, mouth-watering hot street food photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoG-uJ5N6EkkJEFcJasXvutD43bnw7Xb8mhuRSFJSi3qyRtgN69DWG0H8e99qBiCr_Vist5sTa9TuxjJKPKQzI_ctU260QkOF8Sog2b3LdcUeQ8yD78GRDK6duRv7Z5jL3l8e4JWMzzIf8kL6cNBYAa424iTujcWwZ1g1mUHeBcFcw16JWDZjei-l-hb-VUVv0lclHKEUUoY8w4VwmF9BiP66wdDy_juOk9Js67rREvlvZ3NpEpwVMyg">
-                <span class="absolute top-2.5 left-2.5 bg-error text-on-error font-label-badge text-[11px] sm:text-label-badge px-2 py-0.5 rounded-md shadow-sm uppercase font-bold">Hot Hit 🔥</span>
-                <span class="absolute bottom-2.5 right-2.5 bg-primary text-on-primary font-label-badge text-xs sm:text-label-badge px-2.5 py-1 rounded-full shadow-sm font-bold">Rp 12.000</span>
-              </div>
-              <div class="flex items-center justify-between mb-1">
-                <h3 class="font-headline-sm text-base sm:text-headline-sm uppercase text-primary font-black">SPICY TOGARASHI</h3>
-                <span class="text-error font-label-badge text-xs sm:text-label-badge uppercase font-bold">Spice 3/3 🔥</span>
-              </div>
-              <p class="font-body-md text-xs sm:text-body-md text-on-surface-variant" data-i18n="flavor_spicy_desc">Sensasi pedas membara cabai Jepang togarashi yang nagih di setiap gigitan.</p>
-            </div>
-          </div>
-
-          <!-- 3. CHEESE -->
-          <div class="bg-surface-container-lowest p-4 sm:p-space-md rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col justify-between hover-card-lift card-interactive card-shimmer border border-on-surface/10 reveal-on-scroll reveal-fade-up delay-200">
-            <div>
-              <div class="h-44 sm:h-48 w-full rounded-xl overflow-hidden bg-surface-container relative mb-3 sm:mb-space-sm zoom-img-container">
-                <img class="w-full h-full object-cover" data-alt="Crispy golden Japanese chicken cutlet covered in rich golden yellow melted cheddar cheese sauce drizzle, glistening decadent street snack food photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0NHCh-VK-AoWBIzERHgsAowId9XL_vgI97bsJoZ8WOGBlnHhFG4RmE1v9IvGCbQ-0C-phzoWdAEWBSeHED6xcOcdtHTVeZ9pVG3e0Evhw_XNvilPAHMY1O2j_Hf8xMuPTZ_RVPNbh3G782WkYbScyJjlVtKRFxMJwRwJQnpP5nHsZPHliIjfksZS7Qjd037CqcdhvOdauL1OEVtm-h4XnwLON3GKRYOb7DKEjKlQajY8U89velaIBMg">
-                <span class="absolute top-2.5 left-2.5 bg-tertiary-fixed text-on-tertiary-fixed font-label-badge text-[11px] sm:text-label-badge px-2 py-0.5 rounded-md shadow-sm uppercase font-bold">Cheesy</span>
-                <span class="absolute bottom-2.5 right-2.5 bg-primary text-on-primary font-label-badge text-xs sm:text-label-badge px-2.5 py-1 rounded-full shadow-sm font-bold">Rp 12.000</span>
-              </div>
-              <div class="flex items-center justify-between mb-1">
-                <h3 class="font-headline-sm text-base sm:text-headline-sm uppercase text-on-surface font-black">CHEESE DRIZZLE</h3>
-                <span class="text-tertiary-container font-label-badge text-xs sm:text-label-badge uppercase font-bold">Spice 0/3</span>
-              </div>
-              <p class="font-body-md text-xs sm:text-body-md text-on-surface-variant" data-i18n="flavor_cheese_desc">Taburan keju cheddar creamy gurih keemasan yang lumer di lidah.</p>
-            </div>
-          </div>
-
-          <!-- 4. TERIYAKI -->
-          <div class="bg-surface-container-lowest p-4 sm:p-space-md rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col justify-between hover-card-lift card-interactive card-shimmer border border-on-surface/10 reveal-on-scroll reveal-fade-up delay-250">
-            <div>
-              <div class="h-44 sm:h-48 w-full rounded-xl overflow-hidden bg-surface-container relative mb-3 sm:mb-space-sm zoom-img-container">
-                <img class="w-full h-full object-cover" data-alt="Glossy dark amber teriyaki glazed crispy Japanese fried chicken cutlet sprinkled with toasted white sesame seeds and scallion slivers, mouthwatering restaurant styling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRuNJ5s0JMPwhcfNbkFSPJ3Bt3mzfQsFqPQ6WnLAIN0825DLx_HMn7ghIb0chu9NoqED47hJL4Tqz7z5WQBis6kbD9WwcXqjnLq65ops04JMxv3cZX6InQkRVdfpLBVGgkHgT13YNkQtjf2KEWpnEFigEisEzUwNw5iMff7TdZu2eElz5dBZW9pHjB5M5A3I0SB2ODauC2_6hBvW64FZxhaEkCIqxtgOMjaYRLuK6yCsidoE4JuoGnWA">
-                <span class="absolute top-2.5 left-2.5 bg-surface-container-high text-on-surface font-label-badge text-[11px] sm:text-label-badge px-2 py-0.5 rounded-md shadow-sm uppercase font-bold">Glazed</span>
-                <span class="absolute bottom-2.5 right-2.5 bg-primary text-on-primary font-label-badge text-xs sm:text-label-badge px-2.5 py-1 rounded-full shadow-sm font-bold">Rp 12.000</span>
-              </div>
-              <div class="flex items-center justify-between mb-1">
-                <h3 class="font-headline-sm text-base sm:text-headline-sm uppercase text-on-surface font-black">TERIYAKI GLAZE</h3>
-                <span class="text-tertiary-container font-label-badge text-xs sm:text-label-badge uppercase font-bold">Sweet &amp; Savory</span>
-              </div>
-              <p class="font-body-md text-xs sm:text-body-md text-on-surface-variant" data-i18n="flavor_bbq_desc">Saus smoked BBQ manis gurih dengan aroma asap kayu bakaran yang kaya rasa.</p>
-            </div>
-          </div>
-
-          <!-- 5. KARAAGE -->
-          <div class="bg-surface-container-lowest p-4 sm:p-space-md rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col justify-between hover-card-lift card-interactive card-shimmer border border-on-surface/10 reveal-on-scroll reveal-fade-up delay-300">
-            <div>
-              <div class="h-44 sm:h-48 w-full rounded-xl overflow-hidden bg-surface-container relative mb-3 sm:mb-space-sm zoom-img-container">
-                <img class="w-full h-full object-cover" data-alt="A heap of golden bite-sized Japanese chicken karaage nuggets in a paper street food basket, with crisp potato starch crust and juicy dark meat chicken" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTfIF5RA0RGRNkZ-yE3d8_hEj5OxLkUZJS0GPBXE9hbXsmoj6s_SncOOzkim8yhPs76jNKC5ULwPprvkdi4qVGzuWxD-bqJs88GXEH_ldaWQHSHOPcaJwfRNKaA14uJ7SNOPEz-5maZHcrxfhjfYRX342P-OrRB1uk5-Nksv4SDLMqQk_B37QdiYn7d_5UmZjmxcqlA4iI8Xl4tmVlpD8I2hT6azIak1PbXaXVptOQIz6fgTrptHCCJQ">
-                <span class="absolute top-2.5 left-2.5 bg-surface-container-high text-on-surface font-label-badge text-[11px] sm:text-label-badge px-2 py-0.5 rounded-md shadow-sm uppercase font-bold">Izakaya Style</span>
-                <span class="absolute bottom-2.5 right-2.5 bg-primary text-on-primary font-label-badge text-xs sm:text-label-badge px-2.5 py-1 rounded-full shadow-sm font-bold">Rp 12.000</span>
-              </div>
-              <div class="flex items-center justify-between mb-1">
-                <h3 class="font-headline-sm text-base sm:text-headline-sm uppercase text-on-surface font-black">KARAAGE BITES</h3>
-                <span class="text-tertiary font-label-badge text-xs sm:text-label-badge uppercase font-bold">Extra Juicy</span>
-              </div>
-              <p class="font-body-md text-xs sm:text-body-md text-on-surface-variant" data-i18n="flavor_garlic_desc">Rasa gurih mentega meleleh berpadu aroma bawang putih panggang yang harum.</p>
-            </div>
-          </div>
-
-          <!-- 6. MAC N CHEESE -->
-          <div class="bg-surface-container-lowest p-4 sm:p-space-md rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col justify-between hover-card-lift card-interactive card-shimmer border border-on-surface/10 reveal-on-scroll reveal-fade-up delay-350">
-            <div>
-              <div class="h-44 sm:h-48 w-full rounded-xl overflow-hidden bg-surface-container relative mb-3 sm:mb-space-sm zoom-img-container">
-                <img class="w-full h-full object-cover" data-alt="Crispy fried chicken cutlet piled high with creamy macaroni and melted double cheese sauce topping, decadent comfort food shot with parsley dusting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAUXuxnHlUdDtrj662A8NY7lO-P-Rr5KmCgbxlUngpWggFrOBiG1VxHLmBb3yZZu0XC1MD65ymXmsf6PpfSFWh_HYTbVJrvqWsgwPQ20CLNuNpM5m3Zd4qllK-zLSBmxYkIbcNnQVAXsd3rC2NBR_oK6oGmxFa-PL2ucR35TWGEt5DsSjnat382I-al7Y7M9SdFv-Nd94RwcKQItz68lytrHdWMYLjIxw9Dvde9xa2iUmuP7A2tTKqpg">
-                <span class="absolute top-2.5 left-2.5 bg-tertiary-fixed text-on-tertiary-fixed font-label-badge text-[11px] sm:text-label-badge px-2 py-0.5 rounded-md shadow-sm uppercase font-bold">Student Pick</span>
-                <span class="absolute bottom-2.5 right-2.5 bg-primary text-on-primary font-label-badge text-xs sm:text-label-badge px-2.5 py-1 rounded-full shadow-sm font-bold">Rp 12.000</span>
-              </div>
-              <div class="flex items-center justify-between mb-1">
-                <h3 class="font-headline-sm text-base sm:text-headline-sm uppercase text-on-surface font-black">MAC N CHEESE</h3>
-                <span class="text-tertiary-container font-label-badge text-xs sm:text-label-badge uppercase font-bold">Indulgent</span>
-              </div>
-              <p class="font-body-md text-xs sm:text-body-md text-on-surface-variant" data-i18n="flavor_seaweed_desc">Bubuk rumput laut panggang gurih aroma samudra khas jajanan Shibuya.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ==========================================
-           SECTION 2: MAGICAL CRAFT POTIONS & INTERACTIVE SPIN WHEEL
-           ========================================== -->
-      <!-- ==========================================
-           SECTION 2: MAGICAL CRAFT POTIONS & INTERACTIVE SPIN WHEEL
-           ========================================== -->
-      <section id="potions-section" class="max-w-7xl mx-auto px-4 sm:px-margin lg:px-margin-desktop py-8 sm:py-space-xl">
-        <div class="reveal-on-scroll reveal-fade-up bg-[#24211e] text-[#fff8f0] p-5 sm:p-space-lg lg:p-space-xl rounded-3xl shadow-[6px_6px_0px_#1e1b16] relative overflow-hidden border border-white/10">
-          <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3 sm:gap-space-md mb-6 sm:mb-space-lg border-b border-white/10 pb-4 sm:pb-space-md">
-            <div>
-              <div class="inline-flex items-center gap-2 bg-[#d32f2f] text-white px-3 py-1 rounded-full text-label-badge font-label-badge uppercase mb-2 text-xs">
-                <span class="material-symbols-outlined text-[16px]">local_bar</span>
-                <span data-i18n="potions_tag">MINUMAN SEGAR BERUBAH WARNA</span>
-              </div>
-              <h2 class="font-display-hero-mobile lg:font-headline-lg text-display-hero-mobile lg:text-headline-lg uppercase text-white tracking-tight font-black" data-i18n="potions_title">RACIKAN RAMUAN AJAIB</h2>
-              <p class="font-body-md text-sm sm:text-body-md text-white/70 max-w-xl" data-i18n="potions_desc">Minuman magis segar bersoda dengan gradasi warna cantik yang berubah saat diaduk. Dilengkapi glitter edible aman konsumsi!</p>
-            </div>
-            <div class="flex items-center gap-3 self-start lg:self-auto">
-              <div class="bg-primary text-on-primary font-price-display text-sm sm:text-price-display px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-2xl shadow-[3px_3px_0px_rgba(0,0,0,0.5)] font-black">Rp 12.000 / cup</div>
-              <span class="font-label-badge text-xs uppercase tracking-wider text-white/60" data-i18n="potions_size">GELAS REGULER 16 OZ</span>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-space-lg items-center">
-            
-            <!-- Interactive Wheel Spinner (Positioned FIRST on mobile, RIGHT side on desktop) -->
-            <div class="order-1 lg:order-2 lg:col-span-4 bg-white/5 border border-white/15 p-4 sm:p-space-md rounded-2xl flex flex-col items-center text-center shadow-inner reveal-on-scroll reveal-scale-up">
-              <div class="relative w-44 h-44 sm:w-48 sm:h-48 my-2 flex items-center justify-center">
-                <!-- Pointer -->
-                <div id="roulette-pointer" class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[16px] border-t-white drop-shadow-md"></div>
-                <!-- Rotating Wheel -->
-                <div class="w-40 h-40 sm:w-44 sm:h-44 rounded-full border-4 border-white shadow-2xl flex items-center justify-center overflow-hidden" id="roulette-wheel" style="background: conic-gradient(#2e7d32 0deg 60deg, #0288d1 60deg 120deg, #7b1fa2 120deg 180deg, #d81b60 180deg 240deg, #f57c00 240deg 300deg, #4e342e 300deg 360deg);">
-                  <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-on-surface font-headline-sm text-[11px] sm:text-[12px] flex items-center justify-center uppercase font-black shadow-lg z-10 select-none">SPIN</div>
-                </div>
-              </div>
-              <div class="mt-2 w-full">
-                <span class="font-headline-sm text-sm sm:text-headline-sm uppercase text-white block font-black" data-i18n="roulette_title">BINGUNG PILIH VARIAN?</span>
-                <p class="font-body-sm text-xs text-white/80 mt-1 min-h-[36px] flex items-center justify-center px-2" id="roulette-result" data-i18n="roulette_desc">Klik tombol di bawah dan biarkan takdir yang memilih minuman potion keberuntunganmu!</p>
-              </div>
-              <button class="mt-3 w-full bg-primary hover:bg-primary-container text-on-primary font-headline-sm text-sm sm:text-headline-sm uppercase py-3 rounded-xl shadow-[3px_3px_0px_#000000] btn-tactile flex items-center justify-center gap-2 cursor-pointer font-bold" id="spin-button" onclick="spinRoulette()">
-                <span data-i18n="roulette_btn">PUTAR RODA POTION!</span>
-                <span class="material-symbols-outlined text-[18px]">casino</span>
-              </button>
-            </div>
-
-            <!-- 6 Potion Flavors Grid (Positioned SECOND on mobile, LEFT side on desktop) -->
-            <div class="order-2 lg:order-1 lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-space-md">
-              <!-- 1. Energy Potion -->
-              <div id="potion-card-0" class="bg-white/5 border border-white/10 rounded-2xl p-2.5 sm:p-space-sm flex flex-col items-center text-center transition-all card-interactive card-shimmer hover:border-white/30 reveal-on-scroll reveal-fade-up delay-75">
-                <div class="w-full h-28 sm:h-32 rounded-xl overflow-hidden mb-2 bg-black/20 zoom-img-container">
-                  <img class="w-full h-full object-cover" data-alt="Cold iced matcha green tea latte in clear cup with lid" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBchBN53TA2S2SkzyPmHkxcf4JpIxB--SHg-1oaKMi4aQMAEyqyHguCl-3KhB_6ObPiCvC6o75YI4lUnjNOB8J_ltojKHhvpqIrSpaGLuKV-nInwwvUn3mcKNbQdZEsk99OC530aeZ_Srp23404i7hLVwN402wklXdToQ1-2XcnFZev2d6ZzwxZQsbBZRQM-v957ijs9yspXLy8E5dxtsFxOJtrnYrV_eQMPjKnsAvIn3mVdcurcgosmw">
-                </div>
-                <span class="bg-[#2e7d32] text-white text-[10px] sm:text-[11px] font-label-badge px-2 py-0.5 rounded uppercase mb-1 font-bold" data-i18n="potion_energy_name">Energy Potion</span>
-                <span class="font-headline-sm text-xs sm:text-sm uppercase text-white font-bold" data-i18n="potion_energy_flavor">Matcha Latte</span>
-                <span class="font-body-sm text-[11px] sm:text-xs text-white/70" data-i18n="potion_energy_desc">Matcha Uji Autentik</span>
-              </div>
-
-              <!-- 2. Ocean Potion -->
-              <div id="potion-card-1" class="bg-white/5 border border-white/10 rounded-2xl p-2.5 sm:p-space-sm flex flex-col items-center text-center transition-all card-interactive card-shimmer hover:border-white/30 reveal-on-scroll reveal-fade-up delay-150">
-                <div class="w-full h-28 sm:h-32 rounded-xl overflow-hidden mb-2 bg-black/20 zoom-img-container">
-                  <img class="w-full h-full object-cover" data-alt="Bright blue ocean lemonade iced drink in clear cup" src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&amp;auto=format&amp;fit=crop&amp;q=60" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=500&amp;auto=format&amp;fit=crop&amp;q=60';">
-                </div>
-                <span class="bg-[#0288d1] text-white text-[10px] sm:text-[11px] font-label-badge px-2 py-0.5 rounded uppercase mb-1 font-bold" data-i18n="potion_ocean_name">Ocean Potion</span>
-                <span class="font-headline-sm text-xs sm:text-sm uppercase text-white font-bold" data-i18n="potion_ocean_flavor">Blue Lemonade</span>
-                <span class="font-body-sm text-[11px] sm:text-xs text-white/70" data-i18n="potion_ocean_desc">Sensasi Citrus Segar</span>
-              </div>
-
-              <!-- 3. Galaxy Potion -->
-              <div id="potion-card-2" class="bg-white/5 border border-white/10 rounded-2xl p-2.5 sm:p-space-sm flex flex-col items-center text-center transition-all card-interactive card-shimmer hover:border-white/30 reveal-on-scroll reveal-fade-up delay-200">
-                <div class="w-full h-28 sm:h-32 rounded-xl overflow-hidden mb-2 bg-black/20 zoom-img-container">
-                  <img class="w-full h-full object-cover" data-alt="Creamy purple taro iced latte beverage in clear cup" src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&amp;auto=format&amp;fit=crop&amp;q=60">
-                </div>
-                <span class="bg-[#7b1fa2] text-white text-[10px] sm:text-[11px] font-label-badge px-2 py-0.5 rounded uppercase mb-1 font-bold" data-i18n="potion_galaxy_name">Galaxy Potion</span>
-                <span class="font-headline-sm text-xs sm:text-sm uppercase text-white font-bold" data-i18n="potion_galaxy_flavor">Taro Latte</span>
-                <span class="font-body-sm text-[11px] sm:text-xs text-white/70" data-i18n="potion_galaxy_desc">Lembut &amp; Creamy</span>
-              </div>
-
-              <!-- 4. Love Potion -->
-              <div id="potion-card-3" class="bg-white/5 border border-white/10 rounded-2xl p-2.5 sm:p-space-sm flex flex-col items-center text-center transition-all card-interactive card-shimmer hover:border-white/30 reveal-on-scroll reveal-fade-up delay-250">
-                <div class="w-full h-28 sm:h-32 rounded-xl overflow-hidden mb-2 bg-black/20 zoom-img-container">
-                  <img class="w-full h-full object-cover" data-alt="Pink strawberry milk drink with iced layers in clear plastic cup" src="https://images.unsplash.com/photo-1553787499-6f9133860278?w=500&amp;auto=format&amp;fit=crop&amp;q=60">
-                </div>
-                <span class="bg-[#d81b60] text-white text-[10px] sm:text-[11px] font-label-badge px-2 py-0.5 rounded uppercase mb-1 font-bold" data-i18n="potion_love_name">Love Potion</span>
-                <span class="font-headline-sm text-xs sm:text-sm uppercase text-white font-bold" data-i18n="potion_love_flavor">Strawberry Milk</span>
-                <span class="font-body-sm text-[11px] sm:text-xs text-white/70" data-i18n="potion_love_desc">Manis Stroberi Ceria</span>
-              </div>
-
-              <!-- 5. Lucky Potion -->
-              <div id="potion-card-4" class="bg-white/5 border border-white/10 rounded-2xl p-2.5 sm:p-space-sm flex flex-col items-center text-center transition-all card-interactive card-shimmer hover:border-white/30 reveal-on-scroll reveal-fade-up delay-300">
-                <div class="w-full h-28 sm:h-32 rounded-xl overflow-hidden mb-2 bg-black/20 zoom-img-container">
-                  <img class="w-full h-full object-cover" data-alt="Tropical yellow iced mango yakult drink with ice cubes in clear takeaway cup" src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?w=500&amp;auto=format&amp;fit=crop&amp;q=60">
-                </div>
-                <span class="bg-[#f57c00] text-white text-[10px] sm:text-[11px] font-label-badge px-2 py-0.5 rounded uppercase mb-1 font-bold" data-i18n="potion_lucky_name">Lucky Potion</span>
-                <span class="font-headline-sm text-xs sm:text-sm uppercase text-white font-bold" data-i18n="potion_lucky_flavor">Mango Yakult</span>
-                <span class="font-body-sm text-[11px] sm:text-xs text-white/70" data-i18n="potion_lucky_desc">Perpaduan Tropis Asam Manis</span>
-              </div>
-
-              <!-- 6. Rage Potion -->
-              <div id="potion-card-5" class="bg-white/5 border border-white/10 rounded-2xl p-2.5 sm:p-space-sm flex flex-col items-center text-center transition-all card-interactive card-shimmer hover:border-white/30 reveal-on-scroll reveal-fade-up delay-350">
-                <div class="w-full h-28 sm:h-32 rounded-xl overflow-hidden mb-2 bg-black/20 zoom-img-container">
-                  <img class="w-full h-full object-cover" data-alt="Rich iced dark chocolate beverage with chocolate drizzle in cup" src="https://images.unsplash.com/photo-1541658016709-82535e94bc69?w=500&amp;auto=format&amp;fit=crop&amp;q=60">
-                </div>
-                <span class="bg-[#4e342e] text-white text-[10px] sm:text-[11px] font-label-badge px-2 py-0.5 rounded uppercase mb-1 font-bold" data-i18n="potion_rage_name">Rage Potion</span>
-                <span class="font-headline-sm text-xs sm:text-sm uppercase text-white font-bold" data-i18n="potion_rage_flavor">Dark Chocolate</span>
-                <span class="font-body-sm text-[11px] sm:text-xs text-white/70" data-i18n="potion_rage_desc">Cokelat Pekat Mantap</span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- ==========================================
-           SECTION 3: BALANCED COMBO SETS
-           (The Ultimate Combo + Duo Student Pack, No Add-Ons)
-           ========================================== -->
-      <section class="max-w-7xl mx-auto px-4 sm:px-margin lg:px-margin-desktop py-8 sm:py-space-xl" id="combos-section">
-        <div class="text-center mb-6 sm:mb-space-lg reveal-on-scroll reveal-fade-up">
-          <div class="inline-flex items-center gap-1.5 text-primary font-label-badge text-xs sm:text-label-badge uppercase mb-1">
-            <span class="material-symbols-outlined text-[16px]">lunch_dining</span>
-            <span data-i18n="combos_tag">PAKET HEMAT &amp; BUNDLING</span>
-          </div>
-          <h2 class="font-display-hero-mobile lg:font-headline-lg text-display-hero-mobile lg:text-headline-lg uppercase text-on-surface tracking-tight font-black" data-i18n="combos_title">PAKET HEMAT &amp; BUNDLE</h2>
-          <p class="font-body-md text-sm sm:text-body-md text-on-surface-variant max-w-xl mx-auto" data-i18n="combos_desc">Kombinasi sempurna ayam goreng krispi dan minuman potion segar untuk makan siang puas.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-space-lg items-stretch">
-          <!-- Combo 1: The Ultimate Combo Set -->
-          <div class="bg-surface-container p-5 sm:p-space-lg rounded-3xl shadow-[5px_5px_0px_#1e1b16] flex flex-col justify-between relative overflow-hidden hover-card-lift card-interactive card-shimmer border border-on-surface/10 reveal-on-scroll reveal-fade-up delay-100">
-            <div>
-              <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-space-sm mb-4 sm:mb-space-md">
-                <div>
-                  <span class="bg-primary text-on-primary font-label-badge text-[11px] sm:text-label-badge px-3 py-1 rounded-full uppercase font-bold" data-i18n="combo_badge_pop">PALING HEMAT</span>
-                  <h3 class="font-headline-lg text-xl sm:text-headline-lg uppercase text-on-surface mt-2 font-black" data-i18n="combo_single_name">THE ULTIMATE COMBO SET</h3>
-                  <p class="font-body-sm text-xs sm:text-body-sm text-on-surface-variant" data-i18n="combo_single_desc">Famichiki Cutlet + Minuman Potion Bebas Pilih + Snack Karaage Pack</p>
-                </div>
-                <div class="bg-primary text-on-primary font-price-display text-base sm:text-price-display px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-2xl shadow-[3px_3px_0px_#1e1b16] text-right shrink-0 self-start font-black">
-                  Rp 25.000
-                  <span class="block font-body-sm text-[11px] sm:text-body-sm text-primary-fixed-dim line-through font-normal">Rp 34.000</span>
-                </div>
-              </div>
-
-              <div class="w-full h-52 sm:h-64 rounded-2xl overflow-hidden bg-surface-container-high mb-4 sm:mb-space-md relative zoom-img-container">
-                <img class="w-full h-full object-cover" data-alt="The ultimate combo meal of Japanese crispy Famichiki chicken cutlet, iced Taro latte craft drink, and crispy karaage nuggets" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBchBN53TA2S2SkzyPmHkxcf4JpIxB--SHg-1oaKMi4aQMAEyqyHguCl-3KhB_6ObPiCvC6o75YI4lUnjNOB8J_ltojKHhvpqIrSpaGLuKV-nInwwvUn3mcKNbQdZEsk99OC530aeZ_Srp23404i7hLVwN402wklXdToQ1-2XcnFZev2d6ZzwxZQsbBZRQM-v957ijs9yspXLy8E5dxtsFxOJtrnYrV_eQMPjKnsAvIn3mVdcurcgosmw">
-                <span class="absolute bottom-3 left-3 bg-inverse-surface/90 text-inverse-on-surface font-label-badge text-[11px] sm:text-label-badge px-2.5 sm:px-3 py-1 rounded-lg uppercase shadow-sm" data-i18n="combo_save_1">Hemat Rp 9.000 dengan paket ini</span>
-              </div>
-            </div>
-
-            <div class="bg-surface-container-lowest p-3.5 sm:p-space-md rounded-2xl shadow-sm flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-space-sm border border-on-surface/5">
-              <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-primary text-[18px] sm:text-[20px]">verified</span>
-                <span class="font-label-badge text-xs sm:text-label-badge uppercase text-on-surface font-bold" data-i18n="combo_pair_1">Kombinasi Menu Lengkap</span>
-              </div>
-              <a class="bg-primary hover:bg-primary-container text-on-primary font-label-badge text-xs sm:text-label-badge uppercase px-4 py-2.5 rounded-xl shadow-[2px_2px_0px_#1e1b16] btn-tactile flex items-center justify-center gap-1.5 font-bold" href="https://forms.gle/mZKQudvXEUE7D7Ty5" rel="noopener noreferrer" target="_blank">
-                <span data-i18n="btn_order_item">Pesan di Google Form</span>
-                <span class="material-symbols-outlined text-[16px]">open_in_new</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Combo 2: Duo Student Pack -->
-          <div class="bg-surface-container-low p-5 sm:p-space-lg rounded-3xl shadow-[5px_5px_0px_#1e1b16] flex flex-col justify-between relative overflow-hidden hover-card-lift card-interactive card-shimmer border border-on-surface/10 reveal-on-scroll reveal-fade-up delay-200">
-            <div>
-              <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-space-sm mb-4 sm:mb-space-md">
-                <div>
-                  <span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-badge text-[11px] sm:text-label-badge px-3 py-1 rounded-full uppercase font-bold" data-i18n="combo_badge_duo">FAVORIT MAHASISWA</span>
-                  <h3 class="font-headline-lg text-xl sm:text-headline-lg uppercase text-on-surface mt-2 font-black" data-i18n="combo_duo_name">DUO STUDENT PACK</h3>
-                  <p class="font-body-sm text-xs sm:text-body-sm text-on-surface-variant" data-i18n="combo_duo_desc">2 Famichiki Cutlet + 2 Minuman Potion + Ekstra Saus Cocolan</p>
-                </div>
-                <div class="bg-primary text-on-primary font-price-display text-base sm:text-price-display px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-2xl shadow-[3px_3px_0px_#1e1b16] text-right shrink-0 self-start font-black">
-                  Rp 45.000
-                  <span class="block font-body-sm text-[11px] sm:text-body-sm text-primary-fixed-dim line-through font-normal">Rp 52.000</span>
-                </div>
-              </div>
-
-              <div class="w-full h-52 sm:h-64 rounded-2xl overflow-hidden bg-surface-container-high mb-4 sm:mb-space-md relative flex items-center justify-center zoom-img-container">
-                <img class="w-full h-full object-cover" data-alt="Duo Japanese fried chicken cutlets with cold drinks and savory sauce dip spread" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAUXuxnHlUdDtrj662A8NY7lO-P-Rr5KmCgbxlUngpWggFrOBiG1VxHLmBb3yZZu0XC1MD65ymXmsf6PpfSFWh_HYTbVJrvqWsgwPQ20CLNuNpM5m3Zd4qllK-zLSBmxYkIbcNnQVAXsd3rC2NBR_oK6oGmxFa-PL2ucR35TWGEt5DsSjnat382I-al7Y7M9SdFv-Nd94RwcKQItz68lytrHdWMYLjIxw9Dvde9xa2iUmuP7A2tTKqpg">
-                <span class="absolute bottom-3 left-3 bg-inverse-surface/90 text-inverse-on-surface font-label-badge text-[11px] sm:text-label-badge px-2.5 sm:px-3 py-1 rounded-lg uppercase shadow-sm" data-i18n="combo_save_2">Makan Bareng &amp; Hemat Rp 7.000</span>
-              </div>
-            </div>
-
-            <div class="bg-surface-container-lowest p-3.5 sm:p-space-md rounded-2xl shadow-sm flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 sm:gap-space-sm border border-on-surface/5">
-              <div class="flex items-center gap-2">
-                <span class="material-symbols-outlined text-primary text-[18px] sm:text-[20px]">group</span>
-                <span class="font-label-badge text-xs sm:text-label-badge uppercase text-on-surface font-bold" data-i18n="combo_pair_2">Pas untuk Berdua</span>
-              </div>
-              <a class="bg-primary hover:bg-primary-container text-on-primary font-label-badge text-xs sm:text-label-badge uppercase px-4 py-2.5 rounded-xl shadow-[2px_2px_0px_#1e1b16] btn-tactile flex items-center justify-center gap-1.5 font-bold" href="https://forms.gle/mZKQudvXEUE7D7Ty5" rel="noopener noreferrer" target="_blank">
-                <span data-i18n="btn_order_item">Pesan di Google Form</span>
-                <span class="material-symbols-outlined text-[16px]">open_in_new</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-6 sm:mt-space-lg bg-surface-container p-3 sm:p-space-sm rounded-xl flex items-center justify-center gap-2 sm:gap-space-sm text-center border border-on-surface/5 reveal-on-scroll reveal-fade-up">
-          <span class="material-symbols-outlined text-tertiary-container text-[20px] sm:text-[24px]">savings</span>
-          <span class="font-body-sm text-xs sm:text-body-sm text-on-surface font-medium" data-i18n="combo_loyalty">Semua paket bundling berhadiah kartu cap stamp loyalty! Beli 5 cutlet gratis 1 minuman Potion di Market Day Tel-U.</span>
-        </div>
-      </section>
-
-      <!-- ==========================================
-           SECTION 4: 'TRACK YOUR ORDERS'
-           ========================================== -->
-      <section class="max-w-4xl mx-auto px-4 sm:px-margin lg:px-margin-desktop py-8 sm:py-space-xl" id="track-section">
-        <div class="bg-surface-container-lowest p-5 sm:p-space-lg lg:p-space-xl rounded-3xl shadow-[6px_6px_0px_#1e1b16] border border-on-surface/10 reveal-on-scroll reveal-fade-up">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-space-xs mb-6 sm:mb-space-lg pb-4 sm:pb-space-sm border-b border-surface-container">
-            <div>
-              <div class="flex items-center gap-2 mb-1">
-                <span class="w-2.5 h-2.5 rounded-full bg-[#2E7D32] animate-pulse"></span>
-                <span class="font-label-badge text-xs sm:text-label-badge text-primary uppercase font-bold" data-i18n="track_status_tag">STATUS PESANAN LANGSUNG</span>
-              </div>
-              <h2 class="font-headline-lg text-xl sm:text-headline-lg uppercase text-on-surface font-black" data-i18n="track_title">Lacak Pesanan Anda</h2>
-              <p class="font-body-sm text-xs sm:text-body-sm text-on-surface-variant" data-i18n="track_subtitle">Masukkan nomor WhatsApp yang Anda daftarkan saat pre-order.</p>
-            </div>
-            <span class="bg-surface-container px-3 py-1 rounded-full font-label-badge text-[11px] sm:text-label-badge text-on-surface-variant self-start sm:self-auto font-bold" data-i18n="track_badge_live">
-              Antrean Langsung
-            </span>
-          </div>
-
-          <!-- Phone Search Input Bar (Mobile ergonomic flex/stack) -->
-          <div class="flex flex-col sm:flex-row items-stretch gap-2.5 sm:gap-space-sm mb-6 sm:mb-space-lg">
-            <div class="relative flex-1">
-              <span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">phone_iphone</span>
-              <input class="w-full bg-surface-container-low pl-11 pr-4 py-3 sm:py-3.5 rounded-xl font-label-badge text-xs sm:text-label-badge text-on-surface placeholder:text-on-secondary-container shadow-inner focus:outline-none focus:bg-surface-container transition-all" id="tracking-input" placeholder="Masukkan No WhatsApp (contoh: 088212386621)" data-i18n-placeholder="track_input_placeholder" type="text">
-            </div>
-            <button id="check-status-btn" class="bg-[#0070F3] hover:bg-blue-600 text-surface-container-lowest font-headline-sm text-sm sm:text-headline-sm uppercase px-6 sm:px-space-xl py-3 sm:py-3.5 rounded-xl shadow-[3px_3px_0px_#1e1b16] btn-tactile cursor-pointer font-bold flex items-center justify-center gap-1.5" onclick="checkOrderStatus()">
-              <span class="btn-label-text" data-i18n="track_btn">Cek Status</span>
-              <span class="material-symbols-outlined text-[18px]">search</span>
-            </button>
-          </div>
-
-          <!-- Live Dynamic Results Container (Populated via script.js when searching) -->
-          <div class="flex flex-col gap-3 sm:gap-space-md" id="tracking-results"></div>
-
-          <div class="mt-4 sm:mt-space-md pt-4 sm:pt-space-md border-t border-surface-container flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-space-xs font-body-sm text-xs sm:text-body-sm text-on-surface-variant text-center sm:text-left">
-            <span data-i18n="track_note_pickup">Antrean diperbarui berkala. Ambil: Booth #14 Pavilion</span>
-            <a class="text-primary hover:underline font-label-badge text-xs sm:text-label-badge uppercase font-bold" href="https://wa.me/" target="_blank" data-i18n="track_btn_help">Butuh bantuan? Hubungi Admin</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- ==========================================
-           SECTION 5: HOW IT WORKS & FAQ (3-step guide)
-           ========================================== -->
-      <section class="max-w-7xl mx-auto px-4 sm:px-margin lg:px-margin-desktop py-8 sm:py-space-xl">
-        <div class="text-center mb-6 sm:mb-space-lg reveal-on-scroll reveal-fade-up">
-          <span class="font-label-badge text-xs sm:text-label-badge text-primary uppercase font-bold" data-i18n="flow_tag">Alur Pemesanan 3 Langkah Mudah</span>
-          <h2 class="font-headline-lg text-xl sm:text-headline-lg uppercase text-on-surface font-black" data-i18n="flow_title">Cara Mendapatkan Pesanan Anda</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-space-lg">
-          <!-- Step 1 -->
-          <div class="bg-surface-container-low p-5 sm:p-space-lg rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col items-center text-center hover-card-lift card-interactive card-shimmer border border-on-surface/10 reveal-on-scroll reveal-fade-up delay-100">
-            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary text-on-primary font-headline-md text-lg sm:text-headline-md flex items-center justify-center mb-3 sm:mb-space-sm shadow-md font-black">
-              1
-            </div>
-            <h3 class="font-headline-sm text-base sm:text-headline-sm uppercase text-on-surface mb-1 sm:mb-space-xs font-black" data-i18n="step1_title">Isi Google Form</h3>
-            <p class="font-body-md text-xs sm:text-body-md text-on-surface-variant leading-relaxed" data-i18n="step1_desc">
-              Pilih varian rasa bumbu tabur ayam, minuman potion, dan paket bundling melalui formulir singkat kami.
-            </p>
-          </div>
-          <!-- Step 2 -->
-          <div class="bg-surface-container-low p-5 sm:p-space-lg rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col items-center text-center hover-card-lift card-interactive card-shimmer border border-on-surface/10 reveal-on-scroll reveal-fade-up delay-200">
-            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary text-on-primary font-headline-md text-lg sm:text-headline-md flex items-center justify-center mb-3 sm:mb-space-sm shadow-md font-black">
-              2
-            </div>
-            <h3 class="font-headline-sm text-base sm:text-headline-sm uppercase text-on-surface mb-1 sm:mb-space-xs font-black" data-i18n="step2_title">Konfirmasi &amp; QRIS Pay</h3>
-            <p class="font-body-md text-xs sm:text-body-md text-on-surface-variant leading-relaxed" data-i18n="step2_desc">
-              Dapatkan rincian pesanan via WhatsApp otomatis. Bayar praktis pakai semua e-wallet QRIS atau tunai di booth.
-            </p>
-          </div>
-          <!-- Step 3 -->
-          <div class="bg-surface-container-low p-5 sm:p-space-lg rounded-2xl shadow-[4px_4px_0px_#1e1b16] flex flex-col items-center text-center hover-card-lift card-interactive card-shimmer border border-on-surface/10 reveal-on-scroll reveal-fade-up delay-300">
-            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary text-on-primary font-headline-md text-lg sm:text-headline-md flex items-center justify-center mb-3 sm:mb-space-sm shadow-md font-black">
-              3
-            </div>
-            <h3 class="font-headline-sm text-base sm:text-headline-sm uppercase text-on-surface mb-1 sm:mb-space-xs font-black" data-i18n="step3_title">Lacak &amp; Ambil</h3>
-            <p class="font-body-md text-xs sm:text-body-md text-on-surface-variant leading-relaxed" data-i18n="step3_desc">
-              Pantau status pesanan langsung di website ini. Begitu status berubah Ready, langsung ambil di Booth #14!
-            </p>
-          </div>
-        </div>
-
-        <!-- Final Call To Action Banner -->
-        <div class="mt-8 sm:mt-space-xl bg-primary-container text-on-primary p-6 sm:p-space-lg lg:p-space-xl rounded-3xl shadow-[6px_6px_0px_#1e1b16] flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-space-lg border border-on-surface/10 reveal-on-scroll reveal-scale-up">
-          <div class="flex flex-col gap-1 text-center md:text-left">
-            <span class="font-label-badge text-xs sm:text-label-badge uppercase tracking-wider text-tertiary-fixed font-bold" data-i18n="cta_banner_tag">KUOTA PRE-ORDER TERBATAS: 150 PORSI / HARI</span>
-            <h3 class="font-display-hero-mobile text-xl sm:text-display-hero-mobile uppercase tracking-tight font-black" data-i18n="cta_banner_title">Jangan Sampai Kehabisan Kriuknya!</h3>
-            <p class="font-body-md text-xs sm:text-body-md text-primary-fixed" data-i18n="cta_banner_desc">Ayam goreng potongan segar biasanya ludes sebelum jam 13:00 WIB saat uji coba kampus.</p>
-          </div>
-          <a class="bg-surface-container-lowest text-on-surface hover:bg-surface-container font-headline-sm text-sm sm:text-headline-sm uppercase px-6 sm:px-space-xl py-3.5 sm:py-4 rounded-xl shadow-[4px_4px_0px_#1e1b16] btn-tactile whitespace-nowrap inline-flex items-center gap-2 font-bold w-full sm:w-auto justify-center" href="https://forms.gle/mZKQudvXEUE7D7Ty5" rel="noopener noreferrer" target="_blank">
-            <span data-i18n="cta_banner_btn">Buka Google Form</span>
-            <span class="material-symbols-outlined text-[18px] sm:text-[20px]">open_in_new</span>
-          </a>
-        </div>
-      </section>
-
-    </div>
-  </main>
-
-  <!-- ==========================================
-       FOOTER
-       ========================================== -->
-  <footer class="w-full bg-surface-container-low text-on-surface border-t border-surface-container-high" id="booth-details">
-    <div class="max-w-7xl mx-auto px-4 sm:px-margin lg:px-margin-desktop py-8 sm:py-space-xl">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 sm:gap-space-lg mb-8 sm:mb-space-xl">
-        <div class="md:col-span-2 flex flex-col gap-space-sm">
-          <div class="flex items-center gap-space-xs">
-            <span class="font-headline-sm text-headline-sm uppercase text-primary font-black">TORI SNACKS &amp; SIPS</span>
-            <span class="bg-tertiary-fixed text-on-tertiary-fixed font-label-badge text-xs px-2 py-0.5 rounded-full font-bold">BATCH #04</span>
-          </div>
-          <p class="font-body-md text-sm sm:text-body-md text-on-surface-variant max-w-md leading-relaxed" data-i18n="footer_tagline">Proyek booth kewirausahaan mahasiswa menghadirkan ayam goreng krispi Jepang otentik dan minuman ramuan segar langsung di Telkom University.</p>
-          <div class="flex items-center gap-space-sm mt-space-xs">
-            <span class="material-symbols-outlined text-primary text-[20px]">pin_drop</span>
-            <span class="font-body-sm text-xs sm:text-body-sm font-bold text-on-surface" data-i18n="footer_location">Booth #14, Student Pavilion Hall, Bandung</span>
-          </div>
-        </div>
-
-        <div class="flex flex-col gap-1 sm:gap-space-xs">
-          <span class="font-headline-sm text-base sm:text-headline-sm uppercase text-on-surface font-black" data-i18n="footer_stall_details">Informasi Booth</span>
-          <span class="font-body-sm text-xs sm:text-body-sm text-on-surface-variant">Instagram: <strong class="text-on-surface">@torisnacks.tup</strong></span>
-          <span class="font-body-sm text-xs sm:text-body-sm text-on-surface-variant" data-i18n="footer_open_hours">Buka: 09:00 AM – 17:00 WIB</span>
-          <span class="font-body-sm text-xs sm:text-body-sm text-on-surface-variant" data-i18n="footer_payment">Pembayaran: QRIS &amp; Tunai Diterima</span>
-        </div>
-
-        <div class="flex flex-col gap-1 sm:gap-space-xs">
-          <span class="font-headline-sm text-base sm:text-headline-sm uppercase text-on-surface font-black" data-i18n="footer_quality_title">Kualitas Terjamin</span>
-          <div class="bg-surface-container p-3 sm:p-space-sm rounded-xl flex flex-col gap-1 sm:gap-space-xs border border-on-surface/5">
-            <div class="flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-[#2E7D32] animate-pulse"></span>
-              <span class="font-label-badge text-xs text-on-surface font-bold" data-i18n="footer_quality_badge">DIGORENG SEGAR</span>
-            </div>
-            <p class="font-body-sm text-[11px] sm:text-body-sm text-on-surface-variant" data-i18n="footer_quality_desc">Semua ayam digoreng segar dan dikemas langsung di Booth #14 selama jam Market Day.</p>
-          </div>
+        <div class="chips">
+          <span class="chip"><svg viewBox="0 0 200 160"><use href="#nugget"/></svg><span data-i18n="chip1">Original &amp; Spicy</span></span>
+          <span class="chip"><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="chip2">Homemade</span></span>
+          <span class="chip"><svg viewBox="0 0 220 250"><use href="#pack"/></svg><span data-i18n="chip3">Kemasan Sobek Praktis</span></span>
         </div>
       </div>
-
-      <div class="pt-4 sm:pt-space-md border-t border-surface-container-high flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-space-sm font-body-sm text-xs text-on-surface-variant text-center sm:text-left">
-        <span data-i18n="footer_copyright">© 2025 TORI SNACKS &amp; SIPS • Proyek Market Day Telkom University</span>
-        <span data-i18n="footer_made_with">Dibuat dengan cinta krispi &amp; semangat mahasiswa</span>
+      <div class="art">
+        <div class="disc" id="disc"><img src="logo.png" alt="Torikon logo: a white hen peeking out of a paper bag with a golden nugget"></div>
+        <svg class="ng n1" viewBox="0 0 200 160" aria-hidden="true"><use href="#nuggetHot"/></svg>
+        <svg class="ng n2" viewBox="0 0 200 160" aria-hidden="true"><use href="#nugget"/></svg>
+        <svg class="ng n3" viewBox="0 0 200 160" aria-hidden="true"><use href="#nugget"/></svg>
+        <svg class="spark" viewBox="0 0 140 90" aria-hidden="true"><use href="#spark"/></svg>
+        <div class="note" data-i18n="artNote">baru matang dari penggorengan!</div>
+        <div class="badge" aria-hidden="true">
+          <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100 100 m-78 0 a78 78 0 1 1 156 0 a78 78 0 1 1 -156 0"/></defs>
+            <circle cx="100" cy="100" r="98" fill="#F23D3D" stroke="#8A2B27" stroke-width="4"/>
+            <text font-family="Fredoka, sans-serif" font-weight="600" font-size="19" fill="#fff"><textPath id="sealText" href="#circ" textLength="484" lengthAdjust="spacing">HOMEMADE • RENYAH • DIBUAT DENGAN CINTA • </textPath></text>
+            <circle cx="100" cy="100" r="44" fill="#FFB81C" stroke="#8A2B27" stroke-width="4"/>
+            <use href="#heart" x="76" y="78" width="48" height="45"/></svg>
+        </div>
       </div>
     </div>
-  </footer>
+  </div>
 
-  <!-- ==========================================
-       MOBILE STICKY BOTTOM DOCK (Phone UX Redesign)
-       ========================================== -->
-  <nav id="mobile-nav-dock" class="fixed bottom-3 inset-x-2 sm:inset-x-3 z-40 sm:hidden bg-surface/95 backdrop-blur-lg border border-on-surface/10 rounded-2xl p-1 shadow-[0_4px_20px_rgba(0,0,0,0.18)] flex items-center justify-between mobile-nav-dock max-w-md mx-auto" aria-label="Mobile Bottom Navigation">
-    <a id="mobile-nav-menu" href="#menu" class="mobile-nav-item flex-1 min-w-0 flex flex-col items-center justify-center py-1.5 px-1 rounded-xl text-on-surface-variant transition-all text-center">
-      <span class="material-symbols-outlined text-[18px]">restaurant_menu</span>
-      <span class="text-[9px] font-bold uppercase tracking-tight mt-0.5 truncate w-full" data-i18n="dock_flavors">Rasa</span>
-    </a>
-    <a id="mobile-nav-potions" href="#potions-section" class="mobile-nav-item flex-1 min-w-0 flex flex-col items-center justify-center py-1.5 px-1 rounded-xl text-on-surface-variant transition-all text-center">
-      <span class="material-symbols-outlined text-[18px]">casino</span>
-      <span class="text-[9px] font-bold uppercase tracking-tight mt-0.5 truncate w-full" data-i18n="dock_roulette">Roulette</span>
-    </a>
-    <a id="mobile-nav-combos" href="#combos-section" class="mobile-nav-item flex-1 min-w-0 flex flex-col items-center justify-center py-1.5 px-1 rounded-xl text-on-surface-variant transition-all text-center">
-      <span class="material-symbols-outlined text-[18px]">lunch_dining</span>
-      <span class="text-[9px] font-bold uppercase tracking-tight mt-0.5 truncate w-full" data-i18n="dock_combos">Paket</span>
-    </a>
-    <a id="mobile-nav-track" href="#track-section" class="mobile-nav-item flex-1 min-w-0 flex flex-col items-center justify-center py-1.5 px-1 rounded-xl text-on-surface-variant transition-all text-center">
-      <span class="material-symbols-outlined text-[18px]">receipt_long</span>
-      <span class="text-[9px] font-bold uppercase tracking-tight mt-0.5 truncate w-full" data-i18n="dock_track">Lacak</span>
-    </a>
-    <a href="https://forms.gle/mZKQudvXEUE7D7Ty5" target="_blank" rel="noopener noreferrer" class="flex-1 min-w-0 flex flex-col items-center justify-center py-1.5 px-2 rounded-xl bg-primary text-on-primary font-bold shadow-sm active:scale-95 transition-all text-center btn-tactile">
-      <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
-      <span class="text-[9px] font-bold uppercase tracking-tight mt-0.5 truncate w-full" data-i18n="dock_order">Pesan</span>
-    </a>
-  </nav>
+  <div class="marq" aria-hidden="true"><div class="strip"><div class="mt">
+    <div class="grp"><span data-i18n="marq1">Renyah</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq2">Gurih</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq3">Homemade</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq4">Kemasan Sobek</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq5">Dibuat Penuh Cinta</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg></div>
+    <div class="grp"><span data-i18n="marq1">Renyah</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq2">Gurih</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq3">Homemade</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq4">Kemasan Sobek</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq5">Dibuat Penuh Cinta</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg></div>
+  </div></div></div>
 
+  <div class="edge" style="background:var(--paper)"><div class="zig" style="background:var(--cream)"></div></div>
+  <div class="menu-band">
+    <section id="menu" class="wrap">
+      <div class="sec-head"><span class="tagline" data-i18n="menuTagline">pilih kelezatanmu</span><h2 data-i18n="menuTitle">Menu Kami</h2><p data-i18n="menuLead">Dua varian rasa, dibuat homemade dan dibungkus kemasan sobek praktis.</p></div>
+      <div class="menu" id="menuGrid"></div>
+    </section>
+  </div>
+  <div class="edge" style="background:var(--cream)"><div class="zig" style="background:var(--paper)"></div></div>
+
+  <section class="wrap">
+    <div class="sec-head"><span class="tagline" data-i18n="whyTagline">kenapa kamu bakal suka</span><h2 data-i18n="whyTitle">Camilan Kecil, Bahagia Maksimal</h2></div>
+    <div class="why">
+      <div class="b" style="--c:var(--butter);--t:-1.5deg"><div class="ic"><svg viewBox="0 0 200 160"><use href="#nugget"/></svg></div><h3 data-i18n="why1Title">Rasa Autentik</h3><p data-i18n="why1Desc">Ayam goreng ala famichiki Jepang, tersedia varian Original &amp; Spicy.</p></div>
+      <div class="b" style="--c:var(--sky);--t:1.2deg"><div class="ic"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="25" fill="#F5B03A" stroke="#8A2B27" stroke-width="3.5"/><text x="30" y="37" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="600" font-size="19" fill="#12449A">Rp</text></svg></div><h3 data-i18n="why2Title">Harga Ramah Mahasiswa</h3><p data-i18n="why2Desc">Lebih hemat dan terjangkau dibanding versi minimarket.</p></div>
+      <div class="b" style="--c:var(--blush);--t:-1deg"><div class="ic"><svg viewBox="0 0 60 56"><use href="#heart"/></svg></div><h3 data-i18n="why3Title">Dibuat Penuh Cinta</h3><p data-i18n="why3Desc">Setiap porsi dibuat langsung secara homemade, selalu segar.</p></div>
+      <div class="b" style="--c:var(--cream);--t:1.6deg"><div class="ic"><svg viewBox="0 0 220 250"><use href="#pack"/></svg></div><h3 data-i18n="why4Title">Kemasan Sobek Praktis</h3><p data-i18n="why4Desc">Dikemas khas Jepang. Sobek, gigit, dan nikmati senyumnya.</p></div>
+    </div>
+  </section>
+
+  <div class="how">
+    <section id="how" class="wrap">
+      <div class="sec-head"><span class="tagline" data-i18n="howTagline">mudah hanya 3 langkah</span><h2 data-i18n="howTitle">Cara Pesan</h2></div>
+      <ol class="steps">
+        <li><div class="n">1</div><h3 data-i18n="step1Title">Isi Formulir Pesanan</h3><p data-i18n="step1Desc">Pilih varian rasa favoritmu dan masukkan nama serta nomor WhatsApp di Google Form kami.</p></li>
+        <li><div class="n">2</div><h3 data-i18n="step2Title">Kami Buat Pesananmu</h3><p data-i18n="step2Desc">Kami perbarui status pesananmu secara berkala, jadi kamu selalu tahu progresnya.</p>
+          <div class="row-pills"><span class="st st-make" data-i18n="stMake">Sedang Dibuat</span><span class="st st-done" data-i18n="stDone">Selesai Dimasak</span><span class="st st-ready" data-i18n="stReady">Siap Diantar</span><span class="st st-delivered" data-i18n="stDelivered">Sudah Diterima</span><span class="st st-canceled" data-i18n="stCanceled">Dibatalkan</span></div></li>
+        <li><div class="n">3</div><h3 data-i18n="step3Title">Pantau Status Pesanan</h3><p data-i18n="step3Desc">Ketik nomor WhatsApp yang kamu gunakan pada formulir di bawah untuk melihat seluruh pesananmu.</p></li>
+      </ol>
+    </section>
+  </div>
+
+  <div class="edge" style="background:var(--paper)"><div class="zig" style="background:var(--butter)"></div></div>
+  <div class="track-band">
+    <section id="track" class="wrap">
+      <div class="t-grid">
+        <div class="t-copy">
+          <span class="tagline" data-i18n="trackTagline">ayamku sudah sampai mana?</span>
+          <h2><span data-i18n="trackTitle">Lacak Pesananmu</span><span class="demo" id="demoTag" data-i18n="demoTag" hidden>Data Demo</span></h2>
+          <p data-i18n="trackLead">Gunakan nomor WhatsApp dari formulir pesanan. Kamu bisa melihat status dan posisi pesananmu secara langsung.</p>
+          <svg class="ng" viewBox="0 0 200 160" aria-hidden="true"><use href="#nugget"/></svg>
+        </div>
+        <div class="panel">
+          <form class="search" id="trackForm" novalidate>
+            <label for="phone" style="position:absolute;left:-9999px" data-i18n="phoneLabel">Nomor WhatsApp</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="08xxxxxxxxxx" data-i18n="phonePlaceholder">
+            <button class="btn btn-red" type="submit" data-i18n="checkStatusBtn">Cek Status</button>
+          </form>
+          <p class="hint" id="demoHint" hidden><span data-i18n="demoHintText">Pelacak saat ini menampilkan contoh pesanan sebelum terhubung ke spreadsheet. Coba </span><button type="button" id="fill">081234567890</button>.</p>
+          <div class="out" id="out" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="edge" style="background:var(--butter)"><div class="zig" style="background:var(--cream)"></div></div>
+</main>
+
+<footer class="foot-band">
+  <div class="wrap">
+    <p class="word" aria-hidden="true">Torikon</p>
+    <div class="f-row">
+      <a class="brand" href="#top"><img src="logo.png" alt="">Torikon</a>
+      <p data-i18n="footMade">Dibuat dengan cinta di Telkom University, Bandung.</p>
+      <p id="ig" hidden><a class="ig" href="#" id="igLink" rel="noopener" target="_blank" data-i18n="igLinkText">Ikuti kami di Instagram</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="translations.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
