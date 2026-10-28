@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Torikon - Ayam Goreng Krispi Ala Famichiki</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="nugget" viewBox="0 0 200 160">
+      <path d="M28 88C8 58 38 22 82 28C102 6 152 12 168 44C198 54 196 104 170 124C160 150 110 156 90 140C54 150 22 130 28 88Z" fill="#F5B03A" stroke="#8A2B27" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M58 62c10-14 30-16 44-8" stroke="#fff" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <path d="M48 80c2-5 5-8 9-10" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none"/>
+      <ellipse cx="112" cy="92" rx="10" ry="6" fill="#E08A1E" transform="rotate(-24 112 92)"/>
+      <ellipse cx="76" cy="108" rx="8" ry="5" fill="#E08A1E" transform="rotate(18 76 108)"/>
+      <ellipse cx="146" cy="72" rx="7" ry="4.5" fill="#E08A1E" transform="rotate(-10 146 72)"/>
+      <ellipse cx="132" cy="120" rx="8" ry="5" fill="#E08A1E" transform="rotate(30 132 120)"/>
+      <circle cx="96" cy="76" r="4" fill="#E08A1E"/><circle cx="160" cy="98" r="4" fill="#E08A1E"/><circle cx="58" cy="100" r="3.5" fill="#E08A1E"/>
+    </symbol>
+    <symbol id="nuggetHot" viewBox="0 0 200 160">
+      <path d="M28 88C8 58 38 22 82 28C102 6 152 12 168 44C198 54 196 104 170 124C160 150 110 156 90 140C54 150 22 130 28 88Z" fill="#F29A2E" stroke="#8A2B27" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M58 62c10-14 30-16 44-8" stroke="#fff" stroke-width="7" stroke-linecap="round" fill="none"/>
+      <path d="M48 80c2-5 5-8 9-10" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none"/>
+      <rect x="104" y="86" width="20" height="8" rx="4" fill="#D9423F" transform="rotate(-24 114 90)"/>
+      <rect x="66" y="104" width="16" height="7" rx="3.5" fill="#D9423F" transform="rotate(18 74 108)"/>
+      <rect x="138" y="66" width="15" height="7" rx="3.5" fill="#D9423F" transform="rotate(-10 146 70)"/>
+      <rect x="124" y="114" width="16" height="7" rx="3.5" fill="#D9423F" transform="rotate(30 132 118)"/>
+      <circle cx="94" cy="76" r="4" fill="#C0392B"/><circle cx="160" cy="98" r="4" fill="#C0392B"/><circle cx="56" cy="100" r="3.5" fill="#C0392B"/>
+      <ellipse cx="86" cy="122" rx="7" ry="4.5" fill="#E08A1E"/><ellipse cx="148" cy="54" rx="7" ry="4.5" fill="#E08A1E"/>
+    </symbol>
+    <symbol id="spark" viewBox="0 0 140 90">
+      <path d="M46 18c8-14 30-6 24 12-3 10-14 18-24 24-10-6-21-14-24-24-6-18 16-26 24-12z" fill="#F23D3D"/>
+      <rect x="88" y="24" width="44" height="13" rx="6.5" fill="#FFB81C" transform="rotate(-18 110 30)"/>
+      <rect x="92" y="50" width="32" height="12" rx="6" fill="#FFB81C"/>
+    </symbol>
+    <symbol id="heart" viewBox="0 0 60 56">
+      <path d="M30 52C8 36 2 24 6 14 10 4 24 4 30 14 36 4 50 4 54 14 58 24 52 36 30 52z" fill="#F23D3D" stroke="#8A2B27" stroke-width="3.5" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="pack" viewBox="0 0 220 250">
+      <g transform="translate(46 4) rotate(-10 40 40)"><use href="#nugget" width="100" height="80"/></g>
+      <g transform="translate(96 14) rotate(14 40 40)"><use href="#nuggetHot" width="92" height="74"/></g>
+      <path d="M28 96L50 84L70 98L92 82L112 98L134 82L154 98L174 84L194 96L184 232Q110 250 36 232Z" fill="#F8EFE4" stroke="#8A2B27" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M34 124H188" stroke="#8A2B27" stroke-width="4" stroke-dasharray="9 8" stroke-linecap="round"/>
+      <use href="#heart" x="82" y="152" width="56" height="52"/>
+      <path d="M44 112l-14 0" stroke="#8A2B27" stroke-width="4" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Torikon home"><img src="logo.png" alt="">Torikon</a>
+    <nav class="links" aria-label="Main">
+      <a class="t hide-s" href="#menu" data-i18n="navMenu">Menu</a>
+      <a class="t hide-s" href="#how" data-i18n="navHow">Cara Pesan</a>
+      <a class="t" href="#track" data-i18n="navTrack">Lacak Pesanan</a>
+      <a class="btn btn-red btn-sm order-link" href="#order" data-i18n="navOrder">Pesan Sekarang</a>
+      <button class="lang-btn" id="langToggle" type="button" aria-label="Ganti ke Bahasa Inggris">EN</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero-bg">
+    <span class="dots a" aria-hidden="true"></span><span class="dots b" aria-hidden="true"></span>
+    <i class="cr" style="left:6%;top:26%;--r:30deg" aria-hidden="true"></i>
+    <i class="cr red dot" style="left:48%;top:10%;--d:.8s" aria-hidden="true"></i>
+    <i class="cr" style="left:44%;bottom:12%;--r:-40deg;--d:1.4s" aria-hidden="true"></i>
+    <i class="cr red" style="right:6%;bottom:16%;--r:55deg;--d:.4s" aria-hidden="true"></i>
+    <i class="cr dot" style="left:3%;bottom:34%;--d:2s" aria-hidden="true"></i>
+    <div class="wrap hero">
+      <div>
+        <span class="pill" data-i18n="heroPill">Ayam goreng ala Famichiki buatan sendiri</span>
+        <h1 data-i18n="heroH1">Renyah penuh <mark>keceriaan</mark>, dibuat dengan cinta.</h1>
+        <p class="lead" data-i18n="heroLead">Camilan ayam goreng krispi khas Jepang untuk mahasiswa. Pesan lewat formulir, lalu pantau pesananmu langsung di sini dengan nomor WhatsApp.</p>
+        <div class="cta">
+          <a class="btn btn-red order-link" href="#order" data-i18n="heroCtaOrder">Pesan via Google Form</a>
+          <a class="btn btn-white" href="#track" data-i18n="heroCtaTrack">Lacak Pesanan</a>
+        </div>
+        <div class="chips">
+          <span class="chip"><svg viewBox="0 0 200 160"><use href="#nugget"/></svg><span data-i18n="chip1">Original &amp; Spicy</span></span>
+          <span class="chip"><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="chip2">Homemade</span></span>
+          <span class="chip"><svg viewBox="0 0 220 250"><use href="#pack"/></svg><span data-i18n="chip3">Kemasan Sobek Praktis</span></span>
+        </div>
+      </div>
+      <div class="art">
+        <div class="disc" id="disc"><img src="logo.png" alt="Torikon logo: a white hen peeking out of a paper bag with a golden nugget"></div>
+        <svg class="ng n1" viewBox="0 0 200 160" aria-hidden="true"><use href="#nuggetHot"/></svg>
+        <svg class="ng n2" viewBox="0 0 200 160" aria-hidden="true"><use href="#nugget"/></svg>
+        <svg class="ng n3" viewBox="0 0 200 160" aria-hidden="true"><use href="#nugget"/></svg>
+        <svg class="spark" viewBox="0 0 140 90" aria-hidden="true"><use href="#spark"/></svg>
+        <div class="note" data-i18n="artNote">baru matang dari penggorengan!</div>
+        <div class="badge" aria-hidden="true">
+          <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100 100 m-78 0 a78 78 0 1 1 156 0 a78 78 0 1 1 -156 0"/></defs>
+            <circle cx="100" cy="100" r="98" fill="#F23D3D" stroke="#8A2B27" stroke-width="4"/>
+            <text font-family="Fredoka, sans-serif" font-weight="600" font-size="19" fill="#fff"><textPath id="sealText" href="#circ" textLength="484" lengthAdjust="spacing">HOMEMADE • RENYAH • DIBUAT DENGAN CINTA • </textPath></text>
+            <circle cx="100" cy="100" r="44" fill="#FFB81C" stroke="#8A2B27" stroke-width="4"/>
+            <use href="#heart" x="76" y="78" width="48" height="45"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="marq" aria-hidden="true"><div class="strip"><div class="mt">
+    <div class="grp"><span data-i18n="marq1">Renyah</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq2">Gurih</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq3">Homemade</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq4">Kemasan Sobek</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq5">Dibuat Penuh Cinta</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg></div>
+    <div class="grp"><span data-i18n="marq1">Renyah</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq2">Gurih</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq3">Homemade</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq4">Kemasan Sobek</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq5">Dibuat Penuh Cinta</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg></div>
+  </div></div></div>
+
+  <div class="edge" style="background:var(--paper)"><div class="zig" style="background:var(--cream)"></div></div>
+  <div class="menu-band">
+    <section id="menu" class="wrap">
+      <div class="sec-head"><span class="tagline" data-i18n="menuTagline">pilih kelezatanmu</span><h2 data-i18n="menuTitle">Menu Kami</h2><p data-i18n="menuLead">Dua varian rasa, dibuat homemade dan dibungkus kemasan sobek praktis.</p></div>
+      <div class="menu" id="menuGrid"></div>
+    </section>
+  </div>
+  <div class="edge" style="background:var(--cream)"><div class="zig" style="background:var(--paper)"></div></div>
+
+  <section class="wrap">
+    <div class="sec-head"><span class="tagline" data-i18n="whyTagline">kenapa kamu bakal suka</span><h2 data-i18n="whyTitle">Camilan Kecil, Bahagia Maksimal</h2></div>
+    <div class="why">
+      <div class="b" style="--c:var(--butter);--t:-1.5deg"><div class="ic"><svg viewBox="0 0 200 160"><use href="#nugget"/></svg></div><h3 data-i18n="why1Title">Rasa Autentik</h3><p data-i18n="why1Desc">Ayam goreng ala famichiki Jepang, tersedia varian Original &amp; Spicy.</p></div>
+      <div class="b" style="--c:var(--sky);--t:1.2deg"><div class="ic"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="25" fill="#F5B03A" stroke="#8A2B27" stroke-width="3.5"/><text x="30" y="37" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="600" font-size="19" fill="#12449A">Rp</text></svg></div><h3 data-i18n="why2Title">Harga Ramah Mahasiswa</h3><p data-i18n="why2Desc">Lebih hemat dan terjangkau dibanding versi minimarket.</p></div>
+      <div class="b" style="--c:var(--blush);--t:-1deg"><div class="ic"><svg viewBox="0 0 60 56"><use href="#heart"/></svg></div><h3 data-i18n="why3Title">Dibuat Penuh Cinta</h3><p data-i18n="why3Desc">Setiap porsi dibuat langsung secara homemade, selalu segar.</p></div>
+      <div class="b" style="--c:var(--cream);--t:1.6deg"><div class="ic"><svg viewBox="0 0 220 250"><use href="#pack"/></svg></div><h3 data-i18n="why4Title">Kemasan Sobek Praktis</h3><p data-i18n="why4Desc">Dikemas khas Jepang. Sobek, gigit, dan nikmati senyumnya.</p></div>
+    </div>
+  </section>
+
+  <div class="how">
+    <section id="how" class="wrap">
+      <div class="sec-head"><span class="tagline" data-i18n="howTagline">mudah hanya 3 langkah</span><h2 data-i18n="howTitle">Cara Pesan</h2></div>
+      <ol class="steps">
+        <li><div class="n">1</div><h3 data-i18n="step1Title">Isi Formulir Pesanan</h3><p data-i18n="step1Desc">Pilih varian rasa favoritmu dan masukkan nama serta nomor WhatsApp di Google Form kami.</p></li>
+        <li><div class="n">2</div><h3 data-i18n="step2Title">Kami Buat Pesananmu</h3><p data-i18n="step2Desc">Kami perbarui status pesananmu secara berkala, jadi kamu selalu tahu progresnya.</p>
+          <div class="row-pills"><span class="st st-make" data-i18n="stMake">Sedang Dibuat</span><span class="st st-done" data-i18n="stDone">Selesai Dimasak</span><span class="st st-ready" data-i18n="stReady">Siap Diantar</span><span class="st st-delivered" data-i18n="stDelivered">Sudah Diterima</span><span class="st st-canceled" data-i18n="stCanceled">Dibatalkan</span></div></li>
+        <li><div class="n">3</div><h3 data-i18n="step3Title">Pantau Status Pesanan</h3><p data-i18n="step3Desc">Ketik nomor WhatsApp yang kamu gunakan pada formulir di bawah untuk melihat seluruh pesananmu.</p></li>
+      </ol>
+    </section>
+  </div>
+
+  <div class="edge" style="background:var(--paper)"><div class="zig" style="background:var(--butter)"></div></div>
+  <div class="track-band">
+    <section id="track" class="wrap">
+      <div class="t-grid">
+        <div class="t-copy">
+          <span class="tagline" data-i18n="trackTagline">ayamku sudah sampai mana?</span>
+          <h2><span data-i18n="trackTitle">Lacak Pesananmu</span><span class="demo" id="demoTag" data-i18n="demoTag" hidden>Data Demo</span></h2>
+          <p data-i18n="trackLead">Gunakan nomor WhatsApp dari formulir pesanan. Kamu bisa melihat status dan posisi pesananmu secara langsung.</p>
+          <svg class="ng" viewBox="0 0 200 160" aria-hidden="true"><use href="#nugget"/></svg>
+        </div>
+        <div class="panel">
+          <form class="search" id="trackForm" novalidate>
+            <label for="phone" style="position:absolute;left:-9999px" data-i18n="phoneLabel">Nomor WhatsApp</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="08xxxxxxxxxx" data-i18n="phonePlaceholder">
+            <button class="btn btn-red" type="submit" data-i18n="checkStatusBtn">Cek Status</button>
+          </form>
+          <p class="hint" id="demoHint" hidden><span data-i18n="demoHintText">Pelacak saat ini menampilkan contoh pesanan sebelum terhubung ke spreadsheet. Coba </span><button type="button" id="fill">081234567890</button>.</p>
+          <div class="out" id="out" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="edge" style="background:var(--butter)"><div class="zig" style="background:var(--cream)"></div></div>
+</main>
+
+<footer class="foot-band">
+  <div class="wrap">
+    <p class="word" aria-hidden="true">Torikon</p>
+    <div class="f-row">
+      <a class="brand" href="#top"><img src="logo.png" alt="">Torikon</a>
+      <p data-i18n="footMade">Dibuat dengan cinta di Telkom University, Bandung.</p>
+      <p id="ig" hidden><a class="ig" href="#" id="igLink" rel="noopener" target="_blank" data-i18n="igLinkText">Ikuti kami di Instagram</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="translations.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

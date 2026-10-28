@@ -1,185 +1,406 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Torikon - Ayam Goreng Krispi Ala Famichiki</title>
-<link rel="icon" type="image/png" href="logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&family=Patrick+Hand&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Torikon: ayam krispi ala konbini, pre-order Sabtu–Rabu</title>
+  <meta name="description" content="Ayam goreng ala Famichiki buatan anak Telkom University, Bandung. Pre-order Sabtu sampai Rabu, ambil hari Jumat di Parkiran GKU.">
+  <meta name="theme-color" content="#f8efe4">
+  <link rel="icon" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=Zen+Maru+Gothic:wght@900&family=Yusei+Magic&display=swap">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<div class="jp">
+
+<svg class="defs" aria-hidden="true" focusable="false">
   <defs>
-    <symbol id="nugget" viewBox="0 0 200 160">
-      <path d="M28 88C8 58 38 22 82 28C102 6 152 12 168 44C198 54 196 104 170 124C160 150 110 156 90 140C54 150 22 130 28 88Z" fill="#F5B03A" stroke="#8A2B27" stroke-width="5" stroke-linejoin="round"/>
-      <path d="M58 62c10-14 30-16 44-8" stroke="#fff" stroke-width="7" stroke-linecap="round" fill="none"/>
-      <path d="M48 80c2-5 5-8 9-10" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none"/>
-      <ellipse cx="112" cy="92" rx="10" ry="6" fill="#E08A1E" transform="rotate(-24 112 92)"/>
-      <ellipse cx="76" cy="108" rx="8" ry="5" fill="#E08A1E" transform="rotate(18 76 108)"/>
-      <ellipse cx="146" cy="72" rx="7" ry="4.5" fill="#E08A1E" transform="rotate(-10 146 72)"/>
-      <ellipse cx="132" cy="120" rx="8" ry="5" fill="#E08A1E" transform="rotate(30 132 120)"/>
-      <circle cx="96" cy="76" r="4" fill="#E08A1E"/><circle cx="160" cy="98" r="4" fill="#E08A1E"/><circle cx="58" cy="100" r="3.5" fill="#E08A1E"/>
-    </symbol>
-    <symbol id="nuggetHot" viewBox="0 0 200 160">
-      <path d="M28 88C8 58 38 22 82 28C102 6 152 12 168 44C198 54 196 104 170 124C160 150 110 156 90 140C54 150 22 130 28 88Z" fill="#F29A2E" stroke="#8A2B27" stroke-width="5" stroke-linejoin="round"/>
-      <path d="M58 62c10-14 30-16 44-8" stroke="#fff" stroke-width="7" stroke-linecap="round" fill="none"/>
-      <path d="M48 80c2-5 5-8 9-10" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none"/>
-      <rect x="104" y="86" width="20" height="8" rx="4" fill="#D9423F" transform="rotate(-24 114 90)"/>
-      <rect x="66" y="104" width="16" height="7" rx="3.5" fill="#D9423F" transform="rotate(18 74 108)"/>
-      <rect x="138" y="66" width="15" height="7" rx="3.5" fill="#D9423F" transform="rotate(-10 146 70)"/>
-      <rect x="124" y="114" width="16" height="7" rx="3.5" fill="#D9423F" transform="rotate(30 132 118)"/>
-      <circle cx="94" cy="76" r="4" fill="#C0392B"/><circle cx="160" cy="98" r="4" fill="#C0392B"/><circle cx="56" cy="100" r="3.5" fill="#C0392B"/>
-      <ellipse cx="86" cy="122" rx="7" ry="4.5" fill="#E08A1E"/><ellipse cx="148" cy="54" rx="7" ry="4.5" fill="#E08A1E"/>
-    </symbol>
-    <symbol id="spark" viewBox="0 0 140 90">
-      <path d="M46 18c8-14 30-6 24 12-3 10-14 18-24 24-10-6-21-14-24-24-6-18 16-26 24-12z" fill="#F23D3D"/>
-      <rect x="88" y="24" width="44" height="13" rx="6.5" fill="#FFB81C" transform="rotate(-18 110 30)"/>
-      <rect x="92" y="50" width="32" height="12" rx="6" fill="#FFB81C"/>
-    </symbol>
-    <symbol id="heart" viewBox="0 0 60 56">
-      <path d="M30 52C8 36 2 24 6 14 10 4 24 4 30 14 36 4 50 4 54 14 58 24 52 36 30 52z" fill="#F23D3D" stroke="#8A2B27" stroke-width="3.5" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="pack" viewBox="0 0 220 250">
-      <g transform="translate(46 4) rotate(-10 40 40)"><use href="#nugget" width="100" height="80"/></g>
-      <g transform="translate(96 14) rotate(14 40 40)"><use href="#nuggetHot" width="92" height="74"/></g>
-      <path d="M28 96L50 84L70 98L92 82L112 98L134 82L154 98L174 84L194 96L184 232Q110 250 36 232Z" fill="#F8EFE4" stroke="#8A2B27" stroke-width="5" stroke-linejoin="round"/>
-      <path d="M34 124H188" stroke="#8A2B27" stroke-width="4" stroke-dasharray="9 8" stroke-linecap="round"/>
-      <use href="#heart" x="82" y="152" width="56" height="52"/>
-      <path d="M44 112l-14 0" stroke="#8A2B27" stroke-width="4" stroke-linecap="round"/>
-    </symbol>
+    <pattern id="seigaiha" width="40" height="20" patternUnits="userSpaceOnUse">
+      <g fill="#12449a" stroke="#f5b03a" stroke-width="1.6">
+        <circle cx="0" cy="0" r="19"/><circle cx="0" cy="0" r="14"/><circle cx="0" cy="0" r="9"/><circle cx="0" cy="0" r="4"/>
+        <circle cx="40" cy="0" r="19"/><circle cx="40" cy="0" r="14"/><circle cx="40" cy="0" r="9"/><circle cx="40" cy="0" r="4"/>
+        <circle cx="20" cy="10" r="19"/><circle cx="20" cy="10" r="14"/><circle cx="20" cy="10" r="9"/><circle cx="20" cy="10" r="4"/>
+        <circle cx="0" cy="20" r="19"/><circle cx="0" cy="20" r="14"/><circle cx="0" cy="20" r="9"/><circle cx="0" cy="20" r="4"/>
+        <circle cx="40" cy="20" r="19"/><circle cx="40" cy="20" r="14"/><circle cx="40" cy="20" r="9"/><circle cx="40" cy="20" r="4"/>
+      </g>
+    </pattern>
   </defs>
+  <symbol id="star" viewBox="0 0 24 24"><path d="M12 1 L14.6 9.4 L23 12 L14.6 14.6 L12 23 L9.4 14.6 L1 12 L9.4 9.4 Z"/></symbol>
+  <symbol id="leaf" viewBox="0 0 32 32"><path d="M16 30 L16 18 C 8 19, 2 12, 3 4 C 9 7, 13 6, 15 10 L16 13 L17 10 C 19 6, 23 7, 29 4 C 30 12, 24 19, 16 18" fill="#f5b03a" stroke="#8a2b27" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></symbol>
 </svg>
 
-<header class="site-header">
-  <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="Torikon home"><img src="logo.png" alt="">Torikon</a>
-    <nav class="links" aria-label="Main">
-      <a class="t hide-s" href="#menu" data-i18n="navMenu">Menu</a>
-      <a class="t hide-s" href="#how" data-i18n="navHow">Cara Pesan</a>
-      <a class="t" href="#track" data-i18n="navTrack">Lacak Pesanan</a>
-      <a class="btn btn-red btn-sm order-link" href="#order" data-i18n="navOrder">Pesan Sekarang</a>
-      <button class="lang-btn" id="langToggle" type="button" aria-label="Ganti ke Bahasa Inggris">EN</button>
+<a class="skip" href="#main" data-i18n="skip">Langsung ke konten</a>
+
+<!-- ================= NAV ================= -->
+<header class="nav">
+  <div class="nav__in">
+    <a href="#top" class="jp-brand" data-i18n-label="homeLabel" aria-label="Torikon, ke atas halaman">
+      <img src="assets/wordmark.png" width="94" height="30" alt="Torikon">
+    </a>
+    <nav class="nav__links" data-i18n-label="navLabel" aria-label="Navigasi utama">
+      <a class="jp-link" href="#menu" data-i18n="navMenu">Menu</a>
+      <a class="jp-link" href="#how" data-i18n="navHow">Cara pesan</a>
+      <a class="jp-link" href="#track" data-i18n="navTrack">Lacak pesanan</a>
+      <div class="lang" role="group" data-i18n-label="langLabel" aria-label="Bahasa">
+        <button type="button" class="lang__btn" data-lang="id" aria-pressed="true"><span aria-hidden="true">ID</span><span class="sr" lang="id">Bahasa Indonesia</span></button>
+        <button type="button" class="lang__btn" data-lang="en" aria-pressed="false"><span aria-hidden="true">EN</span><span class="sr" lang="en">English</span></button>
+      </div>
+      <a class="jp-btn jp-red btn btn--nav order-link" href="#how">Pre-order</a>
     </nav>
   </div>
 </header>
 
-<main id="top">
-  <div class="hero-bg">
-    <span class="dots a" aria-hidden="true"></span><span class="dots b" aria-hidden="true"></span>
-    <i class="cr" style="left:6%;top:26%;--r:30deg" aria-hidden="true"></i>
-    <i class="cr red dot" style="left:48%;top:10%;--d:.8s" aria-hidden="true"></i>
-    <i class="cr" style="left:44%;bottom:12%;--r:-40deg;--d:1.4s" aria-hidden="true"></i>
-    <i class="cr red" style="right:6%;bottom:16%;--r:55deg;--d:.4s" aria-hidden="true"></i>
-    <i class="cr dot" style="left:3%;bottom:34%;--d:2s" aria-hidden="true"></i>
-    <div class="wrap hero">
+<main id="main">
+
+<!-- ================= HERO: noren + 3D bag ================= -->
+<section id="top" class="hero" aria-labelledby="hero-title">
+  <div class="noren" aria-hidden="true">
+    <div class="noren__rod"></div>
+    <div class="noren__row">
+      <div class="jp-flap"><div class="jp-noren">ト</div></div>
+      <div class="jp-flap"><div class="jp-noren" style="animation-delay:.25s">リ</div></div>
+      <div class="jp-flap"><div class="jp-noren" style="animation-delay:.5s">コ</div></div>
+      <div class="jp-flap"><div class="jp-noren" style="animation-delay:.75s">ン</div></div>
+    </div>
+  </div>
+
+  <div class="leaves" aria-hidden="true">
+    <svg class="jp-leaf" style="left:4%;width:26px;animation-delay:0s;animation-duration:9s"><use href="#leaf"/></svg>
+    <svg class="jp-leaf" style="left:14%;width:20px;animation-delay:3s;animation-duration:11s"><use href="#leaf"/></svg>
+    <svg class="jp-leaf" style="left:26%;width:30px;animation-delay:6s;animation-duration:10s"><use href="#leaf"/></svg>
+    <svg class="jp-leaf" style="left:38%;width:18px;animation-delay:1.5s;animation-duration:12s"><use href="#leaf"/></svg>
+    <svg class="jp-leaf" style="left:52%;width:24px;animation-delay:4.5s;animation-duration:9.5s"><use href="#leaf"/></svg>
+    <svg class="jp-leaf" style="left:63%;width:28px;animation-delay:7.5s;animation-duration:10.5s"><use href="#leaf"/></svg>
+    <svg class="jp-leaf" style="left:74%;width:20px;animation-delay:2.2s;animation-duration:11.5s"><use href="#leaf"/></svg>
+    <svg class="jp-leaf" style="left:84%;width:26px;animation-delay:5.4s;animation-duration:9s"><use href="#leaf"/></svg>
+    <svg class="jp-leaf" style="left:93%;width:22px;animation-delay:8.2s;animation-duration:12s"><use href="#leaf"/></svg>
+    <svg class="jp-leaf" style="left:46%;width:16px;animation-delay:9.6s;animation-duration:10s"><use href="#leaf"/></svg>
+  </div>
+
+  <div class="hero__grid">
+    <div class="hero__copy">
+      <span class="pill-open jp-in" style="animation-delay:.25s"><span class="jp-pulse dot-red"></span><span data-i18n="openPill">Pre-order dibuka</span></span>
+      <h1 id="hero-title" class="hero__title">
+        <span class="jp-in" style="animation-delay:.35s"><span class="jp-squish hero__agetate">Agetate!</span></span><br>
+        <span class="jp-in" style="animation-delay:.5s" data-i18n="heroL2">Baru digoreng,</span><br>
+        <span class="jp-in hero__under" style="animation-delay:.65s"><span data-i18n="heroL3">untukmu.</span>
+          <svg viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path class="jp-draw" d="M4 14 C 50 4, 120 4, 196 12" fill="none" stroke="#f5b03a" stroke-width="7" stroke-linecap="round"/></svg>
+        </span>
+      </h1>
+      <p class="hero__lede jp-in" style="animation-delay:.8s" data-i18n="heroLede">Ayam krispi ala konbini, yang biasa kamu ambil hangat dari etalase. Dibuat sendiri oleh anak Telkom University, Bandung.</p>
+      <div class="hero__cta jp-in" style="animation-delay:.95s">
+        <a class="jp-btn jp-red btn btn--xl order-link" href="#how" data-i18n="ctaPreorder">Pesan sekarang →</a>
+        <a class="jp-btn jp-gold btn btn--xl btn--gold" href="#menu" data-i18n="ctaMenu">Lihat menu</a>
+      </div>
+      <!-- pre-order schedule: visible on the first screen -->
+      <ul class="sched jp-in" style="animation-delay:1.05s">
+        <li><span class="sched__k" data-i18n="schedOrder">Pre-order</span> <span data-i18n="schedOrderVal">Sabtu–Rabu</span></li>
+        <li><span class="sched__k" data-i18n="schedPickup">Ambil</span> <span data-i18n="friday">Jumat</span>, <span class="js-pickup-time">[JAM PENGAMBILAN]</span></li>
+        <li><span class="sched__k" data-i18n="schedPlace">Tempat</span> <span data-i18n="place">Parkiran GKU</span></li>
+      </ul>
+      <p class="hero__hint jp-in" style="animation-delay:1.1s">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8a2b27" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4l7 16 2-7 7-2z"/></svg>
+        <span data-i18n="heroHint">Gerakkan mouse di sekitar tas</span>
+      </p>
+    </div>
+
+    <!-- 3D scene -->
+    <div class="scene" aria-hidden="true">
+      <div class="jp-bagbob scene__bob">
+        <div class="jp-tilt scene__tilt" id="heroTilt">
+          <div class="scene__disc"></div>
+          <div class="scene__ring"><div class="jp-spin"></div></div>
+
+          <img class="jp-floatz fp fp--1" src="assets/original-1.webp" alt="" draggable="false">
+          <img class="jp-floatz fp fp--2" src="assets/spicy-1.webp" alt="" draggable="false">
+          <img class="jp-floatz fp fp--3" src="assets/original-3.webp" alt="" draggable="false">
+          <svg class="jp-twinkle tw tw--1" viewBox="0 0 60 60"><path d="M30 6 L30 20 M8 22 L19 29 M52 22 L41 29" stroke="#ffb81c" stroke-width="6" stroke-linecap="round"/></svg>
+          <svg class="jp-twinkle tw tw--2" viewBox="0 0 24 24"><use href="#star" fill="#ffb81c" stroke="#8a2b27" stroke-width="1.5"/></svg>
+
+          <!-- the bag: white paper sleeve (250 x 274 x 90) -->
+          <div class="bag">
+            <svg class="bag__back" viewBox="0 0 250 330">
+              <path d="M30 2 L220 2 L248 56 L248 328 L2 328 L2 56 Z" fill="#ffffff" stroke="#8a2b27" stroke-width="2.5" stroke-linejoin="round"/>
+              <path d="M2 56 L248 56 M70 2 L70 56 M110 2 L110 56" fill="none" stroke="#8a2b27" stroke-width="1.5" opacity=".45"/>
+            </svg>
+            <img class="bag__p1" src="assets/original-2.webp" alt="" draggable="false">
+            <img class="bag__p2" src="assets/spicy-2.webp" alt="" draggable="false">
+            <div class="bag__side bag__side--l"><i></i></div>
+            <div class="bag__side bag__side--r"><i></i><b></b></div>
+            <div class="bag__bottom"></div>
+            <div class="bag__front"><img src="assets/bag-print.png" alt="" draggable="false"><span></span></div>
+          </div>
+
+          <div class="stamp-wrap"><div class="jp-stamp stamp"><b>OPEN</b><span data-i18n="stampSub">untuk pre-order</span></div></div>
+          <div class="bubble-wrap"><div class="jp-in bubble" style="animation-delay:1.4s">Irasshaimase!</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TICKER: LED sign board ================= -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__in">
+    <span class="jp-neon ticker__badge">HOT</span>
+    <div class="ticker__board"><div class="jp-marquee jp-led ticker__text" id="ticker"></div></div>
+    <span class="jp-neon ticker__badge ticker__badge--gold" style="animation-delay:-1.3s">FRESH</span>
+  </div>
+</div>
+
+<!-- ================= MENU: konbini hot-snack warmer ================= -->
+<section id="menu" class="menu jp-wall" aria-labelledby="menu-title">
+  <div class="awning" aria-hidden="true"><div class="awning__bar"></div><div class="jp-awning awning__stripes"></div></div>
+  <div class="jp-flags" aria-hidden="true">
+    <div class="jp-nobori nobori nobori--l"><div class="nobori__pole"></div><div class="nobori__flag"><span>CRISPY CHICKEN</span><i></i></div></div>
+    <div class="jp-nobori nobori nobori--r" style="animation-delay:-1.6s"><div class="nobori__pole"></div><div class="nobori__flag"><span>PRE-ORDER</span><i></i></div></div>
+    <svg class="jp-twinkle flagstar flagstar--1"><use href="#star" fill="#f5b03a" stroke="#8a2b27" stroke-width="1.2"/></svg>
+    <svg class="jp-twinkle flagstar flagstar--2" style="animation-delay:.9s"><use href="#star" fill="#f5b03a" stroke="#8a2b27" stroke-width="1.2"/></svg>
+  </div>
+
+  <div class="menu__in">
+    <div class="jp-reveal menu__head">
+      <div aria-hidden="true" class="oshinagaki">oshinagaki</div>
       <div>
-        <span class="pill" data-i18n="heroPill">Ayam goreng ala Famichiki buatan sendiri</span>
-        <h1 data-i18n="heroH1">Renyah penuh <mark>keceriaan</mark>, dibuat dengan cinta.</h1>
-        <p class="lead" data-i18n="heroLead">Camilan ayam goreng krispi khas Jepang untuk mahasiswa. Pesan lewat formulir, lalu pantau pesananmu langsung di sini dengan nomor WhatsApp.</p>
-        <div class="cta">
-          <a class="btn btn-red order-link" href="#order" data-i18n="heroCtaOrder">Pesan via Google Form</a>
-          <a class="btn btn-white" href="#track" data-i18n="heroCtaTrack">Lacak Pesanan</a>
-        </div>
-        <div class="chips">
-          <span class="chip"><svg viewBox="0 0 200 160"><use href="#nugget"/></svg><span data-i18n="chip1">Original &amp; Spicy</span></span>
-          <span class="chip"><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="chip2">Homemade</span></span>
-          <span class="chip"><svg viewBox="0 0 220 250"><use href="#pack"/></svg><span data-i18n="chip3">Kemasan Sobek Praktis</span></span>
-        </div>
+        <h2 id="menu-title" data-i18n="menuTitle">Camilan hangat kami</h2>
+        <p data-i18n="menuLede">Langsung dari etalase hangat ke tanganmu. Pilih rasamu.</p>
       </div>
-      <div class="art">
-        <div class="disc" id="disc"><img src="logo.png" alt="Torikon logo: a white hen peeking out of a paper bag with a golden nugget"></div>
-        <svg class="ng n1" viewBox="0 0 200 160" aria-hidden="true"><use href="#nuggetHot"/></svg>
-        <svg class="ng n2" viewBox="0 0 200 160" aria-hidden="true"><use href="#nugget"/></svg>
-        <svg class="ng n3" viewBox="0 0 200 160" aria-hidden="true"><use href="#nugget"/></svg>
-        <svg class="spark" viewBox="0 0 140 90" aria-hidden="true"><use href="#spark"/></svg>
-        <div class="note" data-i18n="artNote">baru matang dari penggorengan!</div>
-        <div class="badge" aria-hidden="true">
-          <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100 100 m-78 0 a78 78 0 1 1 156 0 a78 78 0 1 1 -156 0"/></defs>
-            <circle cx="100" cy="100" r="98" fill="#F23D3D" stroke="#8A2B27" stroke-width="4"/>
-            <text font-family="Fredoka, sans-serif" font-weight="600" font-size="19" fill="#fff"><textPath id="sealText" href="#circ" textLength="484" lengthAdjust="spacing">HOMEMADE • RENYAH • DIBUAT DENGAN CINTA • </textPath></text>
-            <circle cx="100" cy="100" r="44" fill="#FFB81C" stroke="#8A2B27" stroke-width="4"/>
-            <use href="#heart" x="76" y="78" width="48" height="45"/></svg>
+    </div>
+
+    <!-- the warmer (3D, drag to turn) -->
+    <div class="jp-stage stage" id="stage">
+      <div class="jp-turn warmer" id="warmer">
+        <div aria-hidden="true" class="placard">
+          <div class="placard__board"><span class="jp-neon">HOT SNACK</span><small>fresh · warm · crispy</small></div>
+          <div class="placard__legs"><i></i><i></i></div>
+        </div>
+        <div aria-hidden="true" class="w-back"><div class="jp-glow"></div><i></i></div>
+        <div aria-hidden="true" class="w-top"></div>
+        <div aria-hidden="true" class="w-side w-side--l"></div>
+        <div aria-hidden="true" class="w-side w-side--r"><i></i></div>
+        <div aria-hidden="true" class="w-base-bottom"></div>
+
+        <div class="w-glass">
+          <div aria-hidden="true" class="w-bevel"></div>
+          <div aria-hidden="true" class="w-pane"><div class="jp-glare g1"></div><div class="jp-glare g2"></div></div>
+
+          <!-- shelf 1: Original -->
+          <div class="shelf shelf--1">
+            <div aria-hidden="true" class="shelf__floor"></div>
+            <div class="row row--back" id="origBack"></div>
+            <svg class="jp-steam steam" aria-hidden="true" viewBox="0 0 600 40" preserveAspectRatio="none" fill="none" stroke="#8a2b27" stroke-width="3" stroke-linecap="round" opacity=".45"><path d="M100 38 C 90 26, 110 18, 100 4"/><path d="M300 38 C 290 26, 310 18, 300 4"/><path d="M500 38 C 490 26, 510 18, 500 4"/></svg>
+            <div class="row row--front" id="origFront"></div>
+          </div>
+          <div class="lip">
+            <div aria-hidden="true" class="lip__bar"></div>
+            <div class="tagwrap">
+              <div class="jp-tag tag">
+                <div class="tag__head"><div class="tag__name">Tori-Chiki</div><div class="tag__sub">(Original)</div></div>
+                <div class="tag__body"><span class="tag__price">Rp12.000</span><span class="tag__per">per pcs</span></div>
+                <div aria-hidden="true" class="tag__img"><img src="assets/original-1.webp" alt="" draggable="false"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- shelf 2: Spicy -->
+          <div class="shelf shelf--2">
+            <div aria-hidden="true" class="shelf__floor"></div>
+            <div class="row row--back row--spread" id="spicyBack"></div>
+            <svg class="jp-steam steam steam--2" aria-hidden="true" viewBox="0 0 600 40" preserveAspectRatio="none" fill="none" stroke="#d9423f" stroke-width="3" stroke-linecap="round" opacity=".55"><path d="M160 38 C 150 26, 170 18, 160 4"/><path d="M360 38 C 350 26, 370 18, 360 4"/><path d="M540 38 C 530 26, 550 18, 540 4"/></svg>
+            <div class="row row--front row--spread" id="spicyFront"></div>
+          </div>
+        </div>
+
+        <div class="w-base">
+          <div aria-hidden="true" class="lip__bar lip__bar--base"></div>
+          <div class="tagwrap tagwrap--base">
+            <div class="jp-tag tag" style="animation-delay:-1.4s">
+              <div class="tag__head"><div class="tag__name">Spicy Chiki</div><div class="tag__sub">(Spicy)</div></div>
+              <div class="tag__body"><span class="tag__price">Rp12.000</span><span class="tag__per">per pcs</span></div>
+              <div aria-hidden="true" class="tag__img"><img src="assets/spicy-2.webp" alt="" draggable="false"></div>
+            </div>
+          </div>
+          <div aria-hidden="true" class="panel"><span class="jp-spin knob"><i></i></span><span class="panel__warm"><span class="jp-pulse dot-red"></span>WARM</span></div>
+        </div>
+        <div aria-hidden="true" class="foot foot--fl"></div>
+        <div aria-hidden="true" class="foot foot--fr"></div>
+        <div aria-hidden="true" class="foot foot--bl"></div>
+        <div aria-hidden="true" class="foot foot--br"></div>
+      </div>
+    </div>
+    <p class="stage__hint" data-i18n="dragHint">Geser etalase untuk memutarnya</p>
+
+    <!-- details under the case -->
+    <div class="cards">
+      <article class="jp-reveal card" aria-labelledby="orig-name">
+        <span class="card__nick">Tori-Chiki</span>
+        <h3 id="orig-name" class="card__name">Chicken Original</h3>
+        <p data-i18n="origDesc">Lapisan keemasan yang kriuk, juicy di dalam, bumbunya pas. Gurih dan sederhana.</p>
+        <p class="card__meta"><span data-i18n="tagMild">Tidak pedas</span><span class="card__price">Rp12.000 / pcs</span></p>
+        <a class="jp-btn jp-gold btn btn--card btn--gold order-link" href="#how" data-i18n="orderOrig">Pesan Original →</a>
+      </article>
+      <article class="jp-reveal card" aria-labelledby="spicy-name">
+        <span class="card__nick">Spicy Chiki</span>
+        <h3 id="spicy-name" class="card__name">Chicken Spicy</h3>
+        <p data-i18n="spicyDesc">Gigitan juicy yang sama, dengan lapisan merah yang pedasnya pelan-pelan naik. Siapkan minum.</p>
+        <p class="card__meta"><span data-i18n="tagHot">Pedas</span><span class="card__price">Rp12.000 / pcs</span></p>
+        <a class="jp-btn jp-red btn btn--card order-link" href="#how" data-i18n="orderSpicy">Pesan Spicy →</a>
+      </article>
+    </div>
+    <div aria-hidden="true" class="goldshelf"><div></div><div></div><i></i><i></i></div>
+  </div>
+</section>
+
+<!-- ================= HOW TO PRE-ORDER: ticket machine (v6) ================= -->
+<section id="how" class="tkh" aria-labelledby="tkh-title">
+  <!-- seigaiha wave band -->
+  <svg class="tkh-wave" aria-hidden="true">
+    <defs>
+      <pattern id="tkh-seigaiha" width="40" height="20" patternUnits="userSpaceOnUse">
+        <g fill="#12449a" stroke="#f5b03a" stroke-width="1.6">
+          <circle cx="0" cy="0" r="19"/><circle cx="0" cy="0" r="14"/><circle cx="0" cy="0" r="9"/><circle cx="0" cy="0" r="4"/>
+          <circle cx="40" cy="0" r="19"/><circle cx="40" cy="0" r="14"/><circle cx="40" cy="0" r="9"/><circle cx="40" cy="0" r="4"/>
+          <circle cx="20" cy="10" r="19"/><circle cx="20" cy="10" r="14"/><circle cx="20" cy="10" r="9"/><circle cx="20" cy="10" r="4"/>
+          <circle cx="0" cy="20" r="19"/><circle cx="0" cy="20" r="14"/><circle cx="0" cy="20" r="9"/><circle cx="0" cy="20" r="4"/>
+          <circle cx="40" cy="20" r="19"/><circle cx="40" cy="20" r="14"/><circle cx="40" cy="20" r="9"/><circle cx="40" cy="20" r="4"/>
+        </g>
+      </pattern>
+    </defs>
+    <rect width="100%" height="60" fill="url(#tkh-seigaiha)"/>
+  </svg>
+
+  <!-- background decoration -->
+  <div class="tkh-dots" aria-hidden="true"></div>
+  <div class="tkh-deco" aria-hidden="true">
+    <div class="tkh-stack"><span class="s1">01</span><span class="s2">02</span><span class="s3">03</span><span class="s4">04</span></div>
+    <img class="tkh-piece" src="assets/chicken-original.webp" alt="" style="right: 3%; bottom: 36px; width: 150px; transform: rotate(-12deg); animation-delay: -.6s">
+    <img class="tkh-piece" src="assets/chicken-spicy.webp" alt="" style="left: 4%; bottom: 40px; width: 110px; transform: rotate(16deg); animation-delay: -1.8s">
+    <svg class="tkh-star" viewBox="0 0 24 24" style="left: 13%; top: 250px; width: 26px"><path d="M12 1 L14.6 9.4 L23 12 L14.6 14.6 L12 23 L9.4 14.6 L1 12 L9.4 9.4 Z" fill="#ffb81c"/></svg>
+    <svg class="tkh-star" viewBox="0 0 24 24" style="right: 6%; top: 330px; width: 24px; animation-delay: .8s"><path d="M12 1 L14.6 9.4 L23 12 L14.6 14.6 L12 23 L9.4 14.6 L1 12 L9.4 9.4 Z" fill="#ffb81c"/></svg>
+    <svg class="tkh-star" viewBox="0 0 24 24" style="right: 22%; bottom: 60px; width: 18px; animation-delay: 1.4s"><path d="M12 1 L14.6 9.4 L23 12 L14.6 14.6 L12 23 L9.4 14.6 L1 12 L9.4 9.4 Z" fill="#f8efe4"/></svg>
+  </div>
+
+  <div class="tkh-wrap">
+    <!-- heading row -->
+    <div class="tkh-head">
+      <div>
+        <span class="tkh-eyebrow" data-i18n="howKicker">ala mesin tiket</span>
+        <h2 id="tkh-title" class="tkh-title" data-i18n="howTitle">Cara pre-order</h2>
+        <p class="tkh-lede" data-i18n="howLede">Tekan tombol di mesin. Tiketmu tercetak tepat di sebelahnya, jadi kamu bisa baca tiap langkah tanpa scroll.</p>
+      </div>
+      <div class="tkh-actions">
+        <div class="tkh-closes"><span data-i18n="closesLabel">Pre-order tutup:</span> <b data-i18n="closesVal">Rabu</b></div>
+        <div class="tkh-closes"><span data-i18n="pickupLabel">Ambil:</span> <b><span data-i18n="friday">Jumat</span>, <span class="js-pickup-time">[JAM PENGAMBILAN]</span>, <span data-i18n="place">Parkiran GKU</span></b></div>
+        <a class="tkh-cta order-link" data-preorder href="#how" data-i18n="openForm">Buka formulir pre-order →</a>
+      </div>
+    </div>
+
+    <!-- machine + side ticket -->
+    <div class="tkh-stage">
+      <div class="tkh-col">
+        <div class="tkh-disc" aria-hidden="true"></div>
+        <div class="tkh-ring" aria-hidden="true"><div></div></div>
+
+        <div class="tkh-machine">
+          <div class="tkh-front">
+            <div class="tkh-sign" aria-hidden="true">
+              <span class="tkh-led" data-i18n="ledHow">CARA PRE-ORDER!</span>
+              <span class="tkh-lamps"><i></i><i></i></span>
+            </div>
+
+            <div class="tkh-screen" aria-hidden="true">
+              <span class="tkh-screen-num" data-screen-num>1/4</span>
+              <span class="tkh-screen-title" data-screen-title>Isi formulir</span>
+              <span class="tkh-cursor">▌</span>
+            </div>
+
+            <!-- keys are filled in by script.js (from the steps in I18N) -->
+            <div class="tkh-keys" role="group" data-i18n-label="keysLabel" aria-label="Langkah cara pre-order" data-keys></div>
+          </div>
+
+          <div class="tkh-dispenser" aria-hidden="true"></div>
+          <div class="tkh-out" aria-live="polite" data-out></div>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="marq" aria-hidden="true"><div class="strip"><div class="mt">
-    <div class="grp"><span data-i18n="marq1">Renyah</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq2">Gurih</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq3">Homemade</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq4">Kemasan Sobek</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq5">Dibuat Penuh Cinta</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg></div>
-    <div class="grp"><span data-i18n="marq1">Renyah</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq2">Gurih</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq3">Homemade</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq4">Kemasan Sobek</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg><span data-i18n="marq5">Dibuat Penuh Cinta</span><svg viewBox="0 0 60 56"><use href="#heart"/></svg></div>
-  </div></div></div>
-
-  <div class="edge" style="background:var(--paper)"><div class="zig" style="background:var(--cream)"></div></div>
-  <div class="menu-band">
-    <section id="menu" class="wrap">
-      <div class="sec-head"><span class="tagline" data-i18n="menuTagline">pilih kelezatanmu</span><h2 data-i18n="menuTitle">Menu Kami</h2><p data-i18n="menuLead">Dua varian rasa, dibuat homemade dan dibungkus kemasan sobek praktis.</p></div>
-      <div class="menu" id="menuGrid"></div>
-    </section>
-  </div>
-  <div class="edge" style="background:var(--cream)"><div class="zig" style="background:var(--paper)"></div></div>
-
-  <section class="wrap">
-    <div class="sec-head"><span class="tagline" data-i18n="whyTagline">kenapa kamu bakal suka</span><h2 data-i18n="whyTitle">Camilan Kecil, Bahagia Maksimal</h2></div>
-    <div class="why">
-      <div class="b" style="--c:var(--butter);--t:-1.5deg"><div class="ic"><svg viewBox="0 0 200 160"><use href="#nugget"/></svg></div><h3 data-i18n="why1Title">Rasa Autentik</h3><p data-i18n="why1Desc">Ayam goreng ala famichiki Jepang, tersedia varian Original &amp; Spicy.</p></div>
-      <div class="b" style="--c:var(--sky);--t:1.2deg"><div class="ic"><svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="25" fill="#F5B03A" stroke="#8A2B27" stroke-width="3.5"/><text x="30" y="37" text-anchor="middle" font-family="Fredoka, sans-serif" font-weight="600" font-size="19" fill="#12449A">Rp</text></svg></div><h3 data-i18n="why2Title">Harga Ramah Mahasiswa</h3><p data-i18n="why2Desc">Lebih hemat dan terjangkau dibanding versi minimarket.</p></div>
-      <div class="b" style="--c:var(--blush);--t:-1deg"><div class="ic"><svg viewBox="0 0 60 56"><use href="#heart"/></svg></div><h3 data-i18n="why3Title">Dibuat Penuh Cinta</h3><p data-i18n="why3Desc">Setiap porsi dibuat langsung secara homemade, selalu segar.</p></div>
-      <div class="b" style="--c:var(--cream);--t:1.6deg"><div class="ic"><svg viewBox="0 0 220 250"><use href="#pack"/></svg></div><h3 data-i18n="why4Title">Kemasan Sobek Praktis</h3><p data-i18n="why4Desc">Dikemas khas Jepang. Sobek, gigit, dan nikmati senyumnya.</p></div>
+</section>
+<!-- ================= TRACKER: receipt printer ================= -->
+<section id="track" class="track jp-crumbs" aria-labelledby="track-title">
+  <div class="track__in">
+    <div class="jp-reveal track__head">
+      <span class="kicker kicker--red" data-i18n="trackKicker">ayamku di mana?</span>
+      <h2 id="track-title" data-i18n="trackTitle">Lacak pesananmu</h2>
+      <p data-i18n="trackLede">Ketik nomor WhatsApp yang kamu pakai di formulir, tekan tombol merah besar, dan slip pesananmu tercetak di bawah.</p>
     </div>
-  </section>
 
-  <div class="how">
-    <section id="how" class="wrap">
-      <div class="sec-head"><span class="tagline" data-i18n="howTagline">mudah hanya 3 langkah</span><h2 data-i18n="howTitle">Cara Pesan</h2></div>
-      <ol class="steps">
-        <li><div class="n">1</div><h3 data-i18n="step1Title">Isi Formulir Pesanan</h3><p data-i18n="step1Desc">Pilih varian rasa favoritmu dan masukkan nama serta nomor WhatsApp di Google Form kami.</p></li>
-        <li><div class="n">2</div><h3 data-i18n="step2Title">Kami Buat Pesananmu</h3><p data-i18n="step2Desc">Kami perbarui status pesananmu secara berkala, jadi kamu selalu tahu progresnya.</p>
-          <div class="row-pills"><span class="st st-make" data-i18n="stMake">Sedang Dibuat</span><span class="st st-done" data-i18n="stDone">Selesai Dimasak</span><span class="st st-ready" data-i18n="stReady">Siap Diantar</span><span class="st st-delivered" data-i18n="stDelivered">Sudah Diterima</span><span class="st st-canceled" data-i18n="stCanceled">Dibatalkan</span></div></li>
-        <li><div class="n">3</div><h3 data-i18n="step3Title">Pantau Status Pesanan</h3><p data-i18n="step3Desc">Ketik nomor WhatsApp yang kamu gunakan pada formulir di bawah untuk melihat seluruh pesananmu.</p></li>
-      </ol>
-    </section>
-  </div>
-
-  <div class="edge" style="background:var(--paper)"><div class="zig" style="background:var(--butter)"></div></div>
-  <div class="track-band">
-    <section id="track" class="wrap">
-      <div class="t-grid">
-        <div class="t-copy">
-          <span class="tagline" data-i18n="trackTagline">ayamku sudah sampai mana?</span>
-          <h2><span data-i18n="trackTitle">Lacak Pesananmu</span><span class="demo" id="demoTag" data-i18n="demoTag" hidden>Data Demo</span></h2>
-          <p data-i18n="trackLead">Gunakan nomor WhatsApp dari formulir pesanan. Kamu bisa melihat status dan posisi pesananmu secara langsung.</p>
-          <svg class="ng" viewBox="0 0 200 160" aria-hidden="true"><use href="#nugget"/></svg>
-        </div>
-        <div class="panel">
-          <form class="search" id="trackForm" novalidate>
-            <label for="phone" style="position:absolute;left:-9999px" data-i18n="phoneLabel">Nomor WhatsApp</label>
-            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="08xxxxxxxxxx" data-i18n="phonePlaceholder">
-            <button class="btn btn-red" type="submit" data-i18n="checkStatusBtn">Cek Status</button>
+    <div class="jp-reveal printer-area">
+      <div class="printer">
+        <div aria-hidden="true" class="printer__top"><i></i></div>
+        <div class="printer__body">
+          <div class="printer__title"><span>TORIKON · ORDER PRINTER</span><span aria-hidden="true" class="printer__dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+          <form id="trackForm" class="printer__form" novalidate>
+            <div class="printer__field">
+              <label for="phone" data-i18n="phoneLabel">NOMOR WHATSAPP</label>
+              <div class="phonebox">
+                <input id="phone" class="jp-input" type="tel" inputmode="tel" autocomplete="tel" placeholder="0812 3456 7890" aria-describedby="phoneHint printerStatus">
+              </div>
+              <p id="phoneHint" class="printer__hint" data-i18n="phoneHint">08xx, 628xx atau +628xx, semua bisa.</p>
+              <div class="printer__status" id="printerStatus" aria-live="polite"><span class="jp-neon" data-i18n="ready">SIAP ▌</span></div>
+              <button type="button" id="fill" class="demo-btn" hidden data-i18n="demoBtn">Belum pesan? Coba nomor demo</button>
+            </div>
+            <button type="submit" class="jp-print print-btn"><span data-i18n="trackBtn">LACAK</span><small data-i18n="trackBtnSub">cetak</small></button>
           </form>
-          <p class="hint" id="demoHint" hidden><span data-i18n="demoHintText">Pelacak saat ini menampilkan contoh pesanan sebelum terhubung ke spreadsheet. Coba </span><button type="button" id="fill">081234567890</button>.</p>
-          <div class="out" id="out" aria-live="polite"></div>
+          <div aria-hidden="true" class="printer__slot"></div>
         </div>
       </div>
-    </section>
+      <div id="out" aria-live="polite"></div>
+    </div>
   </div>
-  <div class="edge" style="background:var(--butter)"><div class="zig" style="background:var(--cream)"></div></div>
+</section>
+
 </main>
 
-<footer class="foot-band">
-  <div class="wrap">
-    <p class="word" aria-hidden="true">Torikon</p>
-    <div class="f-row">
-      <a class="brand" href="#top"><img src="logo.png" alt="">Torikon</a>
-      <p data-i18n="footMade">Dibuat dengan cinta di Telkom University, Bandung.</p>
-      <p id="ig" hidden><a class="ig" href="#" id="igLink" rel="noopener" target="_blank" data-i18n="igLinkText">Ikuti kami di Instagram</a></p>
+<!-- ================= FOOTER: chicken orbit ================= -->
+<footer class="site-foot">
+  <svg class="jp-wave seigaiha" aria-hidden="true" width="100%" height="40"><rect width="100%" height="40" fill="url(#seigaiha)"/></svg>
+  <div class="site-foot__in">
+    <div class="jp-reveal site-foot__grid">
+      <div>
+        <span class="itadaki">Itadakimasu!</span>
+        <h2 class="hungry" id="hungry" data-i18n-label="hungry" aria-label="Lapar belum?"></h2>
+        <p class="site-foot__lede" data-i18n="footLede">Amankan porsimu di batch ini sebelum penggorengannya penuh. Renyah di luar, bahagia di dalam.</p>
+        <a class="jp-btn jp-gold btn btn--xl btn--gold btn--onblue order-link" href="#how" data-i18n="ctaPreorder">Pesan sekarang →</a>
+      </div>
+      <div aria-hidden="true" class="orbit-stage">
+        <div class="orbit-center">
+          <div class="orbit-logo"><img src="assets/logo-footer.png" alt="" draggable="false"></div>
+          <div class="jp-orbit orbit">
+            <img src="assets/original-1.webp" alt="" draggable="false" style="transform:rotateY(0deg) translateZ(210px) rotate(-10deg)">
+            <img src="assets/spicy-1.webp" alt="" draggable="false" style="transform:rotateY(60deg) translateZ(210px) rotate(10deg)">
+            <img src="assets/original-2.webp" alt="" draggable="false" style="transform:rotateY(120deg) translateZ(210px) rotate(-10deg)">
+            <img src="assets/spicy-2.webp" alt="" draggable="false" style="transform:rotateY(180deg) translateZ(210px) rotate(10deg)">
+            <img src="assets/original-3.webp" alt="" draggable="false" style="transform:rotateY(240deg) translateZ(210px) rotate(-10deg)">
+            <img src="assets/spicy-1.webp" alt="" draggable="false" style="transform:rotateY(300deg) translateZ(210px) rotate(10deg)">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="site-foot__bar">
+      <span>© 2026 Torikon · gochisousama! <span data-i18n="madeWith">Dibuat dengan cinta di Telkom University, Bandung</span></span>
+      <span class="site-foot__links">
+        <a href="#menu" data-i18n="navMenu">Menu</a>
+        <a href="#how" data-i18n="navHow">Cara pesan</a>
+        <a href="#track" data-i18n="navTrack">Lacak pesanan</a>
+        <a id="igLink" href="#" target="_blank" rel="noopener">Instagram @toorikon<span class="sr" data-i18n="newTabSr"> (tab baru)</span></a>
+      </span>
     </div>
   </div>
 </footer>
 
-<script src="translations.js"></script>
+</div>
 <script src="script.js"></script>
 </body>
 </html>
