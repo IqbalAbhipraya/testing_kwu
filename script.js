@@ -175,7 +175,7 @@ function buildTicker(){
 
 /* ---------- warmer: drag to turn ---------- */
 (function warmerDrag(){
-  const stage=$('#stage'), turn=$('#warmer'); let drag=null, ry=-12, raf=null;
+  const stage=$('#stage'), turn=$('#warmer'); let drag=null, ry=0, raf=null;
   stage.addEventListener('pointerdown',e=>{
     if(e.button!==undefined && e.button!==0) return;
     drag={x:e.clientX, ry}; try{ stage.setPointerCapture(e.pointerId); }catch(err){} stage.classList.add('jp-dragging');
